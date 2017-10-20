@@ -1,4 +1,4 @@
-The ClamAV Team - http://www.clamav.net/about.html#credits 
+The QuikAV Team - http://www.quikav.net/about.html#credits 
 ============================================
 Joel Esler
 Douglas Goddard
@@ -48,7 +48,7 @@ Angel Villegas
 Andy Walker
 Yves Younan
 
-ClamAV QA
+QuikAV QA
 ===========
 Erin Germ
 Dragos Malene
@@ -66,7 +66,7 @@ Tomasz Papszun
 Sven Strickroth 
 Trog 
 
-ClamAV Emeritus
+QuikAV Emeritus
 ===============
 aCaB
 Luca Gibelli
@@ -75,11 +75,11 @@ Török Edvin
 Nigel Horne
 
 
-Please see the ChangeLog and clamdoc.pdf for the full list of contributors.
+Please see the ChangeLog and quikdoc.pdf for the full list of contributors.
 
 -------------------------------------------------------------------------------
 
-libclamav credits:
+libquikav credits:
 
 cab.c: The code uses Stuart Caie's libmspack to handle cabinet files
 cvd.c, untar.c: The untar code is based on a public domain minitar utility

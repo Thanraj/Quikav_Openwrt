@@ -1,4 +1,4 @@
-libclamav/textdet.c includes modified code from file-4.23/src/ascmagic.c.
+libquikav/textdet.c includes modified code from file-4.23/src/ascmagic.c.
 The original LEGAL.NOTICE file for file-4.23 is reproduced below.
 
 --------------------------------------------------------------------------

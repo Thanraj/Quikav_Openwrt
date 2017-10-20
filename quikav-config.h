@@ -510,7 +510,7 @@
 #define PACKAGE_NAME "QuikAV"
 
 /* Define to the full name and version of this package. */
-#define PACKAGE_STRING "QuikAV 0.99.2"
+#define PACKAGE_STRING "QuikAV 0.0.1"
 
 /* Define to the one symbol short name of this package. */
 #define PACKAGE_TARNAME "quikav"
@@ -519,7 +519,7 @@
 #define PACKAGE_URL "http://www.quikav.net/"
 
 /* Define to the version of this package. */
-#define PACKAGE_VERSION "0.99.2"
+#define PACKAGE_VERSION "0.0.1"
 
 /* scan buffer size */
 #define SCANBUFF 131072
@@ -580,7 +580,7 @@
 /* #undef USING_PCRE2 */
 
 /* Version number of package */
-#define VERSION "0.99.2"
+#define VERSION "0.0.1"
 
 /* Version suffix for package */
 #define VERSION_SUFFIX ""

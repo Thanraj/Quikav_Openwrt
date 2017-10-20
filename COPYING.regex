@@ -1,4 +1,4 @@
-The code in libclamav/regex/ is derived from OpenBSD's libc/regex, original license follows:
+The code in libquikav/regex/ is derived from OpenBSD's libc/regex, original license follows:
 
  Copyright (c) 1992, 1993, 1994 Henry Spencer.
  Copyright (c) 1992, 1993, 1994

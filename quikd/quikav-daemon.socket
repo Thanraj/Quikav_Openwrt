@@ -1,15 +1,15 @@
 [Unit]
-Description=Socket for Clam AntiVirus userspace daemon
-Documentation=man:clamd(8) man:clamd.conf(5) http://www.clamav.net/lang/en/doc/
+Description=Socket for Quik AntiVirus userspace daemon
+Documentation=man:quikd(8) man:quikd.conf(5) http://www.quikav.net/lang/en/doc/
 # Check for database existence
 ConditionPathExistsGlob=/usr/local/share/quikav/main.{c[vl]d,inc}
 ConditionPathExistsGlob=/usr/local/share/quikav/daily.{c[vl]d,inc}
 
 [Socket]
-ListenStream=/run/clamav/clamd.ctl
+ListenStream=/run/quikav/quikd.ctl
 #ListenStream=127.0.0.1:1024
-SocketUser=clamav
-SocketGroup=clamav
+SocketUser=quikav
+SocketGroup=quikav
 RemoveOnStop=True
 
 [Install]

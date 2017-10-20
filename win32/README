@@ -1,24 +1,24 @@
-ClamAV for Win32
+QuikAV for Win32
 ----------------
 
 --- News ---
 
 In order to support more advanced features planned in future releases, 
-ClamAV has switched to using OpenSSL for hashing. The ClamAV Visual Studio 
-project included with ClamAV's source code requires the OpenSSL 
+QuikAV has switched to using OpenSSL for hashing. The QuikAV Visual Studio 
+project included with QuikAV's source code requires the OpenSSL 
 distributables to be placed in a specific directory. This article will 
 teach you how to compile OpenSSL on a Microsoft Windows system and how 
-to link ClamAV against OpenSSL.
+to link QuikAV against OpenSSL.
 
 Read More here:
-     http://blog.clamav.net/2014/07/compiling-openssl-for-windows.html
+     http://blog.quikav.net/2014/07/compiling-openssl-for-windows.html
 
-Starting from version 0.98 the windows version of ClamAV requires all the
+Starting from version 0.98 the windows version of QuikAV requires all the
 input to be UTF-8 encoded.
 This affects:
 - the API, notably the cl_scanfile() function
-- clamd socket input, e.g. the commands SCAN, CONTSCAN, MUTLISCAN, etc.
-- clamd socket output, i.e replies to the above queries
+- quikd socket input, e.g. the commands SCAN, CONTSCAN, MUTLISCAN, etc.
+- quikd socket output, i.e replies to the above queries
 
 For legacy reasons ANSI (i.e. CP_ACP) input will still be accepted and
 processed as before, but with two important remarks:
@@ -43,10 +43,10 @@ To run the binaries at least Windows XP is required.
 
 --- Getting the code ---
 
-The win32 source code is merged in the ClamAV repository and is available
+The win32 source code is merged in the QuikAV repository and is available
 via git.
-Clone the repository with: git clone git://git.clamav.net/git/clamav-devel
-See http://www.clamav.net/download/sources for more info.
+Clone the repository with: git clone git://git.quikav.net/git/quikav-devel
+See http://www.quikav.net/download/sources for more info.
 
 
 --- Code configuration ---
@@ -58,7 +58,7 @@ Skip this step if you are building from an official release tarball.
 
 --- Compilation ---
 
-Open win32/ClamAV.sln in Visual Studio and build all.
+Open win32/QuikAV.sln in Visual Studio and build all.
 The output directory for the binaries is either /win32/(Win32|x64)/Debug or
 /win32/(Win32|x64)/Release depending on the configuration you pick.
 
@@ -69,21 +69,21 @@ Use MSBuild instead.
 
 --- Special notes ---
 
-The ClamAV tools in win32 are the same as in unix, so refer to their respective
+The QuikAV tools in win32 are the same as in unix, so refer to their respective
 manpage for general usage.
 The major differences are listed below:
 - Config files path search order:
   1- The content of the registry key
-     "HKEY_LOCAL_MACHINE/Software/ClamAV/ConfDir"
-  2- The directory where libclamav.dll is located
-  3- "C:\ClamAV"
+     "HKEY_LOCAL_MACHINE/Software/QuikAV/ConfDir"
+  2- The directory where libquikav.dll is located
+  3- "C:\QuikAV"
 
 - Database files path search order:
   1- The content of the registry key
-     "HKEY_LOCAL_MACHINE/Software/ClamAV/DataDir"
-  2- The directory "database" inside the directory where libclamav.dll is
+     "HKEY_LOCAL_MACHINE/Software/QuikAV/DataDir"
+  2- The directory "database" inside the directory where libquikav.dll is
      located
-  3- "C:\ClamAV\db"
+  3- "C:\QuikAV\db"
 
 - Globbing
 Since the windows command prompt doesn't take care of wildcard expansion,

@@ -8,5 +8,5 @@ redefining command \email
 
 previous meaning of \email will be lost
 
-clamdoc.tex is newer than clamdoc.aux: Please rerun latex.
-\includegraphics couldn't copy /home/smorgan/clamav-devel/docs/html/demon.png to tree: 
+quikdoc.tex is newer than quikdoc.aux: Please rerun latex.
+\includegraphics couldn't copy /home/smorgan/quikav-devel/docs/html/demon.png to tree: 

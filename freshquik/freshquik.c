@@ -150,7 +150,7 @@ help (void)
     mprintf ("                   Quik AntiVirus: freshquik  %s\n",
              get_version ());
     printf ("           By The QuikAV Team: http://www.quikav.net/about.html#credits\n");
-    printf ("           (C) 2007-2015 Quik AV, Inc.\n\n");
+    printf ("           (C) 2016-2017 Quik AV, Inc.\n\n");
 
     mprintf ("    --help               -h              show help\n");
     mprintf

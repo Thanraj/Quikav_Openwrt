@@ -5,7 +5,7 @@ includedir=${prefix}/include
 
 Name: libquikav
 Description: A GPL virus scanner
-Version: 0.99.2
+Version: 0.0.1
 Libs: -L${libdir} -lquikav
 Libs.private:  -lz
 Cflags: -I${includedir}

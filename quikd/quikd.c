@@ -84,7 +84,7 @@ static void help(void)
     printf("\n");
     printf("                      Quik AntiVirus Daemon %s\n", get_version());
     printf("           By The QuikAV Team: http://www.quikav.net/about.html#credits\n");
-    printf("           (C) 2007-2015 Quik AV, Inc.\n\n");
+    printf("           (C) 2016-2017 Quik AV, Inc.\n\n");
 
     printf("    --help                   -h             Show this help.\n");
     printf("    --version                -V             Show version number.\n");

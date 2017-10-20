@@ -639,7 +639,7 @@ static int script2cdiff(const char *script, const char *builder, const struct op
 	return -1;
     }
 
-    if(fprintf(cdiffh, "QuikAV-Diff:%u:%u:", ver, osize) < 0) {
+    if(fprintf(cdiffh, "ClamAV-Diff:%u:%u:", ver, osize) < 0) {
 	mprintf("!script2cdiff: Can't write to %s\n", cdiff);
 	fclose(cdiffh);
 	free(cdiff);
@@ -898,7 +898,7 @@ static int build(const struct optstruct *opts)
     if(sigs > oldsigs)
 	mprintf("New sigs: %u\n", sigs - oldsigs);
 
-    strcpy(header, "QuikAV-VDB:");
+    strcpy(header, "ClamAV-VDB:");
 
     /* time */
     time(&timet);
@@ -1352,7 +1352,7 @@ static int listdb(const char *filename, const regex_t *regex)
     }
     rewind(fh);
 
-    if(!strncmp(buffer, "QuikAV-VDB:", 11)) {
+    if(!strncmp(buffer, "ClamAV-VDB:", 11)) {
 	free(buffer);
 	fclose(fh);
 
@@ -1421,7 +1421,7 @@ static int listdb(const char *filename, const regex_t *regex)
 	    start = buffer;
 	    *pt = 0;
 
-	    if((pt = strstr(start, " (Quik)")))
+	    if((pt = strstr(start, " (Clam)")))
 		*pt = 0;
 
 	    mprintf("%s\n", start);
@@ -1466,7 +1466,7 @@ static int listdb(const char *filename, const regex_t *regex)
 		return -1;
 	    }
 
-	    if((pt = strstr(start, " (Quik)")))
+	    if((pt = strstr(start, " (Clam)")))
 		*pt = 0;
 
 	    mprintf("%s\n", start);
@@ -1500,7 +1500,7 @@ static int listdb(const char *filename, const regex_t *regex)
 	    }
 	    *pt = 0;
 
-	    if((pt = strstr(buffer, " (Quik)")))
+	    if((pt = strstr(buffer, " (Clam)")))
 		*pt = 0;
 
 	    mprintf("%s\n", buffer);
@@ -1663,7 +1663,7 @@ static int comparesha(const char *diff)
 	return -1;
     }
 
-    if(!fgets(buff, sizeof(buff), fh) || strncmp(buff, "QuikAV-VDB", 10)) {
+    if(!fgets(buff, sizeof(buff), fh) || strncmp(buff, "ClamAV-VDB", 10)) {
 	mprintf("!verifydiff: Incorrect info file %s\n", info);
 	fclose(fh);
 	return -1;
@@ -3334,7 +3334,7 @@ static void help(void)
     mprintf("\n");
     mprintf("Quik AntiVirus: Signature Tool (sigtool)  %s\n", get_version());
     mprintf("       By The QuikAV Team: http://www.quikav.net/team\n");
-    mprintf("       (C) 2007-2015 Quik AV, Inc.\n\n");
+    mprintf("       (C) 2016-2017 Quik AV, Inc.\n\n");
 
     mprintf("    --help                 -h              show help\n");
     mprintf("    --version              -V              print version number and exit\n");

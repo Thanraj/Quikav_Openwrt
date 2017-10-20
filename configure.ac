@@ -20,7 +20,7 @@ dnl   MA 02110-1301, USA.
 AC_PREREQ([2.59])
 dnl For a release change [devel] to the real version [0.xy]
 dnl also change VERSION below
-AC_INIT([QuikAV], [0.99.2], [http://bugs.quikav.net/], [quikav], [http://www.quikav.net/])
+AC_INIT([QuikAV], [0.0.1], [http://bugs.quikav.net/], [quikav], [http://www.quikav.net/])
 
 AH_BOTTOM([#include "platform.h"])
 dnl put configure auxiliary into config

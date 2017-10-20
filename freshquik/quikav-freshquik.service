@@ -1,11 +1,11 @@
 [Unit]
-Description=ClamAV virus database updater
-Documentation=man:freshclam(1) man:freshclam.conf(5) http://www.clamav.net/lang/en/doc/
+Description=QuikAV virus database updater
+Documentation=man:freshquik(1) man:freshquik.conf(5) http://www.quikav.net/lang/en/doc/
 # If user wants it run from cron, don't start the daemon.
-ConditionPathExists=!/etc/cron.d/clamav-freshclam
+ConditionPathExists=!/etc/cron.d/quikav-freshquik
 
 [Service]
-ExecStart=/usr/local/bin/freshclam -d --foreground=true
+ExecStart=/usr/local/bin/freshquik -d --foreground=true
 StandardOutput=syslog
 
 [Install]

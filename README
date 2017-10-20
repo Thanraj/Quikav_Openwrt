@@ -2,26 +2,26 @@ Note: This README/NEWS file refers to the source tarball. Some things described
 here may not be available in binary packages.
 --
 
-0.99.2
+0.0.1
 ------
 
-ClamAV 0.99.2 is a release of bug fixes and minor enhancements.
+QuikAV 0.0.1 is a release of bug fixes and minor enhancements.
 
-    - fix ups improving the reliability of several ClamAV file parsers.
+    - fix ups improving the reliability of several QuikAV file parsers.
     - sigtool now decodes file type signatures (e.g., daily.ftm CVD file).
     - now supporting libpcre2 in addition to libpcre.
-    - systemd support for clamd and freshclam. Patch provided by 
+    - systemd support for quikd and freshquik. Patch provided by 
       Andreas Cadhalpun.
     - fixed builds on Mac OS X 10.10 & 10.11.
     - improved debug info for certificate metadata.
-    - improved freshclam messaging when using a proxy.
-    - fixed some freshclam functionality when using private mirrors.
-    - clamd refinements of open file limitations on Solaris. Patch by
+    - improved freshquik messaging when using a proxy.
+    - fixed some freshquik functionality when using private mirrors.
+    - quikd refinements of open file limitations on Solaris. Patch by
       Jim Morris
-    - clamav-milter signal handling for improved clean up during
+    - quikav-milter signal handling for improved clean up during
       termination.
 
-Thank you to the following ClamAV community members for your code
+Thank you to the following QuikAV community members for your code
 submissions and bug reports! 
 
 Brandon Perry
@@ -36,15 +36,15 @@ Daniel J. Luke
 James Ralston
 John Dodson
 
-0.99.1
+0.99.0
 ------
 
-ClamAV 0.99.1 contains a new feature for parsing Hancom Office files
-including extracting and scanning embedded objects. ClamAV 0.99.1
+QuikAV 0.99.0 contains a new feature for parsing Hancom Office files
+including extracting and scanning embedded objects. QuikAV 0.99.0
 also contains important bug fixes. Please see ChangeLog for details.
 
 Thanks to the following community members for code submissions used in
-ClamAV 0.99.1:
+QuikAV 0.99.0:
 
 Jim Morris
 Andreas Cadhalpun
@@ -54,18 +54,18 @@ Sebastian Siewior
 0.99
 ----
 
-ClamAV 0.99 contains major new features and changes. YARA rules, 
+QuikAV 0.99 contains major new features and changes. YARA rules, 
 Perl Compatible Regular Expressions, revamped on-access scanning
-for Linux, and other new features join the many great features of ClamAV:
+for Linux, and other new features join the many great features of QuikAV:
 
     - Processing of YARA rules(some limitations- see signatures.pdf).
-    - Support in ClamAV logical signatures for many of the features
+    - Support in QuikAV logical signatures for many of the features
       added for YARA, such as Perl Compatible Regular Expressions,
       alternate strings, and YARA string attributes. See signatures.pdf
       for full details.
     - New and improved on-access scanning for Linux. See the recent blog
-      post and clamdoc.pdf for details on the new on-access capabilities.
-    - A new ClamAV API callback function that is invoked when a virus 
+      post and quikdoc.pdf for details on the new on-access capabilities.
+    - A new QuikAV API callback function that is invoked when a virus 
       is found. This is intended primarily for applications running in 
       all-match mode. Any applications using all-match mode must use 
       the new callback function to record and report detected viruses.    
@@ -81,15 +81,15 @@ for Linux, and other new features join the many great features of ClamAV:
     - A new sigtool option(--ascii-normalize) allowing signature authors
       to more easily generate normalized versions of ascii files.
     - Windows installation directories changed from \Program Files\Sourcefire\
-      ClamAV to \Program Files\ClamAV or \Program Files\ClamAV-x64.
+      QuikAV to \Program Files\QuikAV or \Program Files\QuikAV-x64.
 
-PLEASE NOTE:  If you are using clamd on-access scanning or have applications
+PLEASE NOTE:  If you are using quikd on-access scanning or have applications
 using all-match mode, you will want to review the changes and make any necessary
-adjustments before using ClamAV 0.99. Users of windows binaries need to be
+adjustments before using QuikAV 0.99. Users of windows binaries need to be
 aware of the change of installation directories.
 
-Thank you to the ClamAV community members who sent patches and bug reports
-included for ClamAV 0.99:
+Thank you to the QuikAV community members who sent patches and bug reports
+included for QuikAV 0.99:
 
 Steve Basford
 Sebastian Andrzej Siewior
@@ -105,7 +105,7 @@ Stephen Welker
 0.98.7
 ------
 
-ClamAV 0.98.7 is here! This release contains new scanning features
+QuikAV 0.98.7 is here! This release contains new scanning features
 and bug fixes. 
 
     - Improvements to PDF processing: decryption, escape sequence
@@ -135,7 +135,7 @@ and bug fixes.
     - Improve detections within xar/pkg files.
 
 As always, we appreciate contributions of bug reports, code fixes,
-and sample submission from the ClamAV community members:
+and sample submission from the QuikAV community members:
 
 Sebastian Andrzej Siewior
 Minzhaun Gong
@@ -147,12 +147,12 @@ Kai Risku
 0.98.6
 ------
 
-ClamAV 0.98.6 is a bug fix release correcting the following:
+QuikAV 0.98.6 is a bug fix release correcting the following:
 
     - library shared object revisions.
     - installation issues on some Mac OS X and FreeBSD platforms.
     - includes a patch from Sebastian Andrzej Siewior making
-      ClamAV pid files compatible with systemd.
+      QuikAV pid files compatible with systemd.
     - Fix a heap out of bounds condition with crafted Yoda's
       crypter files. This issue was discovered by Felix Groebert
       of the Google Security Team.
@@ -169,8 +169,8 @@ ClamAV 0.98.6 is a bug fix release correcting the following:
       handling crafted petite packer files. This issue was discovered
       by Sebastian Andrzej Siewior.
       
-Thanks to the following ClamAV community members for code submissions
-and bug reporting included in ClamAV 0.98.6:
+Thanks to the following QuikAV community members for code submissions
+and bug reporting included in QuikAV 0.98.6:
 
 Sebastian Andrzej Siewior
 Felix Groebert
@@ -181,43 +181,43 @@ Daniel J. Luke
 0.98.5
 ------
 
-Welcome to ClamAV 0.98.5! ClamAV 0.98.5 includes important new features
+Welcome to QuikAV 0.98.5! QuikAV 0.98.5 includes important new features
 for collecting and analyzing file properties. Software developers and
-analysts may collect file property meta data using the ClamAV API for
-subsequent analysis by ClamAV bytecode programs. Using these features
+analysts may collect file property meta data using the QuikAV API for
+subsequent analysis by QuikAV bytecode programs. Using these features
 will require that libjson-c is installed, but otherwise libjson-c is not
 needed.
 
 Look for our upcoming series of blog posts to learn more about using the
-ClamAV API and bytecode facilities for collecting and analyzing file
+QuikAV API and bytecode facilities for collecting and analyzing file
 properties.
 
-ClamAV 0.98.5 also includes these new features and bug fixes:
+QuikAV 0.98.5 also includes these new features and bug fixes:
 
     - Support for the XDP file format and extracting, decoding, and
       scanning PDF files within XDP files.
     - Addition of shared library support for LLVM versions 3.1 - 3.5
-      for the purpose of just-in-time(JIT) compilation of ClamAV
+      for the purpose of just-in-time(JIT) compilation of QuikAV
       bytecode signatures. Andreas Cadhalpun submitted the patch
       implementing this support.
-    - Enhancements to the clambc command line utility to assist
-      ClamAV bytecode signature authors by providing introspection
+    - Enhancements to the quikbc command line utility to assist
+      QuikAV bytecode signature authors by providing introspection
       into compiled bytecode programs.
-    - Resolution of many of the warning messages from ClamAV compilation.
+    - Resolution of many of the warning messages from QuikAV compilation.
     - Improved detection of malicious PE files.
-    - Security fix for ClamAV crash when using 'clamscan -a'. This issue
+    - Security fix for QuikAV crash when using 'quikscan -a'. This issue
       was identified by Kurt Siefried of Red Hat.
-    - Security fix for ClamAV crash when scanning maliciously crafted
+    - Security fix for QuikAV crash when scanning maliciously crafted
       yoda's crypter files. This issue, as well as several other bugs
       fixed in this release, were identified by Damien Millescamp of
       Oppida.
-    - ClamAV 0.98.5 now works with OpenSSL in FIPS compliant mode.
+    - QuikAV 0.98.5 now works with OpenSSL in FIPS compliant mode.
       Thanks to Reinhard Max for supplying the patch.
     - Bug fixes and other feature enhancements. See Changelog or
       git log for details.
 
-Thanks to the following ClamAV community members for code submissions
-and bug reporting included in ClamAV 0.98.5:
+Thanks to the following QuikAV community members for code submissions
+and bug reporting included in QuikAV 0.98.5:
 
 Andreas Cadhalpun
 Sebastian Andrzej Siewior
@@ -228,16 +228,16 @@ Kurt Seifried
 0.98.4
 ------
 
-ClamAV 0.98.4 is a bug fix release. The following issues are now resolved:
+QuikAV 0.98.4 is a bug fix release. The following issues are now resolved:
 
     - Various build problems on Solaris, OpenBSD, AIX.
 
-    - Crashes of clamd on Windows and Mac OS X platforms when reloading
+    - Crashes of quikd on Windows and Mac OS X platforms when reloading
       the virus signature database.
 
-    - Infinite loop in clamdscan when clamd is not running.
+    - Infinite loop in quikdscan when quikd is not running.
 
-    - Freshclam failure on Solaris 10.
+    - Freshquik failure on Solaris 10.
 
     - Buffer underruns when handling multi-part MIME email attachments.
 
@@ -264,52 +264,52 @@ Sebastian Andrzej Siewior
 0.98.2
 ------
 
-Here are the new features and improvements in ClamAV 0.98.2:
+Here are the new features and improvements in QuikAV 0.98.2:
 
     - Support for common raw disk image formats using 512 byte sectors,
       specifically GPT, APM, and MBR partitioning.
 
-    - Experimental support of OpenIOC files. ClamAV will now extract file
+    - Experimental support of OpenIOC files. QuikAV will now extract file
       hashes from OpenIOC files residing in the signature database location,
-      and generate ClamAV hash signatures. ClamAV uses no other OpenIOC
+      and generate QuikAV hash signatures. QuikAV uses no other OpenIOC
       features at this time. No OpenIOC files will be delivered through
-      freshclam. See openioc.org and iocbucket.com for additional information
+      freshquik. See openioc.org and iocbucket.com for additional information
       about OpenIOC.
 
-    - All ClamAV sockets (clamd, freshclam, clamav-milter, clamdscan, clamdtop)
+    - All QuikAV sockets (quikd, freshquik, quikav-milter, quikdscan, quikdtop)
       now support IPV6 addresses and configuration parameters.
 
     - Use OpenSSL file hash functions for improved performance. OpenSSL 
-      is now prerequisite software for ClamAV 0.98.2.
+      is now prerequisite software for QuikAV 0.98.2.
 
     - Improved detection of malware scripts within image files. Issue reported
       by Maarten Broekman.
 
     - Change to circumvent possible denial of service when processing icons within
       specially crafted PE files. Icon limits are now in place with corresponding
-      clamd and clamscan configuration parameters. This issue was reported by 
+      quikd and quikscan configuration parameters. This issue was reported by 
       Joxean Koret.
 
-    - Improvements to the fidelity of the ClamAV pattern matcher, an issue
+    - Improvements to the fidelity of the QuikAV pattern matcher, an issue
       reported by Christian Blichmann.
 
     - Opt-in collection of statistics. Statistics collected are: sizes and MD5 
       hashes of files, PE file section counts and section MD5 hashes, and names
       and counts of detected viruses. Enable statistics collection with the
-      --enable-stats clamscan flag or StatsEnabled clamd configuration
+      --enable-stats quikscan flag or StatsEnabled quikd configuration
       parameter.
 
-    - Improvements to ClamAV build process, unit tests, and platform support with
+    - Improvements to QuikAV build process, unit tests, and platform support with
       assistance and suggestions by Sebastian Andrzej Siewior, Scott Kitterman,
       and Dave Simonson.
 
-    - Patch by Arkadiusz Miskiewicz to improve error handling in freshclam.
+    - Patch by Arkadiusz Miskiewicz to improve error handling in freshquik.
 
-    - ClamAV 0.98.2 also includes miscellaneous bug fixes and documentation 
+    - QuikAV 0.98.2 also includes miscellaneous bug fixes and documentation 
       improvements.
 
-Thanks to the following ClamAV community members for sending patches or reporting
-bugs and issues that are addressed in ClamAV 0.98.2:
+Thanks to the following QuikAV community members for sending patches or reporting
+bugs and issues that are addressed in QuikAV 0.98.2:
 
 Sebastian Andrzej Siewior
 Scott Kitterman
@@ -339,7 +339,7 @@ files in the program, then also delete it here.
 
 0.98.1
 ------
-ClamAV 0.98.1 provides improved support of Mac OS X platform, support for new file types, and 
+QuikAV 0.98.1 provides improved support of Mac OS X platform, support for new file types, and 
 quality improvements. These include:
 
     - Extraction, decompression, and scanning of files within Apple Disk Image (DMG) format.
@@ -360,14 +360,14 @@ quality improvements. These include:
       performance cost. This should only be needed when callback functions are used
       that need file access.
 
-    - Various improvements to ClamAV configuration, support of third party libraries, 
+    - Various improvements to QuikAV configuration, support of third party libraries, 
       and unit tests.
 
 0.98
 ------
 
-ClamAV 0.98 includes many new features, across all the different components
-of ClamAV. There are new scanning options, extensions to the libclamav API,
+QuikAV 0.98 includes many new features, across all the different components
+of QuikAV. There are new scanning options, extensions to the libquikav API,
 support for additional filetypes, and internal upgrades.
 
     - Signature improvements: New signature targets have been added for
@@ -375,37 +375,37 @@ support for additional filetypes, and internal upgrades.
       (JAR) are not part of the Java target.) Hash signatures can now specify
       a '*' (wildcard)  size if the size is unknown. Using wildcard size
       requires setting the minimum engine FLEVEL to avoid backwards
-      compatibility issues. For more details read the ClamAV Signatures
+      compatibility issues. For more details read the QuikAV Signatures
       guide.
 
     - Scanning enhancements: New filetypes can be unpacked and scanned,
       including ISO9660, Flash, and self-extracting 7z files. PDF
       handling is now more robust and better handles encrypted PDF files.
 
-    - Authenticode: ClamAV is now aware of the certificate chains when
+    - Authenticode: QuikAV is now aware of the certificate chains when
       scanning signed PE files. When the database contains signatures for
       trusted root certificate authorities, the engine can whitelist
       PE files with a valid signature. The same database file can also
       include known compromised certificates to be rejected! This
-      feature can also be disabled in clamd.conf (DisableCertCheck) or
+      feature can also be disabled in quikd.conf (DisableCertCheck) or
       the command-line (nocerts).
 
-    - New options: Several new options for clamscan and clamd have been
-      added. For example, ClamAV can be set to print infected files and
+    - New options: Several new options for quikscan and quikd have been
+      added. For example, QuikAV can be set to print infected files and
       error files, and suppress printing OK results. This can be helpful
       when scanning large numbers of files. This new option is "-o" for
-      clamscan and "LogClean" for clamd. Check clamd.conf or the clamscan
+      quikscan and "LogClean" for quikd. Check quikd.conf or the quikscan
       help message for specific details.
 
-    - New callbacks added to the API: The libclamav API has additional hooks
-      for developers to use when wrapping ClamAV scanning. These function
+    - New callbacks added to the API: The libquikav API has additional hooks
+      for developers to use when wrapping QuikAV scanning. These function
       types are prefixed with "clcb_" and allow developers to add logic at 
       certain steps of the scanning process without directly modifying the 
-      library. For more details refer to the clamav.h file.
+      library. For more details refer to the quikav.h file.
 
     - More configurable limits: Several hardcoded values are now configurable
       parameters, providing more options for tuning the engine to match your
-      needs. Check clamd.conf or the clamscan help message for specific
+      needs. Check quikd.conf or the quikscan help message for specific
       details.
 
     - Performance improvements: This release furthers the use of memory maps
@@ -414,9 +414,9 @@ support for additional filetypes, and internal upgrades.
       libtommath to tomsfastmath functions. The A/C matcher code has also
       been optimized to provide a speed boost.
 
-    - Support for on-access scanning using Clamuko/Dazuko has been replaced
-      with fanotify. Accordingly, clamd.conf settings related to on-access
-      scanning have had Clamuko removed from the name. Clamuko-specific
+    - Support for on-access scanning using Quikuko/Dazuko has been replaced
+      with fanotify. Accordingly, quikd.conf settings related to on-access
+      scanning have had Quikuko removed from the name. Quikuko-specific
       configuration items have been marked deprecated and should no longer
       be used.
 
@@ -424,33 +424,33 @@ There are also fixes for other minor issues and code quality changes. Please
 see the ChangeLog file for details.
 
 --
-The ClamAV team (http://www.clamav.net/about.html#credits)
+The QuikAV team (http://www.quikav.net/about.html#credits)
 
 0.97.8
 ----
 
-ClamAV 0.97.8 addresses several reported potential security bugs. Thanks to
+QuikAV 0.97.8 addresses several reported potential security bugs. Thanks to
 Felix Groebert of the Google Security Team for finding and reporting these
 issues.
 
 0.97.7
 ----
 
-ClamAV 0.97.7 addresses several reported potential security bugs. Thanks to
+QuikAV 0.97.7 addresses several reported potential security bugs. Thanks to
 Felix Groebert, Mateusz Jurczyk and Gynvael Coldwind of the Google Security
 Team for finding and reporting these issues.
 
 0.97.6
 ----
 
-ClamAV 0.97.6 includes minor bug fixes and detection improvements.
-ClamAV 0.97.6 corrects bug 5252 "CL_EFORMAT: Bad format or broken data ERROR
+QuikAV 0.97.6 includes minor bug fixes and detection improvements.
+QuikAV 0.97.6 corrects bug 5252 "CL_EFORMAT: Bad format or broken data ERROR
 reported as scan result."
 
 0.97.5
 ------
 
-ClamAV 0.97.5 addresses possible evasion cases in some archive formats 
+QuikAV 0.97.5 addresses possible evasion cases in some archive formats 
 (CVE-2012-1457, CVE-2012-1458, CVE-2012-1459). It also addresses stability 
 issues in portions of the bytecode engine. This release is recommended for 
 all users.
@@ -458,20 +458,20 @@ all users.
 0.97.4
 ------
 
-ClamAV 0.97.4 includes minor bugfixes, detection improvements and initial 
-support for on-access scanning under Mac OS X (see contrib/ClamAuth). 
+QuikAV 0.97.4 includes minor bugfixes, detection improvements and initial 
+support for on-access scanning under Mac OS X (see contrib/QuikAuth). 
 This update is recommended for all users.
 
 0.97.3
 ------
 
-ClamAV 0.97.3 is a minor bugfix release and is recommended for all 
+QuikAV 0.97.3 is a minor bugfix release and is recommended for all 
 users. Please refer to the ChangeLog file for details.
 
 0.97.2
 ------
 
-ClamAV 0.97.2 fixes problems with the bytecode engine, Safebrowsing detection,
+QuikAV 0.97.2 fixes problems with the bytecode engine, Safebrowsing detection,
 hash matcher, and other minor issues. Please see the ChangeLog file for
 details.
 
@@ -482,53 +482,53 @@ This is a bugfix release recommended for all users. Please refer to the
 ChangeLog file for details.
 
 --
-The ClamAV team (http://www.clamav.net/about.html#credits)
+The QuikAV team (http://www.quikav.net/about.html#credits)
 
 
 0.97
 ----
 
-ClamAV 0.97 brings many improvements, including complete Windows support
+QuikAV 0.97 brings many improvements, including complete Windows support
 (all major components compile out-of-box under Visual Studio), support for
 signatures based on SHA1 and SHA256, better error detection, as well as 
 speed and memory optimizations. The complete list of changes is available 
 in the ChangeLog file. For upgrade notes and tips please see: 
-https://wiki.clamav.net/Main/UpgradeNotes097
+https://wiki.quikav.net/Main/UpgradeNotes097
 
-With Sourcefire, Inc. acquisition of Immunet Corp., ClamAV for Windows
-3.0 has been renamed Immunet 3.0, powered by ClamAV. This release
-contains the fully integrated LibClamAV 0.97 engine for offline,
+With Sourcefire, Inc. acquisition of Immunet Corp., QuikAV for Windows
+3.0 has been renamed Immunet 3.0, powered by QuikAV. This release
+contains the fully integrated LibQuikAV 0.97 engine for offline,
 OnDemand, and OnAccess scanning. Immunet 3.0 users can now utilize
-the full power of the LibClamAV engine, all the ClamAV signatures,
+the full power of the LibQuikAV engine, all the QuikAV signatures,
 and creation of custom signatures on any platform running Immunet 3.0,
-powered by ClamAV. If you run Windows systems in your environment and
-need an AV solution to protect them, give Immunet 3.0, powered by ClamAV
-a try; you can download it from http://www.clamav.net/download.html#otherversions 
+powered by QuikAV. If you run Windows systems in your environment and
+need an AV solution to protect them, give Immunet 3.0, powered by QuikAV
+a try; you can download it from http://www.quikav.net/download.html#otherversions 
 
 
 --
-The ClamAV team (http://www.clamav.net/about.html#credits)
+The QuikAV team (http://www.quikav.net/about.html#credits)
 
 
 0.96.5
 ------
 
-ClamAV 0.96.5 includes bugfixes and minor feature enhancements, such as
+QuikAV 0.96.5 includes bugfixes and minor feature enhancements, such as
 improved handling of detection statistics, better file logging,
-and support for custom database URLs in freshclam. Please refer to the
+and support for custom database URLs in freshquik. Please refer to the
 ChangeLog for details.
 
 --
-The ClamAV team (http://www.clamav.net/about.html#credits)
+The QuikAV team (http://www.quikav.net/about.html#credits)
 
 
 0.96.4
 ------
 
-ClamAV 0.96.4 is a bugfix release recommended for all users.
+QuikAV 0.96.4 is a bugfix release recommended for all users.
 
 --
-The ClamAV team (http://www.clamav.net/about.html#credits)
+The QuikAV team (http://www.quikav.net/about.html#credits)
 
 0.96.3
 ------
@@ -537,12 +537,12 @@ This release fixes problems with the PDF parser and the internal bzip2
 library. A complete list of changes is available in the Changelog file.
 
 --
-The ClamAV team (http://www.clamav.net/about.html#credits)
+The QuikAV team (http://www.quikav.net/about.html#credits)
 
 0.96.2
 ------
 
-ClamAV 0.96.2 brings a new PDF parser, performance and memory improvements,
+QuikAV 0.96.2 brings a new PDF parser, performance and memory improvements,
 and a number of bugfixes and minor enhancements. This upgrade is recommended
 for all users.
 
@@ -553,68 +553,68 @@ This is a bugfix release, please refer to the ChangeLog for the complete
 list of changes.
 
 --
-The ClamAV team (http://www.clamav.net/about.html#credits)
+The QuikAV team (http://www.quikav.net/about.html#credits)
 
 0.96
 ----
 
-This release of ClamAV introduces new malware detection mechanisms and other
+This release of QuikAV introduces new malware detection mechanisms and other
 significant improvements to the scan engine. The key features include:
 
-    - The Bytecode Interpreter: the interpreter built into LibClamAV allows
+    - The Bytecode Interpreter: the interpreter built into LibQuikAV allows
       the signature writers to create and distribute very complex detection
       routines and remotely enhance the scanner's functionality
 
     - Heuristic improvements: improve the PE heuristics detection engine by
       adding support of bogus icons and fake PE header information. In a
-      nutshell, ClamAV can now detect malware that tries to disguise itself
+      nutshell, QuikAV can now detect malware that tries to disguise itself
       as a harmless application by using the most common Windows program icons.
 
     - Signature Improvements: logical signature improvements to allow more
       detailed matching and referencing groups of signatures. Additionally,
       improvements to wildcard matching on word boundaries and newlines.
 
-    - Support for new archives: 7zip, InstallShield and CPIO. LibClamAV
+    - Support for new archives: 7zip, InstallShield and CPIO. LibQuikAV
       can now transparently unpack and inspect their contents.
 
     - Support for new executable file formats: 64-bit ELF files and OS X
       Universal Binaries with Mach-O files. Additionally, the PE module
       can now decompress and inspect executables packed with UPX 3.0.
 
-    - Support for DazukoFS in clamd
+    - Support for DazukoFS in quikd
 
     - Performance improvements: overall performance improvements and memory
       optimizations for a better overall resource utilization experience.
 
-    - Native Windows Support: ClamAV will now build natively under Visual
+    - Native Windows Support: QuikAV will now build natively under Visual
       Studio. This will allow 3rd Party application developers on Windows
-      to easily integrate LibClamAV into their applications.
+      to easily integrate LibQuikAV into their applications.
 
 The complete list of changes is available in the ChangeLog file. For upgrade
-notes and tips please see: https://wiki.clamav.net/Main/UpgradeNotes096
+notes and tips please see: https://wiki.quikav.net/Main/UpgradeNotes096
 
 --
-The ClamAV team (http://www.clamav.net/about.html#credits)
+The QuikAV team (http://www.quikav.net/about.html#credits)
 
 0.95.3
 ------
 
-ClamAV 0.95.3 is a bugfix release recommended for all users.
+QuikAV 0.95.3 is a bugfix release recommended for all users.
 Please refer to the ChangeLog included in the source distribution
 for the list of changes.
 
 --
-The ClamAV team (http://www.clamav.net/about.html#credits)
+The QuikAV team (http://www.quikav.net/about.html#credits)
 
 0.95.2
 ------
 
 This version improves handling of archives, adds support for --file-list
-in clamscan and clamdscan, and fixes various issues found in previous
+in quikscan and quikdscan, and fixes various issues found in previous
 releases.
 
 --
-The ClamAV team (http://www.clamav.net/about.html#credits)
+The QuikAV team (http://www.quikav.net/about.html#credits)
 
 0.95.1
 ------
@@ -622,65 +622,65 @@ The ClamAV team (http://www.clamav.net/about.html#credits)
 This is a bugfix release only, please see the ChangeLog for details.
 
 --
-The ClamAV team (http://www.clamav.net/about.html#credits)
+The QuikAV team (http://www.quikav.net/about.html#credits)
 
 0.95
 ----
 
-ClamAV 0.95 introduces many bugfixes, improvements and additions. To make
+QuikAV 0.95 introduces many bugfixes, improvements and additions. To make
 the transition easier, we put various tips and upgrade notes on this page:
-https://wiki.clamav.net/Main/UpgradeNotes095. For detailed list of changes
+https://wiki.quikav.net/Main/UpgradeNotes095. For detailed list of changes
 and bugfixes, please see the ChangeLog.
 
 The following are the key features of this release:
 
     - Google Safe Browsing support: in addition to the heuristic and signature
-      based phishing detection mechanisms already available in ClamAV, the
+      based phishing detection mechanisms already available in QuikAV, the
       scanner can now make use of the Google's blacklists of suspected
-      phishing and malware sites. The ClamAV Project distributes a constantly
+      phishing and malware sites. The QuikAV Project distributes a constantly
       updated Safe Browsing database, which can be automatically fetched by
-      freshclam. For more information, please see freshclam.conf(5) and
-      http://safebrowsing.clamav.net.
+      freshquik. For more information, please see freshquik.conf(5) and
+      http://safebrowsing.quikav.net.
 
-    - New clamav-milter: The program has been redesigned and rewritten from
+    - New quikav-milter: The program has been redesigned and rewritten from
       scratch. The most notable difference is that the internal mode has been
-      dropped which means that now a working clamd companion is required.
+      dropped which means that now a working quikd companion is required.
       The milter now also has its own configuration file.
 
-    - Clamd extensions: The protocol has been extended to lighten the load
-      that clamd puts on the system, solve limitations of the old protocol,
+    - Quikd extensions: The protocol has been extended to lighten the load
+      that quikd puts on the system, solve limitations of the old protocol,
       and reduce latency when signature updates are received. For more
       information about the new extensions please see the official
       documentation and the upgrade notes.
 
-    - Improved API: The API used to program ClamAV's engine (libclamav) has
+    - Improved API: The API used to program QuikAV's engine (libquikav) has
       been redesigned to use modern object-oriented techniques and solves
       various API/ABI compatibility issues between old and new releases.
-      You can find more information in Section 6 of clamdoc.pdf and in
+      You can find more information in Section 6 of quikdoc.pdf and in
       the upgrade notes.
 
-    - ClamdTOP: This is a new program that allows system administrators to
-      monitor clamd. It provides information about the items in the clamd's
-      queue, clamd's memory usage, and the version of the signature database,
+    - QuikdTOP: This is a new program that allows system administrators to
+      monitor quikd. It provides information about the items in the quikd's
+      queue, quikd's memory usage, and the version of the signature database,
       all in real-time and in nice curses-based interface.
 
-    - Memory Pool Allocator: Libclamav now includes its own memory pool
+    - Memory Pool Allocator: Libquikav now includes its own memory pool
       allocator based on memory mapping. This new solution replaces the
       traditional malloc/free system for the copy of the signatures that
-      is kept in memory. As a result, clamd requires much less memory,
+      is kept in memory. As a result, quikd requires much less memory,
       particularly when signature updates are received and the database is
       loaded into memory.
 
-    - Unified Option Parser: Prior to version 0.95 each program in ClamAV's
+    - Unified Option Parser: Prior to version 0.95 each program in QuikAV's
       suite of programs had its own set of runtime options. The new general
       parser brings consistency of use and validation to these options across
-      the suite. Some command line switches of clamscan have been renamed
+      the suite. Some command line switches of quikscan have been renamed
       (the old ones will still be accepted but will have no effect and will
-      result in warnings), please see clamscan(1) and clamscan --help for
+      result in warnings), please see quikscan(1) and quikscan --help for
       the details.
 
 --
-The ClamAV team (http://www.clamav.net/about.html#credits)
+The QuikAV team (http://www.quikav.net/about.html#credits)
 
 
 0.94.2
@@ -690,33 +690,33 @@ This is a bugfix release, please refer to the ChangeLog for a complete
 list of changes.
 
 --
-The ClamAV team (http://www.clamav.net/about.html#credits)
+The QuikAV team (http://www.quikav.net/about.html#credits)
 
 
 0.94.1
 ------
 
-ClamAV 0.94.1 fixes some issues that were found in previous releases and
+QuikAV 0.94.1 fixes some issues that were found in previous releases and
 includes one new feature, "Malware Statistics Gathering." This is an optional
-feature that allows ClamAV users optionally to submit statistics to us about
+feature that allows QuikAV users optionally to submit statistics to us about
 what they detect in the field. We will then use these data to determine what
 types of malware are the most detected in the field and in what geographic
-area they are. It will also allow us to publish summary data on www.clamav.net
+area they are. It will also allow us to publish summary data on www.quikav.net
 where our users will be able to monitor the latest threats. You can help us
-by enabling SubmitDetectionStats in freshclam.conf.
+by enabling SubmitDetectionStats in freshquik.conf.
 
 For more details, please refer to the ChangeLog
 
 
 --
-The ClamAV team (http://www.clamav.net/about.html#credits)
+The QuikAV team (http://www.quikav.net/about.html#credits)
 
 
 0.94
 ----
 
-Sourcefire and the ClamAV team are pleased to announce the release of
-ClamAV 0.94. The following are the key features and improvements of this
+Sourcefire and the QuikAV team are pleased to announce the release of
+QuikAV 0.94. The following are the key features and improvements of this
 version:
 
   - Logical Signatures: The logical signature technology uses operators
@@ -725,24 +725,24 @@ version:
     more detailed and flexible pattern matching.
 
   - Anti-phishing Technology: Users can now change the priority and reporting
-    of ClamAV's heuristic anti-phishing scanner within the detection engine
-    process. They can choose whether, when scanning a supicious file, ClamAV
+    of QuikAV's heuristic anti-phishing scanner within the detection engine
+    process. They can choose whether, when scanning a supicious file, QuikAV
     should stop scanning and report the phish, or continue to scan in case the
-    file contains other malware (clamd: HeuristicScanPrecedence,
-    clamscan: --heuristic-scan-precedence)
+    file contains other malware (quikd: HeuristicScanPrecedence,
+    quikscan: --heuristic-scan-precedence)
 
   - Disassembly Engine: The initial version of the disassembly engine improves
-    ClamAV's detection abilities.
+    QuikAV's detection abilities.
 
   - PUA Detection: Users can now decide which PUA signatures should be loaded
-    (clamd: ExcludePUA, IncludePUA; clamscan: --exclude-pua, --include-pua)
+    (quikd: ExcludePUA, IncludePUA; quikscan: --exclude-pua, --include-pua)
 
   - Data Loss Prevention (DLP): This version includes a new module that, when
     enabled, scans data for the inclusion of US formated Social Security
-    Numbers and credit card numbers (clamd: StructuredDataDetection,
-    clamscan: --detect-structured; additional fine-tuning options are available)
+    Numbers and credit card numbers (quikd: StructuredDataDetection,
+    quikscan: --detect-structured; additional fine-tuning options are available)
 
-  - IPv6 Support: Freshclam now supports IPv6
+  - IPv6 Support: Freshquik now supports IPv6
 
   - Improved Scanning of Scripts: The normalization of scripts now covers
     JavaScript
@@ -755,12 +755,12 @@ version:
 You may need to run 'ldconfig' after installing this version.
 
 ** This version drops the special support for Cygwin. Our QA process showed
-** serious problems with ClamAV builds under Cygwin due to some low-level
+** serious problems with QuikAV builds under Cygwin due to some low-level
 ** incompatibilities in the POSIX compatibility layer, resulting in unreliable
-** ClamAV behaviour.
+** QuikAV behaviour.
 
 --
-The ClamAV team (http://www.clamav.net/about.html#credits)
+The QuikAV team (http://www.quikav.net/about.html#credits)
 
 
 0.93.3
@@ -769,7 +769,7 @@ The ClamAV team (http://www.clamav.net/about.html#credits)
 This release fixes a problem in handling of .cld files introduced in 0.93.2.
 
 --
-The ClamAV team (http://www.clamav.net/about.html#credits)
+The QuikAV team (http://www.quikav.net/about.html#credits)
 
 0.93.2
 ------
@@ -785,7 +785,7 @@ This version improves handling of PDF, CAB, RTF, OLE2 and HTML files
 and includes various bugfixes for 0.93 issues.
 
 --
-The ClamAV team (http://www.clamav.net/about.html#credits)
+The QuikAV team (http://www.quikav.net/about.html#credits)
 
 
 0.93
@@ -794,15 +794,15 @@ The ClamAV team (http://www.clamav.net/about.html#credits)
 This release introduces many new features and engine enhancements, please
 see the notes below for the list of major changes. The most visible one
 is the new logic in scan limits which affects some command line and config
-options of clamscan and clamd. Please see clamscan(1) and clamd.conf(5)
+options of quikscan and quikd. Please see quikscan(1) and quikd.conf(5)
 and the example config file for more information on the new options.
 
 Most important changes include:
 
-  * libclamav:
+  * libquikav:
     - New logic in scan limits: provides much more efficient protection against
       DoS attacks but also results in different command line and config options
-      to clamscan and clamd (see below)
+      to quikscan and quikd (see below)
     - New/improved modules: unzip, SIS, cabinet, CHM, SZDD, text normalisator,
       entity converter
     - Improved filetype detection; filetype definitions can be remotely updated
@@ -811,24 +811,24 @@ Most important changes include:
     - More efficient scanning of HTML files
     - Many other improvements
 
-  * clamd:
+  * quikd:
     - NEW CONFIG FILE OPTIONS: MaxScanSize, MaxFileSize, MaxRecursion, MaxFiles
     - ** THE FOLLOWING OPTIONS ARE NO LONGER SUPPORTED **: MailMaxRecursion,
       ArchiveMaxFileSize, ArchiveMaxRecursion, ArchiveMaxFiles,
       ArchiveMaxCompressionRatio, ArchiveBlockMax
 
-  * clamscan:
+  * quikscan:
     - NEW CMDLINE OPTIONS: --max-filesize, --max-scansize
     - REMOVED OPTIONS: --block-max, --max-space, --max-ratio
 
-  * freshclam:
+  * freshquik:
     - NEW CONFIG OPTION CompressLocalDatabase
     - NEW CMDLINE SWITCH --no-warnings
-    - main.inc and daily.inc directories are no longer used by ClamAV; please
+    - main.inc and daily.inc directories are no longer used by QuikAV; please
       remove them manually from your database directory
 
 --
-The ClamAV team (http://www.clamav.net/about.html#credits)
+The QuikAV team (http://www.quikav.net/about.html#credits)
 
 
 0.92.1
@@ -838,7 +838,7 @@ This is a bugfix release, please refer to the ChangeLog for a complete
 list of changes.
 
 --
-The ClamAV team (http://www.clamav.net/about.html#credits)
+The QuikAV team (http://www.quikav.net/about.html#credits)
 
 
 0.92
@@ -846,53 +846,53 @@ The ClamAV team (http://www.clamav.net/about.html#credits)
 
 This release provides various bugfixes, optimisations and improvements
 to the scanning engine. The new features include support for ARJ and
-SFX-ARJ archives, AutoIt, basic SPF parser in clamav-milter (to reduce
+SFX-ARJ archives, AutoIt, basic SPF parser in quikav-milter (to reduce
 phishing false-positives), faster scanning and others (see ChangeLog).
 To get a consistent behaviour of the anti-phishing module on all platforms,
-libclamav now includes the regex library from OpenBSD.
+libquikav now includes the regex library from OpenBSD.
 
 --
-The ClamAV team (http://www.clamav.net/about.html#credits)
+The QuikAV team (http://www.quikav.net/about.html#credits)
 
 
 0.91.2
 -------
 
-This release fixes various bugs in libclamav, freshclam and clamav-milter,
+This release fixes various bugs in libquikav, freshquik and quikav-milter,
 and adds support for PUA (Potentially Unwanted Application) signatures
-(clamscan: --detect-pua, clamd: DetectPUA).
+(quikscan: --detect-pua, quikd: DetectPUA).
 
 ** Announcement **
 
-Dear ClamAV users,
+Dear QuikAV users,
 
-On August 17, Sourcefire, the creators of Snort, acquired the ClamAV project.
+On August 17, Sourcefire, the creators of Snort, acquired the QuikAV project.
 The full announcement is available here:
 
-http://www.sourcefire.com/products/clamav/
+http://www.sourcefire.com/products/quikav/
 
-We'd like to thank everyone in the ClamAV community for their dedication to
+We'd like to thank everyone in the QuikAV community for their dedication to
 the project. The acquisition by Sourcefire is a testament to the hard work of
-the entire ClamAV community in developing cutting edge technology that truly
+the entire QuikAV community in developing cutting edge technology that truly
 showcases the promise of the open source model. With the additional resources
 Sourcefire will provide we look forward to working with the community to
-continue the advancement of ClamAV.
+continue the advancement of QuikAV.
 
-Sourcefire now owns ClamAV project and related trademarks, as well as the
-source code copyrights held by the five principal members of the ClamAV team.
-Sourcefire will also assume control of the ClamAV project including: the
-ClamAV.org domain, web site and web site content; and the ClamAV Sourceforge
+Sourcefire now owns QuikAV project and related trademarks, as well as the
+source code copyrights held by the five principal members of the QuikAV team.
+Sourcefire will also assume control of the QuikAV project including: the
+QuikAV.org domain, web site and web site content; and the QuikAV Sourceforge
 project page.
 
 What's most important is that from the end-user perspective very little will
 change beyond the additional resources Sourcefire will provide in our
-continued efforts to advance the ClamAV technology and improve our ability to
+continued efforts to advance the QuikAV technology and improve our ability to
 interact with the open source community. The core team will continue to lead
-the advancement of ClamAV and the CVD as employees of Sourcefire. Both the
-ClamAV engine and the signature database will remain under GPL.
+the advancement of QuikAV and the CVD as employees of Sourcefire. Both the
+QuikAV engine and the signature database will remain under GPL.
 
 --
-The ClamAV team (http://www.clamav.net/about.html#credits)
+The QuikAV team (http://www.quikav.net/about.html#credits)
 
 
 0.91.1
@@ -901,13 +901,13 @@ The ClamAV team (http://www.clamav.net/about.html#credits)
 This release fixes stability and other issues of 0.91.
 
 --
-The ClamAV team (http://www.clamav.net/about.html#credits)
+The QuikAV team (http://www.quikav.net/about.html#credits)
 
 
 0.91
 ----
 
-ClamAV 0.91 is the first release to enable the anti-phishing technology
+QuikAV 0.91 is the first release to enable the anti-phishing technology
 in default builds. This technology combines heuristics with special
 signatures and provides effective protection against phishing threats.
 Other important changes and add-ons in this version include:
@@ -922,35 +922,35 @@ Other important changes and add-ons in this version include:
     - extraction of PE files embedded into other executables
     - better handling of PE & UPX
     - removed dependency on libcurl (improves stability)
-    - libclamav.dll available under Windows
-    - IPv6 support in clamav-milter
+    - libquikav.dll available under Windows
+    - IPv6 support in quikav-milter
     - many other improvements and bugfixes
 
 --
-The ClamAV team (http://www.clamav.net/about.html#credits)
+The QuikAV team (http://www.quikav.net/about.html#credits)
 
 
 0.90.3
 ------
 
-This release fixes some security bugs in libclamav and improves stability
+This release fixes some security bugs in libquikav and improves stability
 under Solaris. Please see ChangeLog for complete list of changes. 
 
-If your system is suffering from long clamscan startup times, please
+If your system is suffering from long quikscan startup times, please
 consider installing 0.91rc1 which is due to be released shortly
 after 0.90.3.
 
 --
-The ClamAV team (http://www.clamav.net/about.html#credits)
+The QuikAV team (http://www.quikav.net/about.html#credits)
 
 
 0.90.2
 ------
 
-This release fixes many problems in libclamav and freshclam.
+This release fixes many problems in libquikav and freshquik.
 
 --
-The ClamAV team (http://www.clamav.net/about.html#credits)
+The QuikAV team (http://www.quikav.net/about.html#credits)
 
 0.90.1
 ------
@@ -961,13 +961,13 @@ see ChangeLog for complete list of changes.
 ** Important note **: please run 'ldconfig' after installing this version.
 
 --
-The ClamAV team (http://www.clamav.net/about.html#credits)
+The QuikAV team (http://www.quikav.net/about.html#credits)
 
 
 0.90
 ----
 
-The ClamAV team is proud to announce the long awaited ClamAV 0.90.
+The QuikAV team is proud to announce the long awaited QuikAV 0.90.
 This version introduces lots of new interesting features and marks
 a big step forward in the development of our antivirus engine.
 
@@ -977,7 +977,7 @@ differences between the latest cvds and the previous versions will be
 transferred.
 
 In case the local copy of the latest cvd is corrupted or the scripted
-update fails for some reason, freshclam will fallback to the old method.
+update fails for some reason, freshquik will fallback to the old method.
 Similarly to cvd files, scripted updates are compressed and digitally signed
 and are already being distributed. They will dramatically reduce traffic on
 our mirrors and will allow us to release even more updates in the future.
@@ -989,35 +989,35 @@ is no longer required.
 Cosmetic changes apart, the 0.9x series introduces lots of new code, but some
 parts are not compiled in by default because they are not ready for production
 systems yet. You are encouraged to pass the --enable-experimental flag to
-./configure when compiling ClamAV. The experimental code introduces many
+./configure when compiling QuikAV. The experimental code introduces many
 improvements in terms of detection rate and performances. If you find a bug,
-please take some time to report it on our bugzilla: http://bugs.clamav.net.
+please take some time to report it on our bugzilla: http://bugs.quikav.net.
 Your help in testing the new code is really appreciated. The experimental code
 introduces many improvements in terms of detection rate and performances. 
 
 RAR3, SIS and SFX archives support is finally available together with 
 new unpackers and decryptors: pespin, sue, yc, wwpack32, nspack, mew, upack
-and others. Additionally, ClamAV now includes better mechanisms for scanning
+and others. Additionally, QuikAV now includes better mechanisms for scanning
 ELF, PDF and tar files. The email decoding has been improved to reduce both
 the memory requirements and the time taken to process attachments.
 
 As part of the Google Summer of Code program, we have introduced support for
 a new phishing signatures format that has proved very effective in detecting
-phishing emails. The ClamAV phishing module allows better and more generic
+phishing emails. The QuikAV phishing module allows better and more generic
 detection of phishing emails by searching for URLs in email messages, and 
 comparing the real site with the URL displayed to the user in the message. 
 
 On the performance side, support for the MULTISCAN command has been 
-implemented in clamd, allowing to scan multiple files simultaneously.
+implemented in quikd, allowing to scan multiple files simultaneously.
 Support for Sensory Networks' NodalCore acceleration technology
-(http://www.clamav.net/nodalcore/) is now available in ClamAV and will be
+(http://www.quikav.net/nodalcore/) is now available in QuikAV and will be
 compiled in if the ncore libraries are detected at compile time. NodalCore
 acceleration allows highly improved scan speeds on systems equipped with
 NodalCore cards.
 
 Detailed list of changes:
 
--) libclamav:
+-) libquikav:
   + New unpacker for RAR3, RAR2 and RAR1
   + Rewritten unpackers for Zip and CAB files
   + Support for RAR-SFX, Zip-SFX and CAB-SFX archives
@@ -1044,11 +1044,11 @@ Detailed list of changes:
   + Support for PDF and RTF files
   + New encoding and entity normalizer (experimental)
 
--) clamd:
+-) quikd:
   + New config file parser:
     * all options require arguments (options without args must be now followed
       by boolean values: (yes, no), (1, 0), or (true, false)
-    * optional arguments (as in NotifyClamd) are no longer supported
+    * optional arguments (as in NotifyQuikd) are no longer supported
     * removed "DisableDefaultScanOptions" option (scan options can be
       configured individually)
   + TCP and local sockets can be operated simultaneously
@@ -1063,7 +1063,7 @@ Detailed list of changes:
     - PhishingAlwaysBlockSSLMismatch
     - PhishingAlwaysBlockCloak
 
--) clamav-milter:
+-) quikav-milter:
   + Black list mode: optionally black lists an IP for a configurable amount
     of time
   + Black hole mode: detects emails that will be discarded and refrains from
@@ -1074,7 +1074,7 @@ Detailed list of changes:
   + Removed -b option (enable BOUNCE compile time option to re-enable the
     option)
 
--) clamscan:
+-) quikscan:
   + New options: --no-phishing-sigs, --no-algorithmic (disable phishing and
     algorithmic detection respectively)
   + New options to control the phishing module: --no-phishing-scan-urls,
@@ -1083,7 +1083,7 @@ Detailed list of changes:
   + New option: --no-elf
   + New option: --copy
 
--) freshclam:
+-) freshquik:
   + Interpreter for .cdiff files (scripted updates)
   + Initial version of mirror manager
   + New option: --list-mirrors (list details on mirrors accessed by the mirror
@@ -1095,21 +1095,21 @@ Detailed list of changes:
   + New options: --diff, --run-cdiff, --verify-cdiff (update script management)
   + New option: --mdb (generated .mdb compatible signatures)
 
--) clamconf: initial version of configuration utility for clamd and freshclam
+-) quikconf: initial version of configuration utility for quikd and freshquik
 
-We are happy to announce new interesting software with support for ClamAV:
+We are happy to announce new interesting software with support for QuikAV:
 
   + AqMail - a POP3 client with additional filtering
-  + ClamFS - a FUSE-based file system with on-access anti-virus scanning
-  + c-icap - an ICAP server coded in C with support for ClamAV
+  + QuikFS - a FUSE-based file system with on-access anti-virus scanning
+  + c-icap - an ICAP server coded in C with support for QuikAV
   + MailCleaner - a complete email filtering gateway
-  + mod_streamav - a ClamAV based antivirus filter for Apache 2
-  + pyClamd - a python interface to Clamd
+  + mod_streamav - a QuikAV based antivirus filter for Apache 2
+  + pyQuikd - a python interface to Quikd
 
-More information at http://www.clamav.net/download.html#tools 
+More information at http://www.quikav.net/download.html#tools 
 
 --
-The ClamAV team (http://www.clamav.net/about.html#credits)
+The QuikAV team (http://www.quikav.net/about.html#credits)
 
 
 0.88.7
@@ -1118,20 +1118,20 @@ The ClamAV team (http://www.clamav.net/about.html#credits)
 This version improves scanning of mail and tar files.
 
 --
-The ClamAV team (http://www.clamav.net/about.html#credits)
+The QuikAV team (http://www.quikav.net/about.html#credits)
 
 
 0.88.6
 ------
 
 Changes in this release include better handling of network problems in
-freshclam and other minor bugfixes.
+freshquik and other minor bugfixes.
 
-The ClamAV developers encourage all users to give a try to the latest
+The QuikAV developers encourage all users to give a try to the latest
 beta version of 0.90!
 
 --
-The ClamAV team (http://www.clamav.net/about.html#credits)
+The QuikAV team (http://www.quikav.net/about.html#credits)
 
 
 0.88.5
@@ -1141,7 +1141,7 @@ This version fixes a crash in the CHM unpacker and a heap overflow in the
 function rebuilding PE files after unpacking.
 
 --
-The ClamAV team (http://www.clamav.net/about.html#credits)
+The QuikAV team (http://www.quikav.net/about.html#credits)
 
 
 0.88.4
@@ -1150,7 +1150,7 @@ The ClamAV team (http://www.clamav.net/about.html#credits)
 This release fixes a possible heap overflow in the UPX code.
 
 --
-The ClamAV team (http://www.clamav.net/about.html#credits)
+The QuikAV team (http://www.quikav.net/about.html#credits)
 
 0.88.3
 ------
@@ -1159,23 +1159,23 @@ This version fixes handling of large binhex files and multiple alternatives in
 virus signatures.
 
 --
-The ClamAV team (http://www.clamav.net/about.html#credits)
+The QuikAV team (http://www.quikav.net/about.html#credits)
 
 
 0.88.2
 ------
 
 This release improves virus detection, fixes zip handling on 64-bit
-architectures and possible security problem in freshclam.
+architectures and possible security problem in freshquik.
 
 Following the 0.88.1 release some portals and security related websites
 published incorrect information on security problems of 0.88. To avoid
-such incidents in the future, every new ClamAV package will be released
+such incidents in the future, every new QuikAV package will be released
 together with detailed information about security bugs it fixes. 
 
 
 --
-The ClamAV team (http://www.clamav.net/about.html#credits)
+The QuikAV team (http://www.quikav.net/about.html#credits)
 
 
 0.88.1
@@ -1185,7 +1185,7 @@ This version fixes a number of minor bugs and provides code updates
 to improve virus detection.
 
 --
-The ClamAV team (http://www.clamav.net/about.html#credits)
+The QuikAV team (http://www.quikav.net/about.html#credits)
 
 
 0.88
@@ -1196,7 +1196,7 @@ include better zip and mail processing, and support for a self-protection mode.
 The security of the UPX, FSG and Petite modules has been improved, too.
 
 --
-The ClamAV team (http://www.clamav.net/about.html#credits)
+The QuikAV team (http://www.quikav.net/about.html#credits)
 
 0.87.1
 ------
@@ -1205,7 +1205,7 @@ This release includes major bugfixes for problems with handling TNEF
 attachments, cabinet files and FSG compressed executables.
 
 --
-The ClamAV team (http://www.clamav.net/about.html#credits)
+The QuikAV team (http://www.quikav.net/about.html#credits)
 
 0.87
 ----
@@ -1213,21 +1213,21 @@ The ClamAV team (http://www.clamav.net/about.html#credits)
 This version fixes vulnerabilities in handling of UPX and FSG compressed
 executables. Support for PE files, Zip and Cabinet archives has been improved
 and other small bugfixes have been made. The new option "--on-outdated-execute"
-allows freshclam to run a command when system reports a new engine version.
+allows freshquik to run a command when system reports a new engine version.
 
 --
-The ClamAV team (http://www.clamav.net/about.html#credits)
+The QuikAV team (http://www.quikav.net/about.html#credits)
 
 
 0.86.2
 ------
 
 Changes in this release include fixes for three possible integer overflows
-in libclamav, improved scanning of Cabinet and FSG compressed files, better
-database handling in clamav-milter, and others.
+in libquikav, improved scanning of Cabinet and FSG compressed files, better
+database handling in quikav-milter, and others.
 
 --
-The ClamAV team (http://www.clamav.net/about.html#credits)
+The QuikAV team (http://www.quikav.net/about.html#credits)
 
 0.86.1
 ------
@@ -1235,27 +1235,27 @@ The ClamAV team (http://www.clamav.net/about.html#credits)
 A possible crash in the libmspack's Quantum decompressor has been fixed.
 
 --
-The ClamAV team (http://www.clamav.net/about.html#credits)
+The QuikAV team (http://www.quikav.net/about.html#credits)
 
 0.86
 ----
 
 This release introduces a number of bugfixes and cleanups. Possible descriptor
 leaks in archive unpackers and mishandling of fast track uuencoded files have
-been fixed in libclamav. Database reloading in clamav-milter has been improved.
+been fixed in libquikav. Database reloading in quikav-milter has been improved.
 
 --
-The ClamAV team (http://www.clamav.net/about.html#credits)
+The QuikAV team (http://www.quikav.net/about.html#credits)
 
 0.85.1
 ------
 
 A problem where an email with more than one content-disposition type line,
-one or more of which was empty, could crash libclamav has been fixed. Other
+one or more of which was empty, could crash libquikav has been fixed. Other
 minor bugfixes have been made.
 
 --
-The ClamAV team (http://www.clamav.net/about.html#credits)
+The QuikAV team (http://www.quikav.net/about.html#credits)
 
 0.85
 ----
@@ -1264,7 +1264,7 @@ Bugfixes in this release include correct signature offset calculation in large
 files, proper handling of encrypted zip archives, and others.
 
 --
-The ClamAV team (http://www.clamav.net/about.html#credits)
+The QuikAV team (http://www.quikav.net/about.html#credits)
 
 0.84
 ----
@@ -1275,7 +1275,7 @@ support for TNEF files and new detection mechanisms. Various bugfixes
 have been made.
 
 
--) libclamav:
+-) libquikav:
     + JPEG exploit detector now also checks embedded Photoshop thumbnail images
     + archive meta-data scanner (improves malware detection within encrypted
       archives)
@@ -1287,49 +1287,49 @@ have been made.
     + speed improvements
     + various bugfixes
 
--) clamd:
-    + VirusEvent now sets CLAM_VIRUSEVENT_FILENAME and CLAM_VIRUSEVENT_VIRUSNAME
+-) quikd:
+    + VirusEvent now sets QUIK_VIRUSEVENT_FILENAME and QUIK_VIRUSEVENT_VIRUSNAME
       environment variables
 
--) clamav-milter:
+-) quikav-milter:
     + improved database update detection when not --external
 
--) clamscan:
+-) quikscan:
     + new options --include-dir and exclude-dir
     + new option --max-dir-recursion
 
--) freshclam:
+-) freshquik:
     + new directive LocalIPAddress
 
 -) contrib:
-    + clamdmon 1.0 - clamdwatch replacement written in C
+    + quikdmon 1.0 - quikdwatch replacement written in C
 
 -) 3rd party software:
     + hMailServer - open source e-mail server for Microsoft Window
     + pop3.proxy - proxy server for the POP3 protocol
     + HTTP Anti Virus Proxy
-    + SmarterMail Filter - ClamAV based plugin for SmarterMail Mail Server
-    + smf-clamd - small & fast virus filter for Sendmail
-    + Squidclam - replacement for SquidClamAV-Redirector.py written in C
-    + QtClamAVclient - remote clamd client based on the Qt Toolkit
+    + SmarterMail Filter - QuikAV based plugin for SmarterMail Mail Server
+    + smf-quikd - small & fast virus filter for Sendmail
+    + Squidquik - replacement for SquidQuikAV-Redirector.py written in C
+    + QtQuikAVclient - remote quikd client based on the Qt Toolkit
     + qpsmtp - flexible smtpd daemon written in Perl
 
 News:
 
-Palo Alto, Calif. March 31st 2005 - Clam AntiVirus, the leading Open Source
+Palo Alto, Calif. March 31st 2005 - Quik AntiVirus, the leading Open Source
 antivirus toolkit, and Sensory Networks, the leading provider of hardware
 acceleration for network security applications, announced a partnership
-to provide hardware acceleration support for the Clam AntiVirus suite.
+to provide hardware acceleration support for the Quik AntiVirus suite.
 [...]
-Support for Sensory Networks' NodalCore acceleration in ClamAV will be
+Support for Sensory Networks' NodalCore acceleration in QuikAV will be
 available in version 0.90 of the software suite in Q3 2005. For more
 information please visit:
 http://www.sensorynetworks.com/
 
 
-The ClamAV project announces the opening of the official merchandise store:
+The QuikAV project announces the opening of the official merchandise store:
 
-http://www.cafepress.com/clamav/
+http://www.cafepress.com/quikav/
 
 A big thank you to Finndesign (http://www.finndesign.fi) which
 volunteered to design the whole line of products, including:
@@ -1342,10 +1342,10 @@ volunteered to design the whole line of products, including:
 - stickers
 - scrapbook
 
-By purchasing our merchandise, you contribute to the development of ClamAV.
+By purchasing our merchandise, you contribute to the development of QuikAV.
 
 --
-The ClamAV team (http://www.clamav.net/about.html#credits)
+The QuikAV team (http://www.quikav.net/about.html#credits)
 
 
 0.83
@@ -1353,10 +1353,10 @@ The ClamAV team (http://www.clamav.net/about.html#credits)
 
 Due to a high number of bad files produced by broken software, the MS05-002
 exploit detector now only checks specific RIFF files. This version also fixes
-a stability problem of clamav-milter/clamd and improves e-mail scanning.
+a stability problem of quikav-milter/quikd and improves e-mail scanning.
 
 --
-The ClamAV team (http://www.clamav.net/about.html#credits)
+The QuikAV team (http://www.quikav.net/about.html#credits)
 
 0.82
 ----
@@ -1366,10 +1366,10 @@ Icon Format Handling Could Allow Remote Code Execution") based exploits.
 Fixes include correct attachment scanning in e-mails generated by some
 Internet worms (broken in 0.81), removed false positive "Suspect.Zip"
 warning on non-standard zip archives created by ICEOWS, better proxy support
-in freshclam, and speed improvements.
+in freshquik, and speed improvements.
 
 --
-The ClamAV team (http://www.clamav.net/about.html#credits)
+The QuikAV team (http://www.quikav.net/about.html#credits)
 
 
 0.81
@@ -1377,16 +1377,16 @@ The ClamAV team (http://www.clamav.net/about.html#credits)
 
 Scan engine improvements were made. The internal mail scanner now supports
 multipart/partial messages, and support for decoding non-standard mail files
-was greatly enhanced. clamav-milter by default uses libclamav and scans emails
-itself without the use of clamd. libclamav can now extract RFC2397 encoded
+was greatly enhanced. quikav-milter by default uses libquikav and scans emails
+itself without the use of quikd. libquikav can now extract RFC2397 encoded
 data within HTML documents, block zip archives with modified information in
 local header, and scan HQX files. PE file structure rebuilding from compressed
 executables was improved.
 
-Important note to clamdwatch users: please upgrade to the latest version
-(contrib/clamdwatch) as soon as possible.
+Important note to quikdwatch users: please upgrade to the latest version
+(contrib/quikdwatch) as soon as possible.
 
--) libclamav:
+-) libquikav:
     + major improvements in the mail scanning engine:
 	o support for multipart/partial messages
 	o improved support for non-standard quoted-printable attachments
@@ -1407,24 +1407,24 @@ Important note to clamdwatch users: please upgrade to the latest version
     + stability and (minor) security fixes
     + a lot of minor improvements, including support for new platforms
 
--) clamd:
-    + new directive ExitOnOOM (stop the deamon when libclamav reports an out of
+-) quikd:
+    + new directive ExitOnOOM (stop the deamon when libquikav reports an out of
       memory condition)
     + new directives StreamMinPort and StreamMaxPort (port range specification
       for a stream mode)
     + support for passing of file descriptors
 
--) clamdscan:
+-) quikdscan:
     + added support for --move and --remove
 
--) clamav-milter:
-    + by default uses libclamav to scan e-mails
-    + new option --external (enables the use of clamd)
+-) quikav-milter:
+    + by default uses libquikav to scan e-mails
+    + new option --external (enables the use of quikd)
     + various optimisations
 
--) freshclam:
+-) freshquik:
     + the DNS mode is now enabled by default (no need for DNSDatabaseInfo in
-      freshclam.conf)
+      freshquik.conf)
     + --no-dns uses a If-Modified-Since method instead of a range GET
     + added support for AllowSupplementaryGroups
 
@@ -1433,40 +1433,40 @@ Important note to clamdwatch users: please upgrade to the latest version
       display the corresponding hex values; Word6 binary code will be
       disassembled)
 
--) The list of third party programs with support for ClamAV is growing
-   rapidly. Here are the latest additions (see clamdoc.pdf for details):
+-) The list of third party programs with support for QuikAV is growing
+   rapidly. Here are the latest additions (see quikdoc.pdf for details):
 
-    + AVScan - a libclamav based GUI a-v scanner for Unix
-    + clamailfilter - a Python script that provides a-v scanning via procmailrc
-    + ClamAVPlugin - A ClamAV plugin for SpamAssassin 3.x
-    + ClamCour - an e-mail filter for Courier
-    + clamfilter - a small, secure, and efficient content filter for Postfix
-    + ClamMail - an anti-virus POP3 proxy for Windows
-    + ClamShell - a Java GUI for clamscan
-    + ClamTk - a perl-tk GUI for ClamAV
+    + AVScan - a libquikav based GUI a-v scanner for Unix
+    + quikailfilter - a Python script that provides a-v scanning via procmailrc
+    + QuikAVPlugin - A QuikAV plugin for SpamAssassin 3.x
+    + QuikCour - an e-mail filter for Courier
+    + quikfilter - a small, secure, and efficient content filter for Postfix
+    + QuikMail - an anti-virus POP3 proxy for Windows
+    + QuikShell - a Java GUI for quikscan
+    + QuikTk - a perl-tk GUI for QuikAV
     + clapf - a virus scanning and antispam content filter for Postfix
-    + D bindings for ClamAV - ClamAV bindings for the D programming language
+    + D bindings for QuikAV - QuikAV bindings for the D programming language
     + Frox - a transparent FTP proxy
-    + KMail - a fully-featured email client now supports ClamAV out of box
+    + KMail - a fully-featured email client now supports QuikAV out of box
     + Mail Avenger - a highly-configurable SMTP server with a-v support
     + Mailnees - a mail content filter for Sendmail and Postfix
     + Maverix - anti-spam and anti-virus solution for AOLServer
     + Moodle - scan files submitted by students for viruses!
-    + php-clamav - scan files from within PHP
+    + php-quikav - scan files from within PHP
     + pymavis - a powerful email parser, similar to the old amavis-perl
-    + QClam - a simple program to plug ClamAV to a qmail mailbox
-    + qmailmrtg7 - display graphs of viruses found by ClamAV
+    + QQuik - a simple program to plug QuikAV to a qmail mailbox
+    + qmailmrtg7 - display graphs of viruses found by QuikAV
     + qSheff - an e-mail filter for qmail
     + SafeSquid - a feature rich content filtering internet proxy
     + Scrubber - a server-side daemon for filtering mail content
     + simscan - an e-mail and spam filter for qmail
     + smtpfilter - scan SMTP session for viruses
-    + snort-inline - scan your network traffic for viruses with ClamAV
-    + SquidClamAV Redirector - a Squid helper script which adds virus scanning 
+    + snort-inline - scan your network traffic for viruses with QuikAV
+    + SquidQuikAV Redirector - a Squid helper script which adds virus scanning 
     + WRAVLib - a library for a-v integration with Mono/.NET applications
 
 --
-The ClamAV team (http://www.clamav.net/about.html#credits)
+The QuikAV team (http://www.quikav.net/about.html#credits)
 
 
 0.80
@@ -1475,7 +1475,7 @@ The ClamAV team (http://www.clamav.net/about.html#credits)
 Stable version. Please read the release notes for the candidate versions below.
 
 --
-The ClamAV team (http://www.clamav.net/about.html#credits)
+The QuikAV team (http://www.quikav.net/about.html#credits)
 
 
 0.80rc4
@@ -1486,24 +1486,24 @@ faster base64 decoding, support for GNU tar files, updated on-access scanner,
 and others.
 
 --
-The ClamAV team (http://www.clamav.net/about.html#credits)
+The QuikAV team (http://www.quikav.net/about.html#credits)
 
 0.80rc3
 -------
 
 This release candidate eliminates possible false positive alerts in UPX/FSG
-compressed files and clarifies behaviour of default actions in clamd and
-freshclam.
+compressed files and clarifies behaviour of default actions in quikd and
+freshquik.
 
 We encourage users to take advantage of our new mirror structure. In order to
-download the database from the closest mirror you should configure freshclam
-to use db.XY.clamav.net where XY is your country code (see
+download the database from the closest mirror you should configure freshquik
+to use db.XY.quikav.net where XY is your country code (see
 http://www.iana.org/cctld/cctld-whois.htm for the full list). Please add
-the following lines to freshclam.conf:
+the following lines to freshquik.conf:
 
-    DNSDatabaseInfo current.cvd.clamav.net
-    DatabaseMirror db.XY.clamav.net
-    DatabaseMirror database.clamav.net
+    DNSDatabaseInfo current.cvd.quikav.net
+    DatabaseMirror db.XY.quikav.net
+    DatabaseMirror database.quikav.net
 
 DNSDatabaseInfo enables database and software version verification through
 DNS TXT records, and the second database mirror acts as a fallback in case
@@ -1519,16 +1519,16 @@ This update fixes a serious bug in e-mail scanner.
 0.80rc
 ------
 
-The development version of ClamAV is ready for general testing! New mechanisms
+The development version of QuikAV is ready for general testing! New mechanisms
 have already proved very nasty to Internet worms successfully protecting
 against the new versions R, S, T, U, V and W of the infamous Mydoom worm
 and detecting them as Worm.Mydoom.Gen before they were analysed and specific
-signatures added by the ClamAV database maintainers. That means servers running
-the new version of ClamAV have detected and blocked 100% of Mydoom attacks!
+signatures added by the QuikAV database maintainers. That means servers running
+the new version of QuikAV have detected and blocked 100% of Mydoom attacks!
 
 New features in this release include:
 
--) libclamav
+-) libquikav
     + Portable Executable analyser (CL_SCAN_PE) featuring:
 	o UPX decompression (all versions)
 	o Petite decompression (2.x)
@@ -1551,10 +1551,10 @@ New features in this release include:
       attachments were scanned)
     + added support for scanning URLs in e-mails (CL_SCAN_MAILURL)
     + detection of Worm.Mydoom.M.log
-    + updated API (still backward compatible but please consult clamdoc.pdf
+    + updated API (still backward compatible but please consult quikdoc.pdf
       (Section 6) and adapt your software)
 
--) clamd
+-) quikd
     + new directive ScanHTML (enables HTML normalisator and ScrEnc decoder)
     + new directive ScanPE (win32 executable analyser and decompressor)
     + new directive DetectBrokenExecutables (try to detect broken executables
@@ -1563,9 +1563,9 @@ New features in this release include:
       in mails. BE CAREFUL! DO NOT ENABLE IT ON LOADED MAIL SERVERS)
     + new directive ArchiveBlockMax (archives that exceed limits will be
       marked as viruses)
-    + clamav.conf was renamed clamd.conf
+    + quikav.conf was renamed quikd.conf
 
--) clamscan
+-) quikscan
     + mail files are scanned by default, use --no-mail to disable it
     + new option --no-html (disables HTML normalisator)
     + new option --no-pe (disables PE analyser)
@@ -1573,23 +1573,23 @@ New features in this release include:
     + new option --block-max
     + new option --mail-follow-urls (download and scan files from URLs in mails)
 
--) clamdscan
+-) quikdscan
     + now prints warnings if some activated command line options are only
-      supported by clamscan
+      supported by quikscan
     + added support for archive scanning in stdin mode
 
--) clamav-milter
+-) quikav-milter
     + improved template file format
     + quarantined file names now contain virus names
-    + initial support for SESSION mode of clamd
+    + initial support for SESSION mode of quikd
 
--) freshclam:
+-) freshquik:
     + new directive DNSDatabaseInfo that enables ultra lightweight version
       verification method through DNS (using TXT records). Based on idea by
       Christopher X. Candreva and enabled by default.
-      (see http://www.gossamer-threads.com/lists/clamav/users/11102)
+      (see http://www.gossamer-threads.com/lists/quikav/users/11102)
     + new option --no-dns (quick option to disable DNS method without editing
-      freshclam.conf)
+      freshquik.conf)
 
 -) sigtool
     + removed ability of automatic signature generation (use MD5 sums to
@@ -1599,60 +1599,60 @@ New features in this release include:
       results in three html files in current directory)
 
 -) configure:
-    + new option --disable-gethostbyname_r (try enabling it if clamav-milter
+    + new option --disable-gethostbyname_r (try enabling it if quikav-milter
       compilation fails)
-    + new option --disable-dns (try enabling it if freshclam compilation fails)
+    + new option --disable-dns (try enabling it if freshquik compilation fails)
     + extended regular expression scanner
 
 -) documentation
     + included new Mac OS X installation instructions
     + official documentation rewritten and outdated docs removed
 
--) new 3rd party software with support for ClamAV:
+-) new 3rd party software with support for QuikAV:
     + OdeiaVir - an e-mail filter for qmail and Exim
-    + ClamSMTP - a lightweight (written in C) and simple filter for Postfix
+    + QuikSMTP - a lightweight (written in C) and simple filter for Postfix
     + Protea AntiVirus Tools - a virus filter for Lotus Domino
     + PTSMail Utilities - an e-mail filter for Sendmail
     + mxGuard for IMail - a mail filter for Ipswitch IMail (W32)
     + Zabit - a content and attachment filter for qmail
-    + BeClam - ClamAV port for BeOS
-    + clamXav - a virus scanner with GUI for Mac OS X
+    + BeQuik - QuikAV port for BeOS
+    + quikXav - a virus scanner with GUI for Mac OS X
 
 Special thanks to aCaB for his work on UPX, FSG and Petite decompressors.
 
-Thanks to good reaction times on new threats ClamAV was awarded as best
+Thanks to good reaction times on new threats QuikAV was awarded as best
 security tool for 2004 by Linux Journal: "...With this year's outbreak of
-e-mail worms for non-Linux platforms, ClamAV has been getting quite a workout,
+e-mail worms for non-Linux platforms, QuikAV has been getting quite a workout,
 and Linux admins on mailing lists report that database update times are keeping
 up with or beating the proprietary alternatives." Thanks!
 
 SourceWear.com is selling some very nice t-shirts and polo shirts powered by
-ClamAV. Wear them and virus writers will stay away from you :-) A quarter out
-of every dollar profited from the sale of these shirts will go to the ClamAV
-project. Visit http://www.sourcewear.com and click on ClamAV logo! 
+QuikAV. Wear them and virus writers will stay away from you :-) A quarter out
+of every dollar profited from the sale of these shirts will go to the QuikAV
+project. Visit http://www.sourcewear.com and click on QuikAV logo! 
 
 
 --
-The ClamAV team (http://www.clamav.net/about.html#credits)
+The QuikAV team (http://www.quikav.net/about.html#credits)
 
 0.75
 ----
 
 This release fixes detection of e-mails generated by Worm.Mydoom.I.
 
-Important notice for people using ClamAV 0.60:
+Important notice for people using QuikAV 0.60:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Our logs show that there is still a small percentage of ClamAV 0.60
-installations updating their database. ClamAV 0.60 was released on
+Our logs show that there is still a small percentage of QuikAV 0.60
+installations updating their database. QuikAV 0.60 was released on
 July 29th, 2003 and it was the last release to use the old database
-format. Starting from version 0.65, released on November 12nd, ClamAV
+format. Starting from version 0.65, released on November 12nd, QuikAV
 uses a new database format, which is compressed and digitally signed.
 We have been distributing the database in both formats till now, but
-we plan to drop support for ClamAV 0.60 on September 1st.
+we plan to drop support for QuikAV 0.60 on September 1st.
 
 We encourage _all_ users to upgrade to the latest release available.
-People running an old version of ClamAV are missing many viruses and 
+People running an old version of QuikAV are missing many viruses and 
 may experience stability problems.
 
 On non-production systems you can try the latest development version.
@@ -1662,34 +1662,34 @@ CAB, CHM, UPX, HTML (normalisation), PowerPoint macros and can detect
 annoying e-mails with empty attachments generated by new Bagle variants.
 
 --
-The ClamAV team (http://www.clamav.net/about.html#credits)
+The QuikAV team (http://www.quikav.net/about.html#credits)
 
 0.74
 ----
 
 Bugfixes in this version include crashes with multipart/mixed messages
 and corrupted OLE2 and Zip files. Improvements include various optimisations
-of mail scanning and clamav-milter and clamdscan behaviour.
+of mail scanning and quikav-milter and quikdscan behaviour.
 
 
 New members of our "3rd party software" list:
 
-    + MyClamMailFilter	    an e-mail filter for procmail (written in C)
-    + clamaktion	    scan files from the right-click Konqueror menu
+    + MyQuikMailFilter	    an e-mail filter for procmail (written in C)
+    + quikaktion	    scan files from the right-click Konqueror menu
     + QMVC		    Qmail Mail and Virus Control
-    + pyclamav		    Python binding for ClamAV
-    + FETCAV		    Front End To Clam AntiVirus based on Xdialog
+    + pyquikav		    Python binding for QuikAV
+    + FETCAV		    Front End To Quik AntiVirus based on Xdialog
     + Famuko		    an on-access scanner working in a userspace
     + SoftlabsAV	    a generic anti-virus filter for procmail
 
 
-Japanese users can take an advantage of the new ClamAV related site:
-    http://clamav-jp.sourceforge.jp/
-and join the clamav-jp-users mailing list.
+Japanese users can take an advantage of the new QuikAV related site:
+    http://quikav-jp.sourceforge.jp/
+and join the quikav-jp-users mailing list.
 
 
 --
-The ClamAV team (http://www.clamav.net/about.html#credits)
+The QuikAV team (http://www.quikav.net/about.html#credits)
 
 
 0.73
@@ -1698,10 +1698,10 @@ The ClamAV team (http://www.clamav.net/about.html#credits)
 This version fixes memory management problems in the OLE2 decoder and
 improves mail scanning. 
 
-Thank you for using ClamAV !
+Thank you for using QuikAV !
 
 --
-The ClamAV team (http://www.clamav.net/about.html#credits)
+The QuikAV team (http://www.quikav.net/about.html#credits)
 
 0.72
 ----
@@ -1712,7 +1712,7 @@ functional since 0.70) was improved and a number of other improvements were
 made.
 
 --
-The ClamAV team (http://www.clamav.net/about.html#credits)
+The QuikAV team (http://www.quikav.net/about.html#credits)
 
 0.71
 ----
@@ -1720,30 +1720,30 @@ The ClamAV team (http://www.clamav.net/about.html#credits)
 This release fixes all bugs found in 0.70 and introduces a few new features -
 the noteworthy changes include:
 
--) libclamav:
+-) libquikav:
     + support nested OLE2 files 
     + support Word6 macro code
     + ignore popular file types (media, graphics)
     + support compress.exe (SZDD) compression (test/test.msc)
     + improve virus detection in e-mails
 
--) clamscan:
+-) quikscan:
     + automatically decide (by comparing daily.cvd version numbers) which
-      database directory (hardcoded or clamav.conf's one) to use
+      database directory (hardcoded or quikav.conf's one) to use
     + support compression ratio feature (--max-ratio)
     + allow regular expressions in --[in|ex]clude
     + do not overwrite old files in a quarantine directory but add a numerical
       extension to new files
-    + respect --tempdir in libclamav
+    + respect --tempdir in libquikav
     + fix access problem when calling external unpackers in a superuser mode
     + fix file permission corruption with --deb in a superuser mode
 
--) clamd
+-) quikd
     + support log facility specification in syslog's style (LogFacility)
     + new directive LeaveTemporaryFiles (Debug no longer leaves temporary
       files not removed)
 
--) clamav-milter:
+-) quikav-milter:
     + include the virus name in the 550 rejection
     + support user defined template for virus notifications (--template-file)
     + sort quarantine messages by date
@@ -1754,25 +1754,25 @@ the noteworthy changes include:
     + save PID (--pidfile)
 
 -) documentation:
-    + German clamdoc.pdf translation (Rupert Roesler-Schmidt and Karina
+    + German quikdoc.pdf translation (Rupert Roesler-Schmidt and Karina
       Schwarz, uplink coherent solutions, http://www.uplink.at)
     + new Japanese documentation (Masaki Ogawa)
 
 
 --
-The ClamAV team (http://www.clamav.net/about.html#credits)
+The QuikAV team (http://www.quikav.net/about.html#credits)
 
 
 
 0.70
 ----
 
-The two major changes in this version are new thread manager in clamd
+The two major changes in this version are new thread manager in quikd
 and support for decoding MS Office VBA macros. Both of them have been
 implemented by Trog. Besides, there are many improvements and bugfixes
 (all listed in ChangeLog), a short summary:
 
--) clamd
+-) quikd
     + new thread manager (with better SMP support)
     + on-access scanning now also available on FreeBSD (with Dazuko 2.0)
     + new directive ArchiveBlockEncrypted
@@ -1780,32 +1780,32 @@ implemented by Trog. Besides, there are many improvements and bugfixes
     + handle SIGHUP (re-open logfile) and SIGUSR2 (reload database)
     + respect TCPAddr in stream scanner
 
--) clamav-milter:
+-) quikav-milter:
     + TCPWrappers support
 
--) libclamav:
+-) libquikav:
     + support MS Office documents (OLE2) and VBA macro decoding
     + support encrypted archive detection
-    + new flags: CL_OLE2, CL_ENCRYPTED (see clamdoc.pdf, Section 6.1)
+    + new flags: CL_OLE2, CL_ENCRYPTED (see quikdoc.pdf, Section 6.1)
     + improve virus detection in big files
     + improve support for multipart, bounce and embedded RFC822 messages
     + improve RAR support
     + include backup snprintf implementation
 
--) clamscan:
+-) quikscan:
     + new option: --block-encrypted
 
--) freshclam
+-) freshquik
     + new option: --pid, -p (write pid file if run as daemon)
     + handle SIGHUP (re-open logfile), SIGTERM (terminate with log message),
       SIGALRM and SIGUSR1 (wake up and check mirror)
     + fix bug with -u and -c handling
 
 -) contrib
-    + windows clamd client now available with source code
+    + windows quikd client now available with source code
 
 -) documentation:
-    + new Polish documentation on ClamAV and Samba integration
+    + new Polish documentation on QuikAV and Samba integration
     + official documentation updated
 
 
@@ -1817,9 +1817,9 @@ Thanks to the help of many companies we have 49 very fast and reliable
 virus database mirrors in 22 regions and the number is still growing.
 As of March 2004 we attempt to redirect our users to the closest pool
 of mirrors by looking at their ip source address when they try to resolve
-database.clamav.net. Our DNS servers can answer with a CNAME to:
-db.europe.clamav.net, db.america.clamav.net, db.asia.clamav.net or
-db.other.clamav.net. Our advanced push-mirroring mechanism (maintained by
+database.quikav.net. Our DNS servers can answer with a CNAME to:
+db.europe.quikav.net, db.america.quikav.net, db.asia.quikav.net or
+db.other.quikav.net. Our advanced push-mirroring mechanism (maintained by
 Luca Gibelli) allows database maintainers to update all the mirrors in less
 than one minute !
 
@@ -1829,32 +1829,32 @@ will be concentrated on a new scanning engine and preliminary heuristics -
 please help us and test CVS snapshots from time to time.
 
 
-We are happy to announce new programs with support for ClamAV (all of them
+We are happy to announce new programs with support for QuikAV (all of them
 have been reviewed by our team - more info in the documentation and
-on our website: http://www.clamav.net/download.html#tools):
+on our website: http://www.quikav.net/download.html#tools):
 
-    + ClamWin - a GUI for Windows (!)
-    + KlamAV - a collection of GUI tools for using ClamAV on KDE
-    + clamscan-procfilter - a Perl procmail filter
+    + QuikWin - a GUI for Windows (!)
+    + KlamAV - a collection of GUI tools for using QuikAV on KDE
+    + quikscan-procfilter - a Perl procmail filter
     + j-chkmail - a powerful filter for sendmail
     + qscanq - Virus Scanning for Qmail
-    + clamavr - a Ruby binding for ClamAV
+    + quikavr - a Ruby binding for QuikAV
     + DansGuardian Anti-Virus Plugin
     + Viralator - a Perl script that virus scans http downloads
-    + ClamAssassin - a filter for procmail
+    + QuikAssassin - a filter for procmail
     + Gadoyanvirus - a filter for Qmail
     + OpenProtect - a complete e-mail protection solution
     + RevolSys SMTP kit for Postfix - an antispam/antivirus tools installation
     + POP3 Virus Scanner Daemon
-    + mailman-clamav - a virus filter for Mailman
-    + wbmclamav - a webmin module to manage ClamAV
+    + mailman-quikav - a virus filter for Mailman
+    + wbmquikav - a webmin module to manage QuikAV
     + Scan Log Analyzer
     + mailgraph - a RRDtool frontend for Postfix Statistics
     + INSERT - a security toolkit on a credit card size CD
     + Local Area Security - a Live CD Linux distribution
 
 --
-The ClamAV team (http://www.clamav.net/about.html#credits)
+The QuikAV team (http://www.quikav.net/about.html#credits)
 April 17, 2004
 
 
@@ -1878,7 +1878,7 @@ has better Cygwin support.
 
 0.66
 ----
-This version is a response to the "clamav 0.65 remote DOS exploit" information
+This version is a response to the "quikav 0.65 remote DOS exploit" information
 published on popular security-related mailing lists. Unfortunately we had
 not been contacted by the author before he published that and had to release
 this (unplanned) package very quickly (it should be mentioned that CVS version
@@ -1886,22 +1886,22 @@ was not vulnerable to the exploit). Untested code has been disabled also
 the Dazuko support is temporarily not available (if you really need it please
 use a CVS version or wait for a next stable release). Other noteworthy changes:
 
--) clamd:
+-) quikd:
     + fixed database timestamp handling (and a double reload problem reported
       by Alex Pleiner and Ole Stanstrup)
     + new directive: ArchiveMaxCompressionRatio
-    + new command: SESSION (starts a clamd session and allows to do multiple
+    + new command: SESSION (starts a quikd session and allows to do multiple
       commands per TCP session)
     + new directives: TemporaryDirectory, LogClean (Andrey V. Malyshev)
 
--) clamav-milter: (Nigel Horne)
+-) quikav-milter: (Nigel Horne)
     + added support for AllowSupplementaryGroups and ThreadTimeout
     + added --quarantine-dir (thanks to Michael Dankov)
     + added --noreject (thanks to Vijay Sarvepalli)
     + added --headers (thanks Leonid Zeitlin)
     + added --sign option
 
--) libclamav:
+-) libquikav:
     + detect Worm.SCO.A bounces (Nigel)
     + prevent buffer overflow in broken uuencoded files (Nigel)
     + scan multipart alternatives that have no boundaries (Nigel)
@@ -1917,14 +1917,14 @@ use a CVS version or wait for a next stable release). Other noteworthy changes:
     + fixed memory leak in digital signature verification code (Thomas Lamy)
     + added maximal compression ratio limit (cl_limits->maxratio)
 
--) clamscan:
+-) quikscan:
     + support for multiple arguments on command line (Thomas Lamy)
     + fixed buffer overflow in --move (Denis De Messemacker)
     + removed support for sendfile() under Linux
 
--) freshclam:
-    + support for freshclam.conf (that may be optionally merged with
-      clamav.conf, command line options overwrite config settings)
+-) freshquik:
+    + support for freshquik.conf (that may be optionally merged with
+      quikav.conf, command line options overwrite config settings)
     + work-around for potential database downgrade (subtle problem
       in r-r dns handling) - reported by Daniel Mario Vega and patched
       by Luca Gibelli
@@ -1933,18 +1933,18 @@ use a CVS version or wait for a next stable release). Other noteworthy changes:
     + list virus names with --list-sigs (-l)
 
 -) contrib:
-    + clamdwatch (by Mike Cathey)
-    + windows clamd client with drag&drop support (Nigel Horne)
+    + quikdwatch (by Mike Cathey)
+    + windows quikd client with drag&drop support (Nigel Horne)
 
 -) documentation:
-    + complete clamdoc.pdf French translation by Stephane Jeannenot
-    + Polish how-to on ClamAV and Sendmail integration (with clamav-milter)
+    + complete quikdoc.pdf French translation by Stephane Jeannenot
+    + Polish how-to on QuikAV and Sendmail integration (with quikav-milter)
       by Przemyslaw Holowczyc
 
 
 News:
 
-ClamAV was the first anti-virus protecting against Worm.SCO.A (aka MyDoom.A) !
+QuikAV was the first anti-virus protecting against Worm.SCO.A (aka MyDoom.A) !
 The signature was published by Diego d'Ambra in the daily update 105,
 26-Jan-2004 20:23 GMT and we were at least two hours faster than "big" AV
 vendors:
@@ -1952,9 +1952,9 @@ http://sourceforge.net/mailarchive/forum.php?thread_id=3764826&forum_id=34654
 http://www.pcwelt.de/news/viren_bugs/37278/4.html
 
 
-clamav-devel is finally able to decode OLE2 (Microsoft Office) files and
-decompress VBA streams ! The code is developed by Trog, official ClamAV
-developer. Also we're testing new clamd implementation that will solve
+quikav-devel is finally able to decode OLE2 (Microsoft Office) files and
+decompress VBA streams ! The code is developed by Trog, official QuikAV
+developer. Also we're testing new quikd implementation that will solve
 several important problems (especially that "Time out" related). Please
 help us and test the latest CVS version.
 
@@ -1962,15 +1962,15 @@ help us and test the latest CVS version.
 The virus database now contains more than 20.000 signatures ! On January 8,
 Denis De Messemacker (who joined our team 3 months ago) added signatures for
 about 7700 new viruses. Also special thanks go to Tomasz Papszun for his
-hard work on daily submissions and forcing us to keep ClamAV quality on
+hard work on daily submissions and forcing us to keep QuikAV quality on
 the highest possible level.
 
 
-New mirroring mechanisms. Luca Gibelli (ClamAV) and mirror administrators
-(22 sites, http://www.clamav.net/documentation.html for
+New mirroring mechanisms. Luca Gibelli (QuikAV) and mirror administrators
+(22 sites, http://www.quikav.net/documentation.html for
 a complete mirror information) are converting mirrors to new "push mirroring"
 method. It uses advanced techniques to ensure all the mirrors are up to date.
-More info: http://www.clamav.net/documentation.html 
+More info: http://www.quikav.net/documentation.html 
 
 
 We would like to thank our donors:
@@ -1992,30 +1992,30 @@ We would like to thank our donors:
     * An anonymous donor from Colorado, US
 
 --
-Tomasz Kojm <tkojm*clamav.net>
+Tomasz Kojm <tkojm*quikav.net>
 February 10, 2004
 
 
 0.65
 ----
 IMPORTANT NOTE: The project has been moved into SourceForge. The only official
-		ClamAV's homepage is www.clamav.net (however clamav.elektrapro.
+		QuikAV's homepage is www.quikav.net (however quikav.elektrapro.
 		com still works). We would like to thank ElektraPro.com for
 		their support for the open-source community  - THANKS !
 
 
-ClamAV 0.65 introduces a new database container file format (called CVD) with
+QuikAV 0.65 introduces a new database container file format (called CVD) with
 support for digital signatures and compression. Please remove the old
 databases from your database directory before the installation. And the most
-important thing: clamd stability has been greatly improved (especially under
+important thing: quikd stability has been greatly improved (especially under
 FreeBSD) ! Also we have a new mirror infrastructure - you will find all the
-details in clamdoc.pdf. If you want to become an official ClamAV mirror
-(with entry in database.clamav.net) please read the clamav-mirror-howto.pdf
-document and contact our administrator - Luca Gibelli <nervous*clamav.net>.
+details in quikdoc.pdf. If you want to become an official QuikAV mirror
+(with entry in database.quikav.net) please read the quikav-mirror-howto.pdf
+document and contact our administrator - Luca Gibelli <nervous*quikav.net>.
 
 Noteworthy changes in this version:
 
--) clamd:
+-) quikd:
     + fixed a race condition in database reloading code (random crashes
       under high load)
     + fixed a race condition with the improperly initialized session start time
@@ -2028,13 +2028,13 @@ Noteworthy changes in this version:
     + new directive TCPAddr (Bernard Quatermass, fixed by Damien Curtain)
     + new directive Debug
 
--) clamav-milter: (Nigel Horne <njh*clamav.net>)
+-) quikav-milter: (Nigel Horne <njh*quikav.net>)
     + new --force-scan flag
     + new -P and -q flags by Nicholas M. Kirsch
-    WARNING: clamav-milter and our mail scanner are still in high development
+    WARNING: quikav-milter and our mail scanner are still in high development
 	     and may be unstable. You should always use the CVS version.
 
--) libclamav:
+-) libquikav:
     + support for a new database container format (CVD) - compressed and
       digitally signed
     + better protection against malformed zip archives (such as Mimail)
@@ -2043,39 +2043,39 @@ Noteworthy changes in this version:
     + memory leak fixes (Thomas Lamy)
     + new scan option CL_DISABLERAR (disables built-in RAR unpacker)
 
--) freshclam:
+-) freshquik:
     + fixed --on-error-execute behaviour (David Woakes)
     + new option --user (-u) USER - run as USER instead of the default user.
       Patch by Damien Curtain.
-    + rewritten to use database.clamav.net and CVD
+    + rewritten to use database.quikav.net and CVD
 
 -) documentation:
-    + new Spanish documentation on ClamAV and Sendmail integration by
+    + new Spanish documentation on QuikAV and Sendmail integration by
       Erick Ivaan Lopez Carreon
-    + included clamdoc.pdf Turkish translation by yavuz kaya and Ýbrahim erken
-    + included clamav-mirror-howto.pdf by Luca Gibelli
-    + included clamd+daemontools HOWTO by Jesse D. Guardiani
+    + included quikdoc.pdf Turkish translation by yavuz kaya and Ýbrahim erken
+    + included quikav-mirror-howto.pdf by Luca Gibelli
+    + included quikd+daemontools HOWTO by Jesse D. Guardiani
     + included signatures.pdf
     + man pages: updated
-    + clamdoc.pdf: rewritten
+    + quikdoc.pdf: rewritten
 
-New members of our list of ClamAV certified software (see clamdoc.pdf for
+New members of our list of QuikAV certified software (see quikdoc.pdf for
 details):
     + cgpav
     + smtp-vilter
     + IVS Milter
     + scanexi
-    + Mail::ClamAV
+    + Mail::QuikAV
     + OpenAntiVirus samba-vscan
     + Sylpheed Claws
-    + nclamd
+    + nquikd
 
 Thanks to Mia Kalenius and Sergei Pronin we have a new official logo !
 
-Thank you for using ClamAV !
+Thank you for using QuikAV !
 
 --
-Tomasz Kojm <tkojm*clamav.net>
+Tomasz Kojm <tkojm*quikav.net>
 November 12, 2003
 
 
@@ -2085,29 +2085,29 @@ November 12, 2003
 
 Hello again...
 
-This is a new, (very?) stable release of Clam AntiVirus. 0.60 was developed
+This is a new, (very?) stable release of Quik AntiVirus. 0.60 was developed
 and stabilized for over seven months and many people had contributed to the
 final release. This version introduces many enhancements and a new program:
-clamav-milter written by ClamAV developer Nigel Horne. This is a mail scanner
-for Sendmail/milter written entirely in C, which uses clamd for virus scanning.
-Clamav-milter and clamd duet is a powerful solution for systems where high
-performance is required. Please check clamdoc for more detail.
+quikav-milter written by QuikAV developer Nigel Horne. This is a mail scanner
+for Sendmail/milter written entirely in C, which uses quikd for virus scanning.
+Quikav-milter and quikd duet is a powerful solution for systems where high
+performance is required. Please check quikdoc for more detail.
 
 
-    Many people get confused with ClamAV database status because of
+    Many people get confused with QuikAV database status because of
     the OpenAntiVirus update information at:
 	    http://openantivirus.org/latest.php
-    (last update at 17 October, 2002). The ClamAV virus database contains
+    (last update at 17 October, 2002). The QuikAV virus database contains
     the OAV database (with some signatures fixed or removed) but we
     develop it independently of the OAV project. Our database is updated
     frequently (on average 4-5 times a week). You can help (or join) us -
     will find some basic but useful instructions at
-	    http://clamav.elektrapro.com/doc/signatures.pdf
+	    http://quikav.elektrapro.com/doc/signatures.pdf
 
 
-News from ClamAV world:
+News from QuikAV world:
 
--) New email address for virus submitting: virus@clamav.elektrapro.com
+-) New email address for virus submitting: virus@quikav.elektrapro.com
    You don't need to encrypt a virus sample, but if your system doesn't allow
    you to send infected files just put it into an encrypted zip archive
    (password: virus)
@@ -2115,20 +2115,20 @@ News from ClamAV world:
    Special thanks to Nicholas Chua, Diego D'Ambra, Hrvoje Habjanic, Nigel Kukard
    and Chris van Meerendonk for a big number of samples submitted.
 
--) New mailing list: virusdb@clamav.elektrapro.com
-   After each update an email with subject "[clamav-virusdb] Update" and a list
-   of viruses added is sent to it. You can set up a procmail rule for freshclam
+-) New mailing list: virusdb@quikav.elektrapro.com
+   After each update an email with subject "[quikav-virusdb] Update" and a list
+   of viruses added is sent to it. You can set up a procmail rule for freshquik
    to react on such a mails (and update the database just after an update).
 
 -) New official mirrors:
-    + clamav.ozforces.com: database mirror updated manually (thanks to
+    + quikav.ozforces.com: database mirror updated manually (thanks to
       Andrew <andrew@ozforces.com>)
-    + clamav.essentkabel.com: full (automatic) mirror of clamav.elektrapro.com
+    + quikav.essentkabel.com: full (automatic) mirror of quikav.elektrapro.com
       (thanks to Chris van Meerendonk <cvm@castel.nl>)
-    + clamav.linux-sxs.org: database mirror - rsync from clamav.ozforces.com
+    + quikav.linux-sxs.org: database mirror - rsync from quikav.ozforces.com
       (thanks to Douglas J Hunley <doug@hunley.homeip.net>)
 
-    Freshclam will automatically use them when the main server is not
+    Freshquik will automatically use them when the main server is not
     accessible.
 
 -) Official port in FreeBSD available ! (maintained by Masahiro Teramoto
@@ -2138,13 +2138,13 @@ News from ClamAV world:
 	http://www.activeintra.net/openbsd/article.php?id=5
    (maintained by Flinn Mueller <flinn@activeintra.net>)
 
--) there are many new programs that use ClamAV, eg. mod_clamav (Apache
-   virus scanning filter), clamdmail or Sagator. You will find more
-   info in clamdoc.
+-) there are many new programs that use QuikAV, eg. mod_quikav (Apache
+   virus scanning filter), quikdmail or Sagator. You will find more
+   info in quikdoc.
 
 Changes:
 
--) libclamav:
+-) libquikav:
     + fixed buffer overflow in unrarlib (patch by Robbert Kouprie
       <robbert@exx.nl>)
 
@@ -2164,14 +2164,14 @@ Changes:
     + fixed strcasecmp() compile problem in zziplib on Free/NetBSD and others
 
 
--) clamd:
+-) quikd:
     + fixed descriptor leak in directory scanner - it was causing random
-      clamd crashes and locks, especially on highly loaded servers. Reported
+      quikd crashes and locks, especially on highly loaded servers. Reported
       by Kristof Petr <Kristof.P@fce.vutbr.cz>.
 
     + fixed crash with archive scanning on BSD (increased thread stack size)
       (Nigel Horne)
-    + fixed CONTSCAN command (used by clamdscan) - it had archive support
+    + fixed CONTSCAN command (used by quikdscan) - it had archive support
       disabled (hardcoded)
     + fixed SelfCheck option (there was a logic bug, and the option was
       disabled) it now checks a databases time stamps and reloads them
@@ -2181,7 +2181,7 @@ Changes:
     + new STREAM command (scanning data on socket) and directives:
       StreamSaveToDisk (save stream to disk to allow scanning within archives),
       StreamMaxLength. This option allows scanning data on socket (might be
-      sent from another host), currently only clamav-milter uses this.
+      sent from another host), currently only quikav-milter uses this.
 
     + new ScanMail directive for scanning into mbox/Maildir files
     + new directive: ArchiveLimitMemoryUsage (limit memory usage with bzip2)
@@ -2193,13 +2193,13 @@ Changes:
       in config file (Magnus Ekdahl <magnus@debian.org>)
 
 
--) clamscan:
+-) quikscan:
     + fixed --remove option (didn't work when the file was scanned with an
       internal unpacker) (patch by Damien Curtain <damien@pagefault.org>)
     + --move option for moving infected files into a specified directory
       (by Damien Curtain <damien@pagefault.org>)
     + --mbox enables a direct support for mbox files
-      (ex. clamscan --mbox /var/spool/mail)
+      (ex. quikscan --mbox /var/spool/mail)
     + fixed --log (-l) option
     + fixed -i option (patch by Magnus Ekdahl <magnus@debian.org>)
     + enabled default archive limits (max-files = 500, max-size = 10M,
@@ -2208,12 +2208,12 @@ Changes:
     + use unzoo instead of non-free zoo (patch by Magnus Ekdahl)
     + removed thread support
 
-freshclam:
+freshquik:
     + mirror support (implemented by Damien Curtain <damien@pagefault.org>)
     + --proxy-user: proxy authorization support (implemented by Gernot Tenchio
       <g.tenchio@telco-tech.de>)
     + new options --on-error-execute, --on-update-execute
-      (ex. freshclam -d -c 6 --on-error-execute "sendsms 23332243 Can't
+      (ex. freshquik -d -c 6 --on-error-execute "sendsms 23332243 Can't
       update virus database"). Idea by Douglas J Hunley <doug@hunley.homeip.net>
 
 configure:
@@ -2225,7 +2225,7 @@ configure:
 
 -) documentation:
     + included how-to in Portugese by Alexandre de Jesus Marcolino
-    + clamdoc.pdf and system manual updates
+    + quikdoc.pdf and system manual updates
 
 Many thanks to Luca 'NERvOus' Gibelli from ElektraPro for his support,
 to Ken McKittrick from USA DataNet for a fully accessible FreeBSD box and
@@ -2240,9 +2240,9 @@ June 21, 2003
 ----
 Many major changes this time...
 
--) libclamav:
+-) libquikav:
     + fixed segfault with some strange zip archives (there is a bug in zziplib,
-      libclamav contains a work around for it) (the problem was reported by
+      libquikav contains a work around for it) (the problem was reported by
       Oliver Paukstadt <pstadt@stud.fh-heilbronn.de>)
     + engine improvements (better support for a detection of new viruses,
       limited memory usage (consumes ~ 5 Mb now))
@@ -2251,44 +2251,44 @@ Many major changes this time...
       without specifying the type of content, fixed (theoretical) memory leak,
       support for multipart/report messages, fixed bug causing some formats to
       fail to scan) (Nigel)
--) clamd:
+-) quikd:
     + new commands: CONTSCAN (it doesn't stop scanning even when virus is
       found), VERSION
     + disable logging of a unnecessary time stamps with LogTime when
       LogVerbose isn't used (patch by Ed Phillips <ed@UDel.Edu>)
--) freshclam:
+-) freshquik:
     + "Cache-Control: no-cache" enabled by default
     + Cygwin support fix
--) clamdscan:
+-) quikdscan:
     + initial version
 -) all tools:
     + removed huge printf() in help() (there was a buffer overflow problem with
       --help option under Windows and SCO Unix (reported by Wojciech Noworyta
       <wnow@konarski.edu.pl> and Nigel respectively)
 -) configure:
-    + allow configuration of the clamav user and group with --with-user and
+    + allow configuration of the quikav user and group with --with-user and
       --with-group (patch by Patrick Bihan-Faou <patrick@mindstep.com>)
     + --enable-id-check - it uses the check procedure from Jason Englander
       <jason@englanders.cc>, currently it will fail on systems with getent
-      which doesn't detect clamav group.
+      which doesn't detect quikav group.
     + do not overwrite the existing config file
 
 
 There are initial packages for Windows available at:
-    http://clamav.elektrapro.com/binary
+    http://quikav.elektrapro.com/binary
 
 --tk
 
 
 0.53
 ----
-This release has removed the limit for a file name length in clamscan. Some
+This release has removed the limit for a file name length in quikscan. Some
 viruses (eg. W32/Yaha.E) are using very long file names, and they were
 ignored in mbox mode. Users of AMaViS-ng and other wrappers were not
 vulnerable to this problem, because that programs don't use original
 attachement file names.
 
--) clamscan:
+-) quikscan:
     + removed limit for a file name length (thanks to Odhiambo Washington
       <wash@wananchi.com> for the test files and extensive mbox testing)
     + mbox: adapted to the new changes, enabled thread support (Nigel),
@@ -2300,25 +2300,25 @@ attachement file names.
 This version contains a portability fixes - it should compile on OpenBSD,
 MacOSX and NetBSD (support for them was broken in 0.51). 
 
--) clamd: various fixes:
+-) quikd: various fixes:
 	+ drop supplementary groups (suggested by Enrico Scholz
 	  <enrico.scholz@informatik.tu-chemnitz.de>) (this has been implemented
-	  in freshclam, too)
+	  in freshquik, too)
 	+ work-around for the segmentation fault at QUIT under FreeBSD
 	+ check timeouts when waiting for threads in RELOAD mode
 	+ SelfCheck - internal integrity check (by default every 1 hour)
 	+ fixed problem with directory scanning on non typical file systems
 	  (bug reported by Jason Englander <jason@englanders.cc>)
-	+ clamd is a system command (clamd.1 -> clamd.8, /usr/local/bin ->
+	+ quikd is a system command (quikd.1 -> quikd.8, /usr/local/bin ->
 	  /usr/local/sbin) (Magnus Ekdahl)
--) clamscan:
+-) quikscan:
 	+ mbox code updates (Nigel Horne) - it fixes some problems on *BSD
 	  systems (see mailing lists archives for the details)
 	+ enable core dumping (Nigel Horne) [ with --enable-debug ]
--) freshclam:
-	+ applied http-proxy patch from http://bugs.debian.org/clamav (by
+-) freshquik:
+	+ applied http-proxy patch from http://bugs.debian.org/quikav (by
 	  Martin Lesser <admin-debian@bettercom.de>)
-	+ when configured with --disable-cache, freshclam forces 'no-cache'
+	+ when configured with --disable-cache, freshquik forces 'no-cache'
 	  option in proxy servers (patch by Ant La Porte <ant@dvere.net>)
 
 -) HPUX (10.20/11.0 tested) support (thanks to Joe Oaks <joe.oaks@hp.com>)
@@ -2326,7 +2326,7 @@ MacOSX and NetBSD (support for them was broken in 0.51).
 -) support/mboxscan: new version with SpamAssassin support (Nigel Horne)
 -) re-included TrashScan 0.08 (by Trashware <trashware@gmx.de>) - the security
    issue has been fixed.
--) included "Installing qmail-scanner, Clam Antivirus and SpamAssassin under
+-) included "Installing qmail-scanner, Quik Antivirus and SpamAssassin under
    FreeBSD" how-to by Paul Hoadley and Eric Parsonage
 
 
@@ -2335,17 +2335,17 @@ MacOSX and NetBSD (support for them was broken in 0.51).
 
 OAV database is up to date ! There was a problem with signature parsing,
 because some hex strings were upper case. Anyway, I still recommend you
-freshclam for a database updating.
+freshquik for a database updating.
 
 -) support for the genuine OAV database
 -) limited memory usage (at the cost of speed, increase CL_MIN_LENGTH in
-   libclamav/clamav.h to make it faster, it's safe to set it on 3-4 for
+   libquikav/quikav.h to make it faster, it's safe to set it on 3-4 for
    the OAV database)
 -) fixed compile problem on TurboLinux 6.5 (probably others, too), the bug
    was reported by Henk Kuipers <henk@opensourcesolutions.nl>.
--) clamd: fixed THREXIT (thanks to Piotr Gackiewicz <gacek@intertele.pl>)
--) clamd: fixed serious bug with thread argument type
--) clamscan: mbox: don't scan empty attachments (Nigel Horne)
+-) quikd: fixed THREXIT (thanks to Piotr Gackiewicz <gacek@intertele.pl>)
+-) quikd: fixed serious bug with thread argument type
+-) quikscan: mbox: don't scan empty attachments (Nigel Horne)
 -) configure: --with-db1, --with-db2 (suggested by Magnus Ekdahl)
 
 
@@ -2353,75 +2353,75 @@ freshclam for a database updating.
 ----
 
 Here it is...
-Clam AntiVirus 0.50 contains an anti-virus library - libclamav, a fully
-multi-threaded daemon clamd(1) and a quite long list of changes. The
+Quik AntiVirus 0.50 contains an anti-virus library - libquikav, a fully
+multi-threaded daemon quikd(1) and a quite long list of changes. The
 documentation was rewritten and you _should_ review it. By courtesy of
 NERvOus <nervous@nervous.it> and ElektraPro, there are three mailing lists
-available - you can subscribe via www at http://clamav.elektrapro.com/ml.
+available - you can subscribe via www at http://quikav.elektrapro.com/ml.
 Please check the manual for more information.
 
 
 New software:
 
--) libclamav with RAR, Zip and Gzip support built-in. The library is thread
+-) libquikav with RAR, Zip and Gzip support built-in. The library is thread
    safe and should be very secure, also. It uses UniquE RAR File
    Library by Christian Scheurer and Johannes Winkelmann (RAR 2.0 support only)
    and zziplib library by Guido Draheim and Tomi Ollila. Both of them are
-   included and slightly modified in the clamav sources. You need the zlib
+   included and slightly modified in the quikav sources. You need the zlib
    library for the Zip/Gzip support, though. The API is described with
-   examples in the clamdoc.
+   examples in the quikdoc.
 
--) clamd: a modern anti-virus daemon. It uses configuration file clamav.conf
-   described in the clamav.conf(5) manual. The program was written with
+-) quikd: a modern anti-virus daemon. It uses configuration file quikav.conf
+   described in the quikav.conf(5) manual. The program was written with
    security as a goal. 
 
--) clamuko: on-access scanning under Linux. It utilizes Dazuko kernel module
-   (GPL, http://dazuko.org) and is clamd-based.
+-) quikuko: on-access scanning under Linux. It utilizes Dazuko kernel module
+   (GPL, http://dazuko.org) and is quikd-based.
 
 New features / improvements:
 
 -) enhanced scanner engine (better detection of some complex polymorphic
    viruses)
 
--) clamscan: Nigel Horne <njh@bandsman.co.uk> has added the ability to scan
+-) quikscan: Nigel Horne <njh@bandsman.co.uk> has added the ability to scan
    mail attachments in a filter. For example:
 
-   $ clamscan -i --mbox - < /var/spool/mail/john
+   $ quikscan -i --mbox - < /var/spool/mail/john
    /tmp/aa6b9fc06bc477ae/setup.exe: Worm/Klez.H FOUND
 
-   Nigel is the author of the whole mbox code in clamscan. Currently it only
+   Nigel is the author of the whole mbox code in quikscan. Currently it only
    works in a filter mode, but there are plans to move the code into the
-   libclamav and allow clamd using it. Please check support/mboxscan, also.
+   libquikav and allow quikd using it. Please check support/mboxscan, also.
 
--) clamscan: support for including and excluding multiple patterns with
+-) quikscan: support for including and excluding multiple patterns with
    --include and --exclude (patch by Alejandro Dubrovsky
    <s328940@student.uq.edu.au>).
-   Example: clamscan --include .exe --include .obj --include .scr /mnt/windows
+   Example: quikscan --include .exe --include .obj --include .scr /mnt/windows
 
--) clamscan: don't scan /proc files (Linux, st_dev comparing). No more
+-) quikscan: don't scan /proc files (Linux, st_dev comparing). No more
    /proc/kcore related mails :))
 
--) clamscan: use libclamav's archive support by default (it's enabled by default
+-) quikscan: use libquikav's archive support by default (it's enabled by default
    and may be disabled with --disable-archive) and switch to the external
-   unpackers (if specified) in the case of libclamav archive code error.
+   unpackers (if specified) in the case of libquikav archive code error.
 
--) freshclam: proxy support (via $http_proxy variable and --http-proxy).
+-) freshquik: proxy support (via $http_proxy variable and --http-proxy).
    I started implementing proxy support some time ago, but never finished.
    Nigel Horne did the great job and has finished the proxy support !
 
--) freshclam: --daemon-notify. freshclam will send the RELOAD command to the
+-) freshquik: --daemon-notify. freshquik will send the RELOAD command to the
    daemon after database update (supports both tcp and local sockets, it reads
-   clamav.conf to determine the socket type).
+   quikav.conf to determine the socket type).
 
--) freshclam: support for viruses.db2
+-) freshquik: support for viruses.db2
 
 Bug fixes:
 
--) freshclam: log 'Database updated' message (thanks to Jeffrey Moskot
+-) freshquik: log 'Database updated' message (thanks to Jeffrey Moskot
     <jef@math.miami.edu> for the bug report). It now prints a number
     of signatures in a database, also.
 
--) clamscan: fixed compile problem on Solaris 8 and some other systems -
+-) quikscan: fixed compile problem on Solaris 8 and some other systems -
    #include <signal.h> lack in others.c (thanks Mike Loewen
    <mloewen@sturgeon.cac.psu.edu> for the bug report)
 
@@ -2429,28 +2429,28 @@ Documentation:
 
 -) included Japanese documentation by Masaki Ogawa <proc@mac.com>
 
--) updated Spanish "Sendmail + Amavis + ClamAv - Como" by Erick I. Lopez
+-) updated Spanish "Sendmail + Amavis + QuikAv - Como" by Erick I. Lopez
    Carreon <elopezc@technitrade.com>
 
--) rewritten clamdoc, included clamdoc-html, removed PostScript version (.ps)
+-) rewritten quikdoc, included quikdoc-html, removed PostScript version (.ps)
 
--) Clam-Mutant ;) logo update by Michal Hajduczenia <michalis@mat.uni.torun.pl>
+-) Quik-Mutant ;) logo update by Michal Hajduczenia <michalis@mat.uni.torun.pl>
 
--) new man pages: clamd(1), clamav.conf(5); others updated
+-) new man pages: quikd(1), quikav.conf(5); others updated
 
 
 !!!
     Please don't use the oav-update script with this version. It doesn't
 update viruses.db2 and supports OpenAntiVirus.org site only (the last
 update of the OAV database was 1 July !). Nicholas Chua <nicholas@ncmbox.net>
-has generated over 200 new signatures, ClamAV's database is also frequently
+has generated over 200 new signatures, QuikAV's database is also frequently
 updated (expecially when new wild virus/worm appears, eg. W32/BugBear.A).
 
     This software is still in developement (new software == new bugs), however
-clamscan should be very stable. You shouldn't use clamd/clamuko (well, clamd is
-stable, clamuko isn't) on production systems, yet. Please wait for 0.51 at
-least ;). ClamAV 0.50 was tested on Linux and Solaris and should work fine.
-There is a problem with clamd on FreeBSD (tested on my FreeBSD 5.0-CURRENT) -
+quikscan should be very stable. You shouldn't use quikd/quikuko (well, quikd is
+stable, quikuko isn't) on production systems, yet. Please wait for 0.51 at
+least ;). QuikAV 0.50 was tested on Linux and Solaris and should work fine.
+There is a problem with quikd on FreeBSD (tested on my FreeBSD 5.0-CURRENT) -
 the daemon crashes with Zip/Gzip files (disabling ScanArchive should help).
 
 Enjoy !
@@ -2465,23 +2465,23 @@ October 5, 2002
 -) fixed threads deadlock in a critical error situation (bug found by David
    Sanchez <dsanchez@veloxia.com>)
 -) fixed sigtool bug (negative seeking)
--) fixed potential clamscan segfault in the case of memory allocation error
+-) fixed potential quikscan segfault in the case of memory allocation error
 -) unpacker execution error is no longer treated as critical - a few programs
-   (eg. Qmail-Scanner, TrashScan) have clamscan command hardcoded with all
+   (eg. Qmail-Scanner, TrashScan) have quikscan command hardcoded with all
    archive options turned on. Now, if unpacker can't be executed, raw file is
    scanned and scan process is continued.
 -) reverted to pthread.h detection
 -) TrashScan 0.07 (Trashware <trashware@gmx.net>)
 -) --exclude (regular expressions are not supported !)
-   [ex: clamscan --exclude="/proc/kcore" /], but please use it with care.
+   [ex: quikscan --exclude="/proc/kcore" /], but please use it with care.
 -) included html documentation
 
 IMPORTANT NOTE:
 ~~~~~~~~~~~~~~~
 You will probably have a problem with a default Qmail-Scanner (1.13 or newer)
 installation. You need to increase qmail-smtpd softlimit or disable it. You
-can force clamscan to use only half of the memory which it uses by default, too.
-Please change the following line in the clamscan/matcher.h file:
+can force quikscan to use only half of the memory which it uses by default, too.
+Please change the following line in the quikscan/matcher.h file:
     #define MIN_LENGTH 5
 to:
     #define MIN_LENGTH 3
@@ -2491,7 +2491,7 @@ softlimit to 8 MB. I want to thank Doug Monroe <doug@planetconnect.com> for
 his contribution in the problem analysis.
 ---
 
-New ClamAV version is in a heavy development. It has currently built-in
+New QuikAV version is in a heavy development. It has currently built-in
 support for RAR, Zip, Gzip and tar. The daemon will support only built-in
 compression/archive support. Snapshot will be available for a few days.
 
@@ -2500,12 +2500,12 @@ compression/archive support. Snapshot will be available for a few days.
 
 -) fixed compile problem on FreeBSD (thanks to Wieslaw Glod <wkg@x2.pl> and
    Ken McKittrick <klmac@usadatanet.com>)
--) clamscan reads all .db files from data directory, so you can put your
+-) quikscan reads all .db files from data directory, so you can put your
    own databases there and they won't be overwrited by the updaters. viruses.db
    is still the main database file (if --database isn't used).
 -) --deb (debian binary packages scanning) by Magnus Ekdahl <magnus@debian.org>
 -) --remove option, but be careful with it !
--) new clam logo ;) (GPL) by Michal Hajduczenia <michalis@mat.uni.torun.pl>.
+-) new quik logo ;) (GPL) by Michal Hajduczenia <michalis@mat.uni.torun.pl>.
 -) TrashScan 0.06 (by Trashware <trashware@gmx.net>) - a script for scanning
    mail with procmail. I recommend it. (support/trashscan)
 -) documentation updates
@@ -2523,7 +2523,7 @@ This release fixes bug with scanning archives in unaccessible directories with
 *superuser* priviledges (after dropping priviledges scanner wasn't able to
 access the archive, although the same archive was accessible), thanks
 for Sergei Pronin <sp@finndesign.fi> for the problem description. Now all
-archives unaccessible directly by the clamav user are copied (with a respect to
+archives unaccessible directly by the quikav user are copied (with a respect to
 --max-space) to the temporary directory. All old filesystem tricks were removed.
 
 Other fixes / improvements:
@@ -2532,9 +2532,9 @@ Other fixes / improvements:
 -) improved -i (--infected) option
 -) removed --strange-unzip option
 -) removed eicar test files and logos from the documentation due to the GPL
-   (thanks for Magnus Ekdahl <magnus@debian.org>), ClamAV-Test-Signature is
+   (thanks for Magnus Ekdahl <magnus@debian.org>), QuikAV-Test-Signature is
    used instead
--) removed Qmail-Scanner patch, ClamAV is supported by Q-S 1.13 (thanks guys!)
+-) removed Qmail-Scanner patch, QuikAV is supported by Q-S 1.13 (thanks guys!)
 -) code cleanups
 
 
@@ -2543,35 +2543,35 @@ Other fixes / improvements:
 
 It fixes following problems:
 
--) database downloading in freshclam/0.20
+-) database downloading in freshquik/0.20
 -) malformed amavis-perl patch from 0.20
--) clamscan problems with some unzip versions, please try --strange-unzip
+-) quikscan problems with some unzip versions, please try --strange-unzip
    option
 
-ClamAV 0.21 source package contains initial support for NetBSD
+QuikAV 0.21 source package contains initial support for NetBSD
 (thanks to Marc Baudoin <babafou@babafou.eu.org>, Jean-Edouard BABIN
 <Jeb@jeb.com.fr>), better support for Mac OS X (Masaki Ogawa <proc@mac.com>),
-and clamdoc documentation corrected by Dennis Leeuw <dleeuw@made-it.com>.
+and quikdoc documentation corrected by Dennis Leeuw <dleeuw@made-it.com>.
 
 
 0.20 Release
 ------------
 
 The most important change in this release is a new, linear pattern matching
-algorithm. You will find more informations about it in clamscan/matcher.c -
-in the sources and in clamdoc. Summary (since 0.15):
+algorithm. You will find more informations about it in quikscan/matcher.c -
+in the sources and in quikdoc. Summary (since 0.15):
 
 New features:
 
 -) fast pattern matching algorithm
--) sigtool utility, check `man sigtool` and clamdoc
+-) sigtool utility, check `man sigtool` and quikdoc
 -) Linux: threads autodetection on various architectures
           (Magnus Ekdahl <magnus@debian.org>)
--) -i, --infected: clamscan prints only infected files
+-) -i, --infected: quikscan prints only infected files
 -) 'Data scanned' in summary, size in megabytes with 16 Kb precision
 -) configure: --with-dbdir sets the database location
 -) support/sigmake shell script by Dennis Leeuw <leeuw@stone-it.com>
--) Spanish "Sendmail+Amavis+ClamAv installation how-to" by
+-) Spanish "Sendmail+Amavis+QuikAv installation how-to" by
    Erick I. Lopez Carreon <elopezc@technitrade.com>
 
 Updates:
@@ -2579,25 +2579,25 @@ Updates:
 -) "Debian GNU/Linux Mail Server v. 0.2.0" by Dennis Leeuw <leeuw@stone-it.com>
 -) qmail-scanner patch from Kazuhiko <kazuhiko@fdiary.net>
 -) general documentation cleanups / updates
--) freshclam / Internet database location
+-) freshquik / Internet database location
 
 Fixes:
 
 -) threads autodetection on not-x86 Linux systems
 -) gcc 3.x support (David Ford <david+cert@blue-labs.org>)
 -) data type fix on Mac OS X (Peter N Lewis <peter@stairways.com.au>)
--) removed -w, --whole-file, now clamscan scans whole files by default
+-) removed -w, --whole-file, now quikscan scans whole files by default
    -w is still supported by internal getopt(), because it is used in
    various patches
 -) removed --one-virus, still supported by getopt(); removed 'Found viruses'
-   from summary, clamscan stops file scanning after first virus
+   from summary, quikscan stops file scanning after first virus
 -) fixed old problem with scanning stdin
 -) removed amavisd-patch - strange problems have been reported
 
 OpenAntiVirus Update is a great tool written by Matthew A. Grant
-<grantma@anathoth.gen.nz> and it will be the primary updater for ClamAV
-in the near future. In contrast to freshclam it has proxy support and many
-specific features. Please check clamdoc for more informations and how to
+<grantma@anathoth.gen.nz> and it will be the primary updater for QuikAV
+in the near future. In contrast to freshquik it has proxy support and many
+specific features. Please check quikdoc for more informations and how to
 obtain it.
 
 
@@ -2605,7 +2605,7 @@ obtain it.
 ----------
 
 This version contains minor bugfixes only, such as:
-    -) multiple fixes in freshclam (it has problems, when one of the
+    -) multiple fixes in freshquik (it has problems, when one of the
        hosts wasn't accessible), there were logic flaws in the code
     -) fixed problem with password protected archives (unpackers were waiting
        for password)
@@ -2615,15 +2615,15 @@ New features:
     -) added support for amavisd, qmail-scanner (see ./support)
 
 There were no major bugs and I was very busy, that's why new version is
-released just today. In the next 2 months, clamav development will be much
+released just today. In the next 2 months, quikav development will be much
 faster. Here are some of my plans:
 
     ~ 0.20 : New pattern-matching algorithm
-    ~ 0.30 : clamlib; clamscan and the daemon based on it
+    ~ 0.30 : quiklib; quikscan and the daemon based on it
 
 There is a new homepage:
 
-		http://clamav.elektrapro.com
+		http://quikav.elektrapro.com
 
 Thanks to ElektraPro.com for sponsoring this site (it's very fast).
 Thanks to NERvOus <nervous@nervous.it>.
@@ -2635,7 +2635,7 @@ Resource usage limits in 0.14
 -----------------------------
 
 Two new features: --max-files, --max-space have been implemented. If you have
-enabled one of this options, clamscan monitors resource usage (number of
+enabled one of this options, quikscan monitors resource usage (number of
 created files and used space) and stops extractor when it has exceeded
 the limit. You should use these options to protect your machine against
 Denial of Service attacks. In the near future --max-levels (limit for

@@ -1,17 +1,17 @@
 [Unit]
-Description=Clam AntiVirus userspace daemon
-Documentation=man:clamd(8) man:clamd.conf(5) http://www.clamav.net/lang/en/doc/
-Requires=clamav-daemon.socket
+Description=Quik AntiVirus userspace daemon
+Documentation=man:quikd(8) man:quikd.conf(5) http://www.quikav.net/lang/en/doc/
+Requires=quikav-daemon.socket
 # Check for database existence
 ConditionPathExistsGlob=/usr/local/share/quikav/main.{c[vl]d,inc}
 ConditionPathExistsGlob=/usr/local/share/quikav/daily.{c[vl]d,inc}
 
 [Service]
-ExecStart=/usr/local/sbin/clamd --foreground=true
+ExecStart=/usr/local/sbin/quikd --foreground=true
 # Reload the database
 ExecReload=/bin/kill -USR2 $MAINPID
 StandardOutput=syslog
 
 [Install]
 WantedBy=multi-user.target
-Also=clamav-daemon.socket
+Also=quikav-daemon.socket

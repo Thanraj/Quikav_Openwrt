@@ -1,4 +1,4 @@
-Modified files from the YARA project exist in libclamav. These have file
+Modified files from the YARA project exist in libquikav. These have file
 names with "yara_" prefixing the original yara file names. The YARA project
 uses the license below:
 
