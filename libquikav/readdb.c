@@ -2196,7 +2196,7 @@ static int cli_loadinfo(FILE *fs, struct cl_engine *engine, unsigned int options
     }
 	cl_update_hash(ctx, buffer, strlen(buffer));
 	cli_chomp(buffer);
-	if(!strncmp("QuikAV-VDB:", buffer, 11)) {
+	if(!strncmp("ClamAV-VDB:", buffer, 11)) {
 	    if(engine->dbinfo) { /* shouldn't be initialized at this point */
 		cli_errmsg("cli_loadinfo: engine->dbinfo already initialized\n");
 		ret = CL_EMALFDB;

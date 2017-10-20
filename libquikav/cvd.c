@@ -399,7 +399,7 @@ struct cl_cvd *cl_cvdparse(const char *head)
 	char *pt;
 
 
-    if(strncmp(head, "QuikAV-VDB:", 11)) {
+    if(strncmp(head, "ClamAV-VDB:", 11)) {
 	cli_errmsg("cli_cvdparse: Not a CVD file\n");
 	return NULL;
     }
