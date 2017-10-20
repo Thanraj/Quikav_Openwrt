@@ -1,0 +1,6 @@
+LIBRARY libquikunrar_iface
+EXPORTS libquikunrar_iface_LTX_unrar_open
+EXPORTS libquikunrar_iface_LTX_unrar_extract_next_prepare
+EXPORTS libquikunrar_iface_LTX_unrar_extract_next
+EXPORTS libquikunrar_iface_LTX_unrar_close
+

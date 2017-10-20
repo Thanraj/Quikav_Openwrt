@@ -1,0 +1,9 @@
+QUIKAV_PRIVATE {
+	global:
+		libquikunrar_iface_LTX_unrar_open;
+		libquikunrar_iface_LTX_unrar_extract_next;
+		libquikunrar_iface_LTX_unrar_extract_next_prepare;
+		libquikunrar_iface_LTX_unrar_close;
+	local:
+		*;
+};

@@ -1,0 +1,121 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Quikconf</TITLE>
+<META NAME="description" CONTENT="Quikconf">
+<META NAME="keywords" CONTENT="quikdoc">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="quikdoc.css">
+
+<LINK REL="next" HREF="node38.html">
+<LINK REL="previous" HREF="node36.html">
+<LINK REL="up" HREF="node29.html">
+<LINK REL="next" HREF="node38.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html694"
+  HREF="node38.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html690"
+  HREF="node29.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html684"
+  HREF="node36.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html692"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html695"
+  HREF="node38.html">Output format</A>
+<B> Up:</B> <A NAME="tex2html691"
+  HREF="node29.html">Usage</A>
+<B> Previous:</B> <A NAME="tex2html685"
+  HREF="node36.html">Freshquik</A>
+ &nbsp; <B>  <A NAME="tex2html693"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00068000000000000000"></A><A NAME="sec:quikconf"></A>
+<BR>
+Quikconf
+</H2>
+    <code>quikconf</code> is the Quik Anti-Virus configuration utility.  It is used
+    for displaying values of configurations options in QuikAV, which
+    will show the contents of quikd.conf (or tell you if it is not
+    properly configured), the contents of freshquik.conf, and display
+    information about software settings, database, platform, and build
+    information. Here is a sample quikconf output:
+<SMALL CLASS="FOOTNOTESIZE">    </SMALL><PRE>
+$ quikconf
+
+Checking configuration files in /etc/quikav
+
+Config file: quikd.conf
+-----------------------
+ERROR: Please edit the example config file /etc/quikav/quikd.conf
+
+Config file: freshquik.conf
+---------------------------
+ERROR: Please edit the example config file /etc/quikav/freshquik.conf
+
+quikav-milter.conf not found
+
+Software settings
+-----------------
+Version: 0.98.2
+Optional features supported: MEMPOOL IPv6 AUTOIT_EA06 BZIP2 RAR JIT
+
+Database information
+--------------------
+Database directory: /xquik/gcc/release/share/quikav
+WARNING: freshquik.conf and quikd.conf point to different database directories
+print_dbs: Can't open directory /xquik/gcc/release/share/quikav
+
+Platform information
+--------------------
+uname: Linux 3.5.0-44-generic #67~precise1-Ubuntu SMP Wed Nov 13 16:20:03 UTC 2013 i686
+OS: linux-gnu, ARCH: i386, CPU: i686
+Full OS version: Ubuntu 12.04.3 LTS
+zlib version: 1.2.3.4 (1.2.3.4), compile flags: 55
+Triple: i386-pc-linux-gnu
+CPU: i686, Little-endian
+platform id: 0x0a114d4d0404060401040604
+
+Build information
+-----------------
+GNU C: 4.6.4 (4.6.4)
+GNU C++: 4.6.4 (4.6.4)
+CPPFLAGS:
+CFLAGS: -g -O0 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE
+CXXFLAGS:
+LDFLAGS:
+Configure: '--prefix=/xquik/gcc/release/' '--disable-quikav' '--enable-debug' 'CFLAGS=-g -O0'
+sizeof(void*) = 4
+Engine flevel: 77, dconf: 77
+</PRE>
+    For more detailed help, type 'man quikconf' or 'quikconf -help'.
+
+<P>
+<BR><HR>
+<ADDRESS>
+Cisco 2016-04-21
+</ADDRESS>
+</BODY>
+</HTML>
