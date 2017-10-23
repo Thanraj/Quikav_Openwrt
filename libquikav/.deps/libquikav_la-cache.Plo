@@ -75,7 +75,7 @@ libquikav_la-cache.lo: cache.c /usr/include/stdc-predef.h \
  /usr/include/x86_64-linux-gnu/sys/stat.h \
  /usr/include/x86_64-linux-gnu/bits/stat.h cache.h others.h matcher.h \
  filetypes.h fmap.h dconf.h /usr/include/zlib.h /usr/include/zconf.h \
- cvd.h ../libquikunrar_iface/unrar_iface.h regex/regex.h bytecode.h \
+ qvd.h ../libquikunrar_iface/unrar_iface.h regex/regex.h bytecode.h \
  quikbc.h bytecode_detect.h bytecode_api.h events.h crtmgr.h bignum.h \
  bignum_fast.h /usr/include/ctype.h yara_quik.h ../shared/queue.h \
  yara_hash.h /usr/include/x86_64-linux-gnu/sys/param.h \
@@ -349,7 +349,7 @@ dconf.h:
 
 /usr/include/zconf.h:
 
-cvd.h:
+qvd.h:
 
 ../libquikunrar_iface/unrar_iface.h:
 

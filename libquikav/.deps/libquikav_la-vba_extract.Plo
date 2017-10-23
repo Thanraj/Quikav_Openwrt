@@ -79,7 +79,7 @@ libquikav_la-vba_extract.lo: vba_extract.c /usr/include/stdc-predef.h \
  /usr/lib/gcc/x86_64-linux-gnu/5/include/stdint.h /usr/include/stdint.h \
  /usr/include/x86_64-linux-gnu/bits/wchar.h fmap.h /usr/include/pthread.h \
  /usr/include/sched.h /usr/include/x86_64-linux-gnu/bits/sched.h \
- /usr/include/x86_64-linux-gnu/bits/setjmp.h dconf.h cvd.h mpool.h \
+ /usr/include/x86_64-linux-gnu/bits/setjmp.h dconf.h qvd.h mpool.h \
  ../libquikunrar_iface/unrar_iface.h regex/regex.h bytecode.h quikbc.h \
  bytecode_detect.h bytecode_api.h events.h crtmgr.h bignum.h \
  bignum_fast.h yara_quik.h ../shared/queue.h yara_hash.h \
@@ -361,7 +361,7 @@ fmap.h:
 
 dconf.h:
 
-cvd.h:
+qvd.h:
 
 mpool.h:
 

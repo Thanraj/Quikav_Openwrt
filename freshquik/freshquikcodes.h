@@ -29,7 +29,7 @@
 #define FCE_DIRECTORY     50
 #define FCE_CONNECTION    52
 #define FCE_EMPTYFILE     53
-#define FCE_BADCVD        54
+#define FCE_BADQVD        54
 #define FCE_FILE          55
 /* TESTFAIL is also 55, consider moving to new value */
 #define FCE_TESTFAIL      55

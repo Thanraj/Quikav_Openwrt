@@ -88,7 +88,7 @@ libquikav_la-stats.lo: stats.c /usr/include/stdc-predef.h \
  /usr/lib/gcc/x86_64-linux-gnu/5/include/stdint.h /usr/include/stdint.h \
  /usr/include/x86_64-linux-gnu/bits/wchar.h ../libquikav/fmap.h \
  ../libquikav/others.h ../libquikav/dconf.h /usr/include/zlib.h \
- /usr/include/zconf.h ../libquikav/cvd.h ../libquikav/mpool.h \
+ /usr/include/zconf.h ../libquikav/qvd.h ../libquikav/mpool.h \
  ../libquikunrar_iface/unrar_iface.h ../libquikav/regex/regex.h \
  ../libquikav/bytecode.h ../libquikav/quikbc.h \
  ../libquikav/bytecode_detect.h ../libquikav/bytecode_api.h \
@@ -382,7 +382,7 @@ libquikav_la-stats.lo: stats.c /usr/include/stdc-predef.h \
 
 /usr/include/zconf.h:
 
-../libquikav/cvd.h:
+../libquikav/qvd.h:
 
 ../libquikav/mpool.h:
 

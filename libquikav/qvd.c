@@ -40,7 +40,7 @@
 #include "others.h"
 #include "dsig.h"
 #include "str.h"
-#include "cvd.h"
+#include "qvd.h"
 #include "readdb.h"
 #include "default.h"
 
@@ -526,14 +526,14 @@ static int cli_cvdverify(FILE *fs, struct cl_cvd *cvdpt, unsigned int skipsig)
     fseek(fs, 0, SEEK_SET);
     if(fread(head, 1, 512, fs) != 512) {
 	cli_errmsg("cli_cvdverify: Can't read CVD header\n");
-	return CL_ECVD;
+	return CL_EQVD;
     }
 
     head[512] = 0;
     for(i = 511; i > 0 && (head[i] == ' ' || head[i] == 10); head[i] = 0, i--);
 
     if((cvd = cl_cvdparse(head)) == NULL)
-	return CL_ECVD;
+	return CL_EQVD;
 
     if(cvdpt)
 	memcpy(cvdpt, cvd, sizeof(struct cl_cvd));

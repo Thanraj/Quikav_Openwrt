@@ -94,7 +94,7 @@ bcrun.o: bcrun.c /usr/include/stdc-predef.h ../quikav-config.h \
  /usr/include/x86_64-linux-gnu/bits/in.h /usr/include/rpc/netdb.h \
  /usr/include/x86_64-linux-gnu/bits/siginfo.h \
  /usr/include/x86_64-linux-gnu/bits/netdb.h ../shared/optparser.h \
- ../libquikav/dconf.h ../libquikav/cvd.h ../libquikav/others.h \
+ ../libquikav/dconf.h ../libquikav/qvd.h ../libquikav/others.h \
  ../libquikav/matcher.h ../libquikav/filetypes.h ../libquikav/others.h \
  /usr/include/pthread.h /usr/include/sched.h \
  /usr/include/x86_64-linux-gnu/bits/sched.h \
@@ -425,7 +425,7 @@ bcrun.o: bcrun.c /usr/include/stdc-predef.h ../quikav-config.h \
 
 ../libquikav/dconf.h:
 
-../libquikav/cvd.h:
+../libquikav/qvd.h:
 
 ../libquikav/others.h:
 

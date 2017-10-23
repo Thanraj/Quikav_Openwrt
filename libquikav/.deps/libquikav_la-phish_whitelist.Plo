@@ -75,7 +75,7 @@ libquikav_la-phish_whitelist.lo: phish_whitelist.c \
  /usr/include/x86_64-linux-gnu/bits/wchar.h fmap.h /usr/include/pthread.h \
  /usr/include/sched.h /usr/include/x86_64-linux-gnu/bits/sched.h \
  /usr/include/x86_64-linux-gnu/bits/setjmp.h dconf.h /usr/include/zlib.h \
- /usr/include/zconf.h cvd.h mpool.h ../libquikunrar_iface/unrar_iface.h \
+ /usr/include/zconf.h qvd.h mpool.h ../libquikunrar_iface/unrar_iface.h \
  regex/regex.h bytecode.h quikbc.h bytecode_detect.h bytecode_api.h \
  events.h crtmgr.h bignum.h bignum_fast.h yara_quik.h ../shared/queue.h \
  yara_hash.h /usr/include/x86_64-linux-gnu/sys/param.h \
@@ -347,7 +347,7 @@ dconf.h:
 
 /usr/include/zconf.h:
 
-cvd.h:
+qvd.h:
 
 mpool.h:
 

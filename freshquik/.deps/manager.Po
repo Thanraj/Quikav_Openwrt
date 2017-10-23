@@ -115,7 +115,7 @@ manager.o: manager.c /usr/include/stdc-predef.h ../quikav-config.h \
  ../libquikav/fmap.h ../libquikav/others.h /usr/include/pthread.h \
  /usr/include/sched.h /usr/include/x86_64-linux-gnu/bits/sched.h \
  /usr/include/x86_64-linux-gnu/bits/setjmp.h ../libquikav/dconf.h \
- ../libquikav/cvd.h ../libquikav/mpool.h \
+ ../libquikav/qvd.h ../libquikav/mpool.h \
  ../libquikunrar_iface/unrar_iface.h ../libquikav/regex/regex.h \
  ../libquikav/bytecode.h ../libquikav/quikbc.h \
  ../libquikav/bytecode_detect.h ../libquikav/bytecode_api.h \
@@ -125,7 +125,7 @@ manager.o: manager.c /usr/include/stdc-predef.h ../quikav-config.h \
  ../libquikav/bcfeatures.h ../libquikav/matcher-ac.h \
  ../libquikav/matcher-bm.h ../libquikav/matcher-hash.h \
  ../libquikav/matcher-pcre.h ../libquikav/regex_pcre.h ../libquikav/str.h \
- ../libquikav/cvd.h ../libquikav/regex_list.h ../libquikav/phishcheck.h \
+ ../libquikav/qvd.h ../libquikav/regex_list.h ../libquikav/phishcheck.h \
  ../libquikav/htmlnorm.h ../libquikav/readdb.h ../libquikav/str.h \
  ../libquikav/filtering.h
 
@@ -503,7 +503,7 @@ mirman.h:
 
 ../libquikav/dconf.h:
 
-../libquikav/cvd.h:
+../libquikav/qvd.h:
 
 ../libquikav/mpool.h:
 
@@ -551,7 +551,7 @@ mirman.h:
 
 ../libquikav/str.h:
 
-../libquikav/cvd.h:
+../libquikav/qvd.h:
 
 ../libquikav/regex_list.h:
 

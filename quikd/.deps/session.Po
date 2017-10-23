@@ -88,7 +88,7 @@ session.o: session.c /usr/include/stdc-predef.h ../quikav-config.h \
  /usr/include/x86_64-linux-gnu/bits/wchar.h ../libquikav/others.h \
  ../libquikav/matcher.h ../libquikav/quikav.h ../libquikav/filetypes.h \
  ../libquikav/fmap.h ../libquikav/others.h ../libquikav/dconf.h \
- /usr/include/zlib.h /usr/include/zconf.h ../libquikav/cvd.h \
+ /usr/include/zlib.h /usr/include/zconf.h ../libquikav/qvd.h \
  ../libquikav/mpool.h ../libquikunrar_iface/unrar_iface.h \
  ../libquikav/regex/regex.h ../libquikav/bytecode.h ../libquikav/quikbc.h \
  ../libquikav/bytecode_detect.h ../libquikav/bytecode_api.h \
@@ -400,7 +400,7 @@ session.o: session.c /usr/include/stdc-predef.h ../quikav-config.h \
 
 /usr/include/zconf.h:
 
-../libquikav/cvd.h:
+../libquikav/qvd.h:
 
 ../libquikav/mpool.h:
 

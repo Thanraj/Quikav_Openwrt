@@ -87,7 +87,7 @@ libquikav_la-readdb.lo: readdb.c /usr/include/stdc-predef.h \
  /usr/include/openssl/tls1.h /usr/include/openssl/dtls1.h \
  /usr/include/openssl/pqueue.h /usr/include/x86_64-linux-gnu/sys/time.h \
  /usr/include/openssl/ssl23.h /usr/include/openssl/srtp.h \
- /usr/include/openssl/err.h cvd.h /usr/include/strings.h matcher-ac.h \
+ /usr/include/openssl/err.h qvd.h /usr/include/strings.h matcher-ac.h \
  filetypes.h cltypes.h /usr/include/inttypes.h fmap.h hashtab.h mpool.h \
  matcher.h others.h /usr/include/pthread.h /usr/include/sched.h \
  /usr/include/x86_64-linux-gnu/bits/sched.h \
@@ -375,7 +375,7 @@ quikav.h:
 
 /usr/include/openssl/err.h:
 
-cvd.h:
+qvd.h:
 
 /usr/include/strings.h:
 

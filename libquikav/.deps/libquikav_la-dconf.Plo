@@ -73,7 +73,7 @@ libquikav_la-dconf.lo: dconf.c /usr/include/stdc-predef.h \
  /usr/include/x86_64-linux-gnu/bits/stat.h cltypes.h \
  /usr/include/inttypes.h /usr/lib/gcc/x86_64-linux-gnu/5/include/stdint.h \
  /usr/include/stdint.h /usr/include/x86_64-linux-gnu/bits/wchar.h dconf.h \
- cvd.h mpool.h readdb.h matcher.h filetypes.h fmap.h others.h \
+ qvd.h mpool.h readdb.h matcher.h filetypes.h fmap.h others.h \
  /usr/include/pthread.h /usr/include/sched.h \
  /usr/include/x86_64-linux-gnu/bits/sched.h \
  /usr/include/x86_64-linux-gnu/bits/setjmp.h \
@@ -332,7 +332,7 @@ cltypes.h:
 
 dconf.h:
 
-cvd.h:
+qvd.h:
 
 mpool.h:
 

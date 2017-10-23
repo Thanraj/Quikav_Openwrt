@@ -241,7 +241,7 @@ libquikavcxx_la-bytecode2llvm.lo: bytecode2llvm.cpp \
  /usr/include/x86_64-linux-gnu/bits/environments.h \
  /usr/include/x86_64-linux-gnu/bits/confname.h /usr/include/getopt.h \
  /usr/include/x86_64-linux-gnu/bits/unistd.h ../quikav.h ../cltypes.h \
- ../cvd.h ../mpool.h ../quikav.h ../quikbc.h ../bytecode.h ../quikbc.h \
+ ../qvd.h ../mpool.h ../quikav.h ../quikbc.h ../bytecode.h ../quikbc.h \
  ../fmap.h ../bytecode_detect.h ../bytecode_priv.h ../bytecode.h \
  ../type_desc.h ../execs.h ../hashtab.h ../bcfeatures.h \
  ../bytecode_hooks.h ../events.h ../type_desc.h
@@ -968,7 +968,7 @@ llvm/include/llvm/Config/config.h:
 
 ../cltypes.h:
 
-../cvd.h:
+../qvd.h:
 
 ../mpool.h:
 

@@ -76,7 +76,7 @@ libquikav_nocxx_la-bytecode_nojit.lo: bytecode_nojit.c \
  execs.h hashtab.h mpool.h bcfeatures.h bytecode_hooks.h events.h \
  others.h matcher.h filetypes.h /usr/include/pthread.h \
  /usr/include/sched.h /usr/include/x86_64-linux-gnu/bits/sched.h \
- /usr/include/x86_64-linux-gnu/bits/setjmp.h dconf.h cvd.h \
+ /usr/include/x86_64-linux-gnu/bits/setjmp.h dconf.h qvd.h \
  ../libquikunrar_iface/unrar_iface.h regex/regex.h bytecode_api.h \
  crtmgr.h bignum.h bignum_fast.h /usr/include/ctype.h yara_quik.h \
  ../shared/queue.h yara_hash.h /usr/include/x86_64-linux-gnu/sys/param.h \
@@ -362,7 +362,7 @@ filetypes.h:
 
 dconf.h:
 
-cvd.h:
+qvd.h:
 
 ../libquikunrar_iface/unrar_iface.h:
 

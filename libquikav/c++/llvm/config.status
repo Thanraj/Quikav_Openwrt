@@ -448,7 +448,7 @@ Copyright (C) 2010 Free Software Foundation, Inc.
 This config.status script is free software; the Free Software Foundation
 gives unlimited permission to copy, distribute and modify it."
 
-ac_pwd='/Thanaraj/MyOpenWrt/quikav-0.99.2/libquikav/c++/llvm'
+ac_pwd='/Thanaraj/MyOpenWrt/quikav-0.0.1/libquikav/c++/llvm'
 srcdir='.'
 INSTALL='/usr/bin/install -c'
 test -n "$AWK" || AWK=awk
@@ -649,7 +649,7 @@ S["ENABLE_VISIBILITY_INLINES_HIDDEN"]="1"
 S["OCAML_LIBDIR"]=""
 S["ALL_BINDINGS"]="ocaml"
 S["BINDINGS_TO_BUILD"]=""
-S["LLVM_CONFIGTIME"]="Mon Oct 16 17:27:31 IST 2017"
+S["LLVM_CONFIGTIME"]="Mon Oct 23 12:13:49 IST 2017"
 S["LLVM_MANDIR"]="/usr/local/man"
 S["LLVM_INFODIR"]="/usr/local/info"
 S["LLVM_INCLUDEDIR"]="/usr/local/include"
@@ -1036,7 +1036,7 @@ D["LLVM_ETCDIR"]=" \"/usr/local/etc/llvm\""
 D["LLVM_INCLUDEDIR"]=" \"/usr/local/include\""
 D["LLVM_INFODIR"]=" \"/usr/local/info\""
 D["LLVM_MANDIR"]=" \"/usr/local/man\""
-D["LLVM_CONFIGTIME"]=" \"Mon Oct 16 17:27:31 IST 2017\""
+D["LLVM_CONFIGTIME"]=" \"Mon Oct 23 12:13:49 IST 2017\""
 D["LLVM_HOSTTRIPLE"]=" \"x86_64-unknown-linux-gnu\""
   for (key in D) D_is_set[key] = 1
   FS = ""

@@ -92,7 +92,7 @@ libquikav_la-mbox.lo: mbox.c /usr/include/stdc-predef.h \
  filetypes.h cltypes.h /usr/include/inttypes.h \
  /usr/lib/gcc/x86_64-linux-gnu/5/include/stdint.h /usr/include/stdint.h \
  /usr/include/x86_64-linux-gnu/bits/wchar.h fmap.h dconf.h \
- /usr/include/zlib.h /usr/include/zconf.h cvd.h mpool.h \
+ /usr/include/zlib.h /usr/include/zconf.h qvd.h mpool.h \
  ../libquikunrar_iface/unrar_iface.h regex/regex.h bytecode.h quikbc.h \
  bytecode_detect.h bytecode_api.h events.h crtmgr.h bignum.h \
  bignum_fast.h yara_quik.h ../shared/queue.h yara_hash.h execs.h \
@@ -412,7 +412,7 @@ dconf.h:
 
 /usr/include/zconf.h:
 
-cvd.h:
+qvd.h:
 
 mpool.h:
 

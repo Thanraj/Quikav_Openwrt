@@ -93,7 +93,7 @@ optparser.o: ../shared/optparser.c /usr/include/stdc-predef.h \
  ../libquikav/others.h /usr/include/pthread.h /usr/include/sched.h \
  /usr/include/x86_64-linux-gnu/bits/sched.h \
  /usr/include/x86_64-linux-gnu/bits/setjmp.h ../libquikav/dconf.h \
- /usr/include/zlib.h /usr/include/zconf.h ../libquikav/cvd.h \
+ /usr/include/zlib.h /usr/include/zconf.h ../libquikav/qvd.h \
  ../libquikav/mpool.h ../libquikunrar_iface/unrar_iface.h \
  ../libquikav/regex/regex.h ../libquikav/bytecode.h ../libquikav/quikbc.h \
  ../libquikav/bytecode_detect.h ../libquikav/bytecode_api.h \
@@ -418,7 +418,7 @@ optparser.o: ../shared/optparser.c /usr/include/stdc-predef.h \
 
 /usr/include/zconf.h:
 
-../libquikav/cvd.h:
+../libquikav/qvd.h:
 
 ../libquikav/mpool.h:
 

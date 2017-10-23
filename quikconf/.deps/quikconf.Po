@@ -98,7 +98,7 @@ quikconf.o: quikconf.c /usr/include/stdc-predef.h ../quikav-config.h \
  /usr/include/pthread.h /usr/include/sched.h \
  /usr/include/x86_64-linux-gnu/bits/sched.h \
  /usr/include/x86_64-linux-gnu/bits/setjmp.h ../libquikav/dconf.h \
- ../libquikav/cvd.h ../libquikav/mpool.h \
+ ../libquikav/qvd.h ../libquikav/mpool.h \
  ../libquikunrar_iface/unrar_iface.h ../libquikav/regex/regex.h \
  ../libquikav/bytecode.h ../libquikav/quikbc.h \
  ../libquikav/bytecode_detect.h ../libquikav/bytecode_api.h \
@@ -429,7 +429,7 @@ quikconf.o: quikconf.c /usr/include/stdc-predef.h ../quikav-config.h \
 
 ../libquikav/dconf.h:
 
-../libquikav/cvd.h:
+../libquikav/qvd.h:
 
 ../libquikav/mpool.h:
 

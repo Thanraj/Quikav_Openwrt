@@ -549,7 +549,7 @@ configure:8141: gcc -o conftest -g -O2 -Wl,-export-dynamic   conftest.c  >&5
 configure:8141: $? = 0
 configure:8157: result: yes
 configure:8166: checking for compiler -Wl,--version-script option
-configure:8212: gcc -o conftest -g -O2 -Wl,--version-script=/tmp/foo3vZAjS/export.map   conftest.c  >&5
+configure:8212: gcc -o conftest -g -O2 -Wl,--version-script=/tmp/foo7GwHgb/export.map   conftest.c  >&5
 configure:8212: $? = 0
 configure:8230: result: yes
 configure:8240: checking for an ANSI C-conforming const
@@ -596,8 +596,8 @@ configure:9422: checking whether libtool supports -dlopen/-dlpreopen
 configure:9434: result: yes
 configure:9451: checking for shl_load
 configure:9451: gcc -o conftest -g -O2   conftest.c  >&5
-/tmp/cc7PHRel.o: In function `main':
-/Thanaraj/MyOpenWrt/quikav-0.99.2/libquikav/c++/llvm/conftest.c:77: undefined reference to `shl_load'
+/tmp/ccVY18Yr.o: In function `main':
+/Thanaraj/MyOpenWrt/quikav-0.0.1/libquikav/c++/llvm/conftest.c:77: undefined reference to `shl_load'
 collect2: error: ld returned 1 exit status
 configure:9451: $? = 1
 configure: failed program was:
@@ -1658,8 +1658,8 @@ configure:10332: $? = 0
 configure:10341: result: yes
 configure:10433: checking for library containing dlopen
 configure:10464: gcc -o conftest -g -O2   conftest.c -lm  >&5
-/tmp/ccnJiQFV.o: In function `main':
-/Thanaraj/MyOpenWrt/quikav-0.99.2/libquikav/c++/llvm/conftest.c:81: undefined reference to `dlopen'
+/tmp/ccD7SMHS.o: In function `main':
+/Thanaraj/MyOpenWrt/quikav-0.0.1/libquikav/c++/llvm/conftest.c:81: undefined reference to `dlopen'
 collect2: error: ld returned 1 exit status
 configure:10464: $? = 1
 configure: failed program was:
@@ -3201,8 +3201,8 @@ configure:11623: checking for CrashReporterClient.h
 configure:11623: result: no
 configure:11634: checking __crashreporter_info__
 configure:11645: gcc -o conftest -g -O2   conftest.c -lpthread -ldl -lm  >&5
-/tmp/ccghVCNc.o: In function `main':
-/Thanaraj/MyOpenWrt/quikav-0.99.2/libquikav/c++/llvm/conftest.c:105: undefined reference to `__crashreporter_info__'
+/tmp/ccwMuKlp.o: In function `main':
+/Thanaraj/MyOpenWrt/quikav-0.0.1/libquikav/c++/llvm/conftest.c:105: undefined reference to `__crashreporter_info__'
 collect2: error: ld returned 1 exit status
 configure:11645: $? = 1
 configure: failed program was:
@@ -4050,8 +4050,8 @@ configure:11853: $? = 0
 configure:11853: result: yes
 configure:11865: checking for mktemp
 configure:11865: gcc -o conftest -g -O2   conftest.c -lpthread -ldl -lm  >&5
-/tmp/ccminVOF.o: In function `main':
-/Thanaraj/MyOpenWrt/quikav-0.99.2/libquikav/c++/llvm/conftest.c:160: warning: the use of `mktemp' is dangerous, better use `mkstemp' or `mkdtemp'
+/tmp/cctBJ7FV.o: In function `main':
+/Thanaraj/MyOpenWrt/quikav-0.0.1/libquikav/c++/llvm/conftest.c:160: warning: the use of `mktemp' is dangerous, better use `mkstemp' or `mkdtemp'
 configure:11865: $? = 0
 configure:11865: result: yes
 configure:11865: checking for posix_spawn
@@ -4085,8 +4085,8 @@ configure:11877: $? = 0
 configure:11877: result: yes
 configure:11877: checking for strerror_s
 configure:11877: gcc -o conftest -g -O2   conftest.c -lpthread -ldl -lm  >&5
-/tmp/ccapkZE4.o: In function `main':
-/Thanaraj/MyOpenWrt/quikav-0.99.2/libquikav/c++/llvm/conftest.c:168: undefined reference to `strerror_s'
+/tmp/ccEZTVed.o: In function `main':
+/Thanaraj/MyOpenWrt/quikav-0.0.1/libquikav/c++/llvm/conftest.c:168: undefined reference to `strerror_s'
 collect2: error: ld returned 1 exit status
 configure:11877: $? = 1
 configure: failed program was:
@@ -4280,8 +4280,8 @@ configure:11889: $? = 0
 configure:11889: result: yes
 configure:11889: checking for malloc_zone_statistics
 configure:11889: gcc -o conftest -g -O2   conftest.c -lpthread -ldl -lm  >&5
-/tmp/ccVayXma.o: In function `main':
-/Thanaraj/MyOpenWrt/quikav-0.99.2/libquikav/c++/llvm/conftest.c:172: undefined reference to `malloc_zone_statistics'
+/tmp/ccrAo2fr.o: In function `main':
+/Thanaraj/MyOpenWrt/quikav-0.0.1/libquikav/c++/llvm/conftest.c:172: undefined reference to `malloc_zone_statistics'
 collect2: error: ld returned 1 exit status
 configure:11889: $? = 1
 configure: failed program was:
@@ -4471,8 +4471,8 @@ configure:11901: $? = 0
 configure:11901: result: yes
 configure:11901: checking for sigsetjmp
 configure:11901: gcc -o conftest -g -O2   conftest.c -lpthread -ldl -lm  >&5
-/tmp/ccNWC1Pj.o: In function `main':
-/Thanaraj/MyOpenWrt/quikav-0.99.2/libquikav/c++/llvm/conftest.c:174: undefined reference to `sigsetjmp'
+/tmp/cc3KXx3D.o: In function `main':
+/Thanaraj/MyOpenWrt/quikav-0.0.1/libquikav/c++/llvm/conftest.c:174: undefined reference to `sigsetjmp'
 collect2: error: ld returned 1 exit status
 configure:11901: $? = 1
 configure: failed program was:
@@ -5431,7 +5431,7 @@ LLVMGCC_LANGS=''
 LLVMGXX='no'
 LLVMGXXCOMMAND='no'
 LLVM_BINDIR='/usr/local/bin'
-LLVM_CONFIGTIME='Mon Oct 16 17:27:31 IST 2017'
+LLVM_CONFIGTIME='Mon Oct 23 12:13:49 IST 2017'
 LLVM_COPYRIGHT='Copyright (c) 2003-2010 University of Illinois at Urbana-Champaign.'
 LLVM_CROSS_COMPILING='0'
 LLVM_DATADIR='/usr/local/share/llvm'
@@ -5703,7 +5703,7 @@ target_vendor='unknown'
 #define LLVM_INCLUDEDIR "/usr/local/include"
 #define LLVM_INFODIR "/usr/local/info"
 #define LLVM_MANDIR "/usr/local/man"
-#define LLVM_CONFIGTIME "Mon Oct 16 17:27:31 IST 2017"
+#define LLVM_CONFIGTIME "Mon Oct 23 12:13:49 IST 2017"
 #define LLVM_HOSTTRIPLE "x86_64-unknown-linux-gnu"
 
 configure: exit 0

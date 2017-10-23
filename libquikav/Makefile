@@ -1024,7 +1024,7 @@ libquikav_la_LDFLAGS =  -thread-safe  \
 include_HEADERS = quikav.h
 libquikav_la_SOURCES = matcher-ac.c matcher-ac.h matcher-bm.c \
 	matcher-bm.h matcher-hash.c matcher-hash.h matcher.c matcher.h \
-	others.c others.h readdb.c readdb.h cvd.c cvd.h dsig.c dsig.h \
+	others.c others.h readdb.c readdb.h qvd.c qvd.h dsig.c dsig.h \
 	scanners.c scanners.h textdet.c textdet.h filetypes.c \
 	filetypes.h filetypes_int.h rtf.c rtf.h blob.c blob.h mbox.c \
 	mbox.h message.c message.h table.c table.h text.c text.h \

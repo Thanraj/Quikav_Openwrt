@@ -230,7 +230,7 @@ download (const struct optstruct *opts, const char *cfgfile)
 #ifndef _WIN32
             alarm (0);
 #endif
-            if (ret == FCE_CONNECTION || ret == FCE_BADCVD
+            if (ret == FCE_CONNECTION || ret == FCE_BADQVD
                 || ret == FCE_FAILEDGET || ret == FCE_MIRRORNOTSYNC)
             {
                 if (try < maxattempts)

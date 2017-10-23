@@ -106,7 +106,7 @@ server-th.o: server-th.c /usr/include/stdc-predef.h ../quikav-config.h \
  ../libquikav/others.h ../libquikav/matcher.h ../libquikav/quikav.h \
  ../libquikav/filetypes.h ../libquikav/cltypes.h ../libquikav/fmap.h \
  ../libquikav/others.h ../libquikav/dconf.h /usr/include/zlib.h \
- /usr/include/zconf.h ../libquikav/cvd.h ../libquikav/mpool.h \
+ /usr/include/zconf.h ../libquikav/qvd.h ../libquikav/mpool.h \
  ../libquikunrar_iface/unrar_iface.h ../libquikav/regex/regex.h \
  ../libquikav/bytecode.h ../libquikav/quikbc.h \
  ../libquikav/bytecode_detect.h ../libquikav/bytecode_api.h \
@@ -463,7 +463,7 @@ shared.h:
 
 /usr/include/zconf.h:
 
-../libquikav/cvd.h:
+../libquikav/qvd.h:
 
 ../libquikav/mpool.h:
 

@@ -108,7 +108,7 @@ sigtool.o: sigtool.c /usr/include/stdc-predef.h ../quikav-config.h \
  /usr/include/pthread.h /usr/include/sched.h \
  /usr/include/x86_64-linux-gnu/bits/sched.h \
  /usr/include/x86_64-linux-gnu/bits/setjmp.h ../libquikav/dconf.h \
- ../libquikav/cvd.h ../libquikav/mpool.h \
+ ../libquikav/qvd.h ../libquikav/mpool.h \
  ../libquikunrar_iface/unrar_iface.h ../libquikav/regex/regex.h \
  ../libquikav/bytecode.h ../libquikav/quikbc.h \
  ../libquikav/bytecode_detect.h ../libquikav/bytecode_api.h \
@@ -125,7 +125,7 @@ sigtool.o: sigtool.c /usr/include/stdc-predef.h ../quikav-config.h \
  ../shared/misc.h /usr/include/netdb.h /usr/include/rpc/netdb.h \
  /usr/include/x86_64-linux-gnu/bits/netdb.h ../shared/optparser.h \
  ../shared/cdiff.h ../shared/tar.h ../libquikav/quikav.h \
- ../libquikav/matcher.h ../libquikav/cvd.h ../libquikav/str.h \
+ ../libquikav/matcher.h ../libquikav/qvd.h ../libquikav/str.h \
  ../libquikav/ole2_extract.h ../libquikav/uniq.h ../libquikav/htmlnorm.h \
  ../libquikav/textnorm.h ../libquikav/default.h ../libquikav/fmap.h \
  ../libquikav/readdb.h ../libquikav/str.h ../libquikav/pe.h
@@ -462,7 +462,7 @@ vba.h:
 
 ../libquikav/dconf.h:
 
-../libquikav/cvd.h:
+../libquikav/qvd.h:
 
 ../libquikav/mpool.h:
 
@@ -540,7 +540,7 @@ vba.h:
 
 ../libquikav/matcher.h:
 
-../libquikav/cvd.h:
+../libquikav/qvd.h:
 
 ../libquikav/str.h:
 
