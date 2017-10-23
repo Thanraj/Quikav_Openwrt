@@ -41,7 +41,7 @@ check_quikav_LDFLAGS = $(XML_LIBS)
 check_quikav_CFLAGS = $(AM_CFLAGS) $(XML_CPPFLAGS)
 check_quikd_SOURCES = check_quikd.c checks_common.h
 check_quikd_CPPFLAGS = -I$(top_srcdir) @CHECK_CPPFLAGS@ @JSON_CPPFLAGS@ @PCRE_CPPFLAGS@ -DSRCDIR=\"$(abs_srcdir)\" -DBUILDDIR=\"$(abs_builddir)\"
-check_quikd_LDADD = @CHECK_LIBS@ @CLAMD_LIBS@
+check_quikd_LDADD = @CHECK_LIBS@ @QUIKD_LIBS@
 else
 check_quikd_SOURCES = check_quikav_skip.c
 check_quikav_SOURCES = check_quikav_skip.c
@@ -83,7 +83,7 @@ $(LCOV_OUTPUT): .libs/check_quikav.gcda
 
 $(LCOV_HTML): $(LCOV_OUTPUT)
 	-$(RM) -r $@
-	LANG=C $(LCOV_GENHTML) --output-directory $@ --title "ClamAV Code Coverage" --show-details $<
+	LANG=C $(LCOV_GENHTML) --output-directory $@ --title "QuikAV Code Coverage" --show-details $<
 	@echo "Open `pwd`/$(LCOV_HTML)/index.html in a browser."
 
 clean-local: lcov-clean

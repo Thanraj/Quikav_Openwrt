@@ -1,4 +1,4 @@
-#
+
 #  Copyright (C) 2006 - 2007 Tomasz Kojm <tkojm@quikav.net>
 #
 #  This program is free software; you can redistribute it and/or modify

@@ -431,7 +431,7 @@ This theoretically may help improve twolf slightly (used in dimbox.c:142?).
 ===-------------------------------------------------------------------------===
 
 PR5945: This: 
-define i32 @clamp0g(i32 %a) {
+define i32 @quikp0g(i32 %a) {
 entry:
         %cmp = icmp slt i32 %a, 0
         %sel = select i1 %cmp, i32 0, i32 %a
@@ -440,7 +440,7 @@ entry:
 
 Is compile to this with the PowerPC (32-bit) backend:
 
-_clamp0g:
+_quikp0g:
         cmpwi cr0, r3, 0
         li r2, 0
         blt cr0, LBB1_2
@@ -452,7 +452,7 @@ LBB1_2:                                                     ; %entry
 
 This could be reduced to the much simpler:
 
-_clamp0g:
+_quikp0g:
         srawi r2, r3, 31
         andc r3, r3, r2
         blr

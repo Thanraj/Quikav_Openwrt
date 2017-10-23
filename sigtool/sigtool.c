@@ -64,7 +64,7 @@
 
 #include "libquikav/quikav.h"
 #include "libquikav/matcher.h"
-#include "libquikav/cvd.h"
+#include "libquikav/qvd.h"
 #include "libquikav/str.h"
 #include "libquikav/ole2_extract.h"
 #include "libquikav/htmlnorm.h"
@@ -126,7 +126,7 @@ static char *getdbname(const char *str, char *dst, int dstlen)
 {
 	int len = strlen(str);
 
-    if(cli_strbcasestr(str, ".cvd") || cli_strbcasestr(str, ".cld") || cli_strbcasestr(str, ".cud"))
+    if(cli_strbcasestr(str, ".qavd") || cli_strbcasestr(str, ".qld") || cli_strbcasestr(str, ".qvd"))
 	len -= 4;
 
     if(dst) {
@@ -639,7 +639,7 @@ static int script2cdiff(const char *script, const char *builder, const struct op
 	return -1;
     }
 
-    if(fprintf(cdiffh, "ClamAV-Diff:%u:%u:", ver, osize) < 0) {
+    if(fprintf(cdiffh, "QuikAV-Diff:%u:%u:", ver, osize) < 0) {
 	mprintf("!script2cdiff: Can't write to %s\n", cdiff);
 	fclose(cdiffh);
 	free(cdiff);
@@ -855,27 +855,27 @@ static int build(const struct optstruct *opts)
 
     /* try to read cvd header of current database */
     if(opts->filename) {
-	if(cli_strbcasestr(opts->filename[0], ".cvd") || cli_strbcasestr(opts->filename[0], ".cld") || cli_strbcasestr(opts->filename[0], ".cud")) {
+	if(cli_strbcasestr(opts->filename[0], ".qavd") || cli_strbcasestr(opts->filename[0], ".qld") || cli_strbcasestr(opts->filename[0], ".qvd")) {
 	    strncpy(olddb, opts->filename[0], sizeof(olddb));
 	    olddb[sizeof(olddb)-1]='\0';
 	} else {
-	    mprintf("!build: Not a CVD/CLD/CUD file\n");
+	    mprintf("!build: Not a QVD/CLD/CUD file\n");
 	    FREE_LS(dblist2);
 	    return -1;
 	}
 
     } else {
 	pt = freshdbdir();
-	snprintf(olddb, sizeof(olddb), "%s"PATHSEP"%s.cvd", localdbdir ? localdbdir : pt, dbname);
+	snprintf(olddb, sizeof(olddb), "%s"PATHSEP"%s.qavd", localdbdir ? localdbdir : pt, dbname);
 	if(access(olddb, R_OK))
-	    snprintf(olddb, sizeof(olddb), "%s"PATHSEP"%s.cld", localdbdir ? localdbdir : pt, dbname);
+	    snprintf(olddb, sizeof(olddb), "%s"PATHSEP"%s.qld", localdbdir ? localdbdir : pt, dbname);
 	if(access(olddb, R_OK))
-	    snprintf(olddb, sizeof(olddb), "%s"PATHSEP"%s.cud", localdbdir ? localdbdir : pt, dbname);
+	    snprintf(olddb, sizeof(olddb), "%s"PATHSEP"%s.qvd", localdbdir ? localdbdir : pt, dbname);
 	free(pt);
     }
 
     if(!(oldcvd = cl_cvdhead(olddb)) && !optget(opts, "unsigned")->enabled) {
-	mprintf("^build: CAN'T READ CVD HEADER OF CURRENT DATABASE %s (wait 3 s)\n", olddb);
+	mprintf("^build: CAN'T READ QVD HEADER OF CURRENT DATABASE %s (wait 3 s)\n", olddb);
 	sleep(3);
     }
 
@@ -898,7 +898,7 @@ static int build(const struct optstruct *opts)
     if(sigs > oldsigs)
 	mprintf("New sigs: %u\n", sigs - oldsigs);
 
-    strcpy(header, "ClamAV-VDB:");
+    strcpy(header, "QuikAV-VDB:");
 
     /* time */
     time(&timet);
@@ -1116,7 +1116,7 @@ static int build(const struct optstruct *opts)
     }
 
     if(cli_cvdunpack(olddb, pt) == -1) {
-	mprintf("!build: Can't unpack CVD file %s\n", olddb);
+	mprintf("!build: Can't unpack QVD file %s\n", olddb);
 	cli_rmdirs(pt);
 	free(pt);
 	unlink(newcvd);
@@ -1142,7 +1142,7 @@ static int build(const struct optstruct *opts)
     }
 
     if(cli_cvdunpack(newcvd, pt) == -1) {
-	mprintf("!build: Can't unpack CVD file %s\n", newcvd);
+	mprintf("!build: Can't unpack QVD file %s\n", newcvd);
 	cli_rmdirs(pt);
 	free(pt);
 	cli_rmdirs(olddb);
@@ -1190,11 +1190,11 @@ static int unpack(const struct optstruct *opts)
 
     if(optget(opts, "unpack-current")->enabled) {
 	dbdir = freshdbdir();
-	snprintf(name, sizeof(name), "%s"PATHSEP"%s.cvd", localdbdir ? localdbdir : dbdir, optget(opts, "unpack-current")->strarg);
+	snprintf(name, sizeof(name), "%s"PATHSEP"%s.qavd", localdbdir ? localdbdir : dbdir, optget(opts, "unpack-current")->strarg);
 	if(access(name, R_OK)) {
-	    snprintf(name, sizeof(name), "%s"PATHSEP"%s.cld", localdbdir ? localdbdir : dbdir, optget(opts, "unpack-current")->strarg);
+	    snprintf(name, sizeof(name), "%s"PATHSEP"%s.qld", localdbdir ? localdbdir : dbdir, optget(opts, "unpack-current")->strarg);
 	    if(access(name, R_OK)) {
-		mprintf("!unpack: Couldn't find %s CLD/CVD database in %s\n", optget(opts, "unpack-current")->strarg, localdbdir ? localdbdir : dbdir);
+		mprintf("!unpack: Couldn't find %s QLD/QVD database in %s\n", optget(opts, "unpack-current")->strarg, localdbdir ? localdbdir : dbdir);
 		free(dbdir);
 		return -1;
 	    }
@@ -1207,7 +1207,7 @@ static int unpack(const struct optstruct *opts)
     }
 
     if (cl_cvdverify(name) != CL_SUCCESS) {
-        mprintf("!unpack: %s is not a valid CVD\n", name);
+        mprintf("!unpack: %s is not a valid QVD\n", name);
         return -1;
     }
 
@@ -1228,7 +1228,7 @@ static int cvdinfo(const struct optstruct *opts)
 
     pt = optget(opts, "info")->strarg;
     if((cvd = cl_cvdhead(pt)) == NULL) {
-	mprintf("!cvdinfo: Can't read/parse CVD header of %s\n", pt);
+	mprintf("!cvdinfo: Can't read/parse QVD header of %s\n", pt);
 	return -1;
     }
     mprintf("File: %s\n", pt);
@@ -1251,7 +1251,7 @@ static int cvdinfo(const struct optstruct *opts)
 	mprintf("Digital signature: %s\n", cvd->dsig);
     }
     cl_cvdfree(cvd);
-    if(cli_strbcasestr(pt, ".cud"))
+    if(cli_strbcasestr(pt, ".qvd"))
 	mprintf("Verification: Unsigned container\n");
     else if((ret = cl_cvdverify(pt))) {
 	mprintf("!cvdinfo: Verification: %s\n", cl_strerror(ret));
@@ -1297,8 +1297,8 @@ static int listdir(const char *dirname, const regex_t *regex)
 	     cli_strbcasestr(dent->d_name, ".rmd") ||
 	     cli_strbcasestr(dent->d_name, ".cdb") ||
 	     cli_strbcasestr(dent->d_name, ".cbc") ||
-	     cli_strbcasestr(dent->d_name, ".cld") ||
-	     cli_strbcasestr(dent->d_name, ".cvd") ||  
+	     cli_strbcasestr(dent->d_name, ".qld") ||
+	     cli_strbcasestr(dent->d_name, ".qavd") ||  
 	     cli_strbcasestr(dent->d_name, ".crb"))) {
 
 		dbfile = (char *) malloc(strlen(dent->d_name) + strlen(dirname) + 2);
@@ -1352,7 +1352,7 @@ static int listdb(const char *filename, const regex_t *regex)
     }
     rewind(fh);
 
-    if(!strncmp(buffer, "ClamAV-VDB:", 11)) {
+    if(!strncmp(buffer, "QuikAV-VDB:", 11)) {
 	free(buffer);
 	fclose(fh);
 
@@ -1368,7 +1368,7 @@ static int listdb(const char *filename, const regex_t *regex)
 	}
 
 	if(cli_cvdunpack(filename, dir) == -1) {
-	    mprintf("!listdb: Can't unpack CVD file %s\n", filename);
+	    mprintf("!listdb: Can't unpack QVD file %s\n", filename);
 	    cli_rmdirs(dir);
 	    free(dir);
 	    return -1;
@@ -1421,7 +1421,7 @@ static int listdb(const char *filename, const regex_t *regex)
 	    start = buffer;
 	    *pt = 0;
 
-	    if((pt = strstr(start, " (Clam)")))
+	    if((pt = strstr(start, " (Quik)")))
 		*pt = 0;
 
 	    mprintf("%s\n", start);
@@ -1466,7 +1466,7 @@ static int listdb(const char *filename, const regex_t *regex)
 		return -1;
 	    }
 
-	    if((pt = strstr(start, " (Clam)")))
+	    if((pt = strstr(start, " (Quik)")))
 		*pt = 0;
 
 	    mprintf("%s\n", start);
@@ -1500,7 +1500,7 @@ static int listdb(const char *filename, const regex_t *regex)
 	    }
 	    *pt = 0;
 
-	    if((pt = strstr(buffer, " (Clam)")))
+	    if((pt = strstr(buffer, " (Quik)")))
 		*pt = 0;
 
 	    mprintf("%s\n", buffer);
@@ -1663,7 +1663,7 @@ static int comparesha(const char *diff)
 	return -1;
     }
 
-    if(!fgets(buff, sizeof(buff), fh) || strncmp(buff, "ClamAV-VDB", 10)) {
+    if(!fgets(buff, sizeof(buff), fh) || strncmp(buff, "QuikAV-VDB", 10)) {
 	mprintf("!verifydiff: Incorrect info file %s\n", info);
 	fclose(fh);
 	return -1;
@@ -2003,7 +2003,7 @@ static int verifydiff(const char *diff, const char *cvd, const char *incdir)
 
     if(cvd) {
 	if(cli_cvdunpack(cvd, tempdir) == -1) {
-	    mprintf("!verifydiff: Can't unpack CVD file %s\n", cvd);
+	    mprintf("!verifydiff: Can't unpack QVD file %s\n", cvd);
 	    cli_rmdirs(tempdir);
 	    free(tempdir);
 	    return -1;
@@ -3128,21 +3128,21 @@ static int makediff(const struct optstruct *opts)
     }
 
     if(!(cvd = cl_cvdhead(opts->filename[0]))) {
-	mprintf("!makediff: Can't read CVD header from %s\n", opts->filename[0]);
+	mprintf("!makediff: Can't read QVD header from %s\n", opts->filename[0]);
 	return -1;
     }
     newver = cvd->version;
     free(cvd);
 
     if(!(cvd = cl_cvdhead(optget(opts, "diff")->strarg))) {
-	mprintf("!makediff: Can't read CVD header from %s\n", optget(opts, "diff")->strarg);
+	mprintf("!makediff: Can't read QVD header from %s\n", optget(opts, "diff")->strarg);
 	return -1;
     }
     oldver = cvd->version;
     free(cvd);
 
     if(oldver + 1 != newver) {
-	mprintf("!makediff: The old CVD must be %u\n", newver - 1);
+	mprintf("!makediff: The old QVD must be %u\n", newver - 1);
 	return -1;
     }
 
@@ -3159,7 +3159,7 @@ static int makediff(const struct optstruct *opts)
     }
 
     if(cli_cvdunpack(optget(opts, "diff")->strarg, odir) == -1) {
-	mprintf("!makediff: Can't unpack CVD file %s\n", optget(opts, "diff")->strarg);
+	mprintf("!makediff: Can't unpack QVD file %s\n", optget(opts, "diff")->strarg);
 	cli_rmdirs(odir);
 	free(odir);
 	return -1;
@@ -3182,7 +3182,7 @@ static int makediff(const struct optstruct *opts)
     }
 
     if(cli_cvdunpack(opts->filename[0], ndir) == -1) {
-	mprintf("!makediff: Can't unpack CVD file %s\n", opts->filename[0]);
+	mprintf("!makediff: Can't unpack QVD file %s\n", opts->filename[0]);
 	cli_rmdirs(odir);
 	cli_rmdirs(ndir);
 	free(odir);

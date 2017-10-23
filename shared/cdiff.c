@@ -39,7 +39,7 @@
 
 #include "libquikav/str.h"
 #include "libquikav/others.h"
-#include "libquikav/cvd.h"
+#include "libquikav/qvd.h"
 #include "libquikav/default.h"
 
 #include "zlib.h"

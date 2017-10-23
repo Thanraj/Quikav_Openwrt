@@ -44,7 +44,7 @@
 #include "shared/output.h"
 
 #include "libquikav/quikav.h"
-#include "libquikav/cvd.h"
+#include "libquikav/qvd.h"
 #include "libquikav/others.h" /* for cli_rmdirs() */
 #include "libquikav/regex/regex.h"
 #include "libquikav/version.h"
@@ -83,14 +83,14 @@ char *freshdbdir(void)
 			fprintf(stderr, "Unable to allocate memory for db directory...\n");
 			return NULL;
 		    }
-		sprintf(daily, "%s"PATHSEP"daily.cvd", opt->strarg);
+		sprintf(daily, "%s"PATHSEP"daily.qavd", opt->strarg);
 		if(access(daily, R_OK))
-		    sprintf(daily, "%s"PATHSEP"daily.cld", opt->strarg);
+		    sprintf(daily, "%s"PATHSEP"daily.qld", opt->strarg);
 
 		if(!access(daily, R_OK) && (d1 = cl_cvdhead(daily))) {
-		    sprintf(daily, "%s"PATHSEP"daily.cvd", dbdir);
+		    sprintf(daily, "%s"PATHSEP"daily.qavd", dbdir);
 		    if(access(daily, R_OK))
-			sprintf(daily, "%s"PATHSEP"daily.cld", dbdir);
+			sprintf(daily, "%s"PATHSEP"daily.qld", dbdir);
 
 		    if(!access(daily, R_OK) && (d2 = cl_cvdhead(daily))) {
 			free(daily);
@@ -142,7 +142,7 @@ void print_version(const char *dbdir)
 	return;
     }
 
-    sprintf(path, "%s"PATHSEP"daily.cvd", pt);
+    sprintf(path, "%s"PATHSEP"daily.qavd", pt);
     if(!access(path, R_OK)) {
 	daily = cl_cvdhead(path);
 	if(daily) {
@@ -152,7 +152,7 @@ void print_version(const char *dbdir)
 	}
     }
 
-    sprintf(path, "%s"PATHSEP"daily.cld", pt);
+    sprintf(path, "%s"PATHSEP"daily.qld", pt);
     if(!access(path, R_OK)) {
 	daily = cl_cvdhead(path);
 	if(daily) {

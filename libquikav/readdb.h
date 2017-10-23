@@ -25,7 +25,7 @@
 #include "matcher.h"
 #include "str.h"
 #include "cltypes.h"
-#include "cvd.h"
+#include "qvd.h"
 
 #ifdef HAVE_YARA
 #define CLI_DBEXT(ext)				\
@@ -56,9 +56,9 @@
 	cli_strbcasestr(ext, ".cbc")   ||	\
 	cli_strbcasestr(ext, ".ftm")   ||	\
 	cli_strbcasestr(ext, ".cfg")   ||	\
-	cli_strbcasestr(ext, ".cvd")   ||	\
-	cli_strbcasestr(ext, ".cld")   ||	\
-	cli_strbcasestr(ext, ".cud")   ||	\
+	cli_strbcasestr(ext, ".qavd")   ||	\
+	cli_strbcasestr(ext, ".qld")   ||	\
+	cli_strbcasestr(ext, ".qvd")   ||	\
 	cli_strbcasestr(ext, ".cdb")   ||	\
 	cli_strbcasestr(ext, ".cat")   ||	\
 	cli_strbcasestr(ext, ".crb")   ||	\
@@ -97,9 +97,9 @@
 	cli_strbcasestr(ext, ".cbc")   ||	\
 	cli_strbcasestr(ext, ".ftm")   ||	\
 	cli_strbcasestr(ext, ".cfg")   ||	\
-	cli_strbcasestr(ext, ".cvd")   ||	\
-	cli_strbcasestr(ext, ".cld")   ||	\
-	cli_strbcasestr(ext, ".cud")   ||	\
+	cli_strbcasestr(ext, ".qavd")   ||	\
+	cli_strbcasestr(ext, ".qld")   ||	\
+	cli_strbcasestr(ext, ".qvd")   ||	\
 	cli_strbcasestr(ext, ".cdb")   ||	\
 	cli_strbcasestr(ext, ".cat")   ||	\
 	cli_strbcasestr(ext, ".crb")   ||	\

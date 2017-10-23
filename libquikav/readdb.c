@@ -41,7 +41,7 @@
 #include <errno.h>
 
 #include "quikav.h"
-#include "cvd.h"
+#include "qvd.h"
 #ifdef	HAVE_STRINGS_H
 #include <strings.h>
 #endif
@@ -1928,7 +1928,7 @@ static int cli_loadcbc(FILE *fs, struct cl_engine *engine, unsigned int *signo, 
     }
 
     rc = cli_bytecode_load(bc, fs, dbio, security_trust, options&CL_DB_BYTECODE_STATS);
-    /* read remainder of DB, needed because cvd.c checks that we read the entire
+    /* read remainder of DB, needed because qvd.c checks that we read the entire
      * file */
     while (cli_dbgets(buf, sizeof(buf), fs, dbio)) {}
 
@@ -2196,7 +2196,7 @@ static int cli_loadinfo(FILE *fs, struct cl_engine *engine, unsigned int options
     }
 	cl_update_hash(ctx, buffer, strlen(buffer));
 	cli_chomp(buffer);
-	if(!strncmp("ClamAV-VDB:", buffer, 11)) {
+	if(!strncmp("QuikAV-VDB:", buffer, 11)) {
 	    if(engine->dbinfo) { /* shouldn't be initialized at this point */
 		cli_errmsg("cli_loadinfo: engine->dbinfo already initialized\n");
 		ret = CL_EMALFDB;
@@ -4251,13 +4251,13 @@ int cli_load(const char *filename, struct cl_engine *engine, unsigned int *signo
     if(cli_strbcasestr(dbname, ".db")) {
 	ret = cli_loaddb(fs, engine, signo, options, dbio, dbname);
 
-    } else if(cli_strbcasestr(dbname, ".cvd")) {
+    } else if(cli_strbcasestr(dbname, ".qavd")) {
 	ret = cli_cvdload(fs, engine, signo, options, 0, filename, 0);
 
-    } else if(cli_strbcasestr(dbname, ".cld")) {
+    } else if(cli_strbcasestr(dbname, ".qld")) {
 	ret = cli_cvdload(fs, engine, signo, options, 1, filename, 0);
 
-    } else if(cli_strbcasestr(dbname, ".cud")) {
+    } else if(cli_strbcasestr(dbname, ".qvd")) {
 	ret = cli_cvdload(fs, engine, signo, options, 2, filename, 0);
 
     } else if (cli_strbcasestr(dbname, ".crb")) {
@@ -4446,9 +4446,9 @@ static int cli_loaddbdir(const char *dirname, struct cl_engine *engine, unsigned
     }
 
     if(ends_with_sep)
-        sprintf(dbfile, "%sdaily.cld", dirname);
+        sprintf(dbfile, "%sdaily.qld", dirname);
     else
-        sprintf(dbfile, "%s"PATHSEP"daily.cld", dirname);
+        sprintf(dbfile, "%s"PATHSEP"daily.qld", dirname);
     have_cld = !access(dbfile, R_OK);
     if(have_cld) {
 	daily_cld = cl_cvdhead(dbfile);
@@ -4460,9 +4460,9 @@ static int cli_loaddbdir(const char *dirname, struct cl_engine *engine, unsigned
 	}
     }
     if(ends_with_sep)
-        sprintf(dbfile, "%sdaily.cvd", dirname);
+        sprintf(dbfile, "%sdaily.qavd", dirname);
     else
-        sprintf(dbfile, "%s"PATHSEP"daily.cvd", dirname);
+        sprintf(dbfile, "%s"PATHSEP"daily.qavd", dirname);
     if(!access(dbfile, R_OK)) {
 	if(have_cld) {
 	    daily_cvd = cl_cvdhead(dbfile);
@@ -4475,17 +4475,17 @@ static int cli_loaddbdir(const char *dirname, struct cl_engine *engine, unsigned
 	    }
 	    if(daily_cld->version > daily_cvd->version) {
 		if(ends_with_sep)
-                    sprintf(dbfile, "%sdaily.cld", dirname);
+                    sprintf(dbfile, "%sdaily.qld", dirname);
 		else
-                    sprintf(dbfile, "%s"PATHSEP"daily.cld", dirname);
+                    sprintf(dbfile, "%s"PATHSEP"daily.qld", dirname);
 	    }
 	    cl_cvdfree(daily_cvd);
 	}
     } else {
 	if(ends_with_sep)
-	    sprintf(dbfile, "%sdaily.cld", dirname);
+	    sprintf(dbfile, "%sdaily.qld", dirname);
 	else
-	    sprintf(dbfile, "%s"PATHSEP"daily.cld", dirname);
+	    sprintf(dbfile, "%s"PATHSEP"daily.qld", dirname);
     }
     if(have_cld)
 	cl_cvdfree(daily_cld);
@@ -4530,8 +4530,8 @@ static int cli_loaddbdir(const char *dirname, struct cl_engine *engine, unsigned
 #endif
 	if(dent->d_ino)
 	{
-	    if(strcmp(dent->d_name, ".") && strcmp(dent->d_name, "..") && strcmp(dent->d_name, "daily.cvd") && strcmp(dent->d_name, "daily.cld") && strcmp(dent->d_name, "daily.cfg") && CLI_DBEXT(dent->d_name)) {
-		if((options & CL_DB_OFFICIAL_ONLY) && !strstr(dirname, "quikav-") && !cli_strbcasestr(dent->d_name, ".cld") && !cli_strbcasestr(dent->d_name, ".cvd")) {
+	    if(strcmp(dent->d_name, ".") && strcmp(dent->d_name, "..") && strcmp(dent->d_name, "daily.qavd") && strcmp(dent->d_name, "daily.qld") && strcmp(dent->d_name, "daily.cfg") && CLI_DBEXT(dent->d_name)) {
+		if((options & CL_DB_OFFICIAL_ONLY) && !strstr(dirname, "quikav-") && !cli_strbcasestr(dent->d_name, ".qld") && !cli_strbcasestr(dent->d_name, ".qavd")) {
 		    cli_dbgmsg("Skipping unofficial database %s\n", dent->d_name);
 		    continue;
 		}
@@ -5211,12 +5211,12 @@ static int countentries(const char *dbname, unsigned int *sigs)
 
 static int countsigs(const char *dbname, unsigned int options, unsigned int *sigs)
 {
-    if((cli_strbcasestr(dbname, ".cvd") || cli_strbcasestr(dbname, ".cld"))) {
+    if((cli_strbcasestr(dbname, ".qavd") || cli_strbcasestr(dbname, ".qld"))) {
 	if(options & CL_COUNTSIGS_OFFICIAL) {
 		struct cl_cvd *cvd = cl_cvdhead(dbname);
 	    if(!cvd) {
 		cli_errmsg("countsigs: Can't parse %s\n", dbname);
-		return CL_ECVD;
+		return CL_EQVD;
 	    }
 	    *sigs += cvd->sigs;
 	    cl_cvdfree(cvd);

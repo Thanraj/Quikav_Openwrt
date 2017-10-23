@@ -238,7 +238,7 @@ am__DEPENDENCIES_1 = libquikunrar_iface.la
 am__DEPENDENCIES_2 = c++/libquikavcxx.la
 am__libquikav_la_SOURCES_DIST = matcher-ac.c matcher-ac.h matcher-bm.c \
 	matcher-bm.h matcher-hash.c matcher-hash.h matcher.c matcher.h \
-	others.c others.h readdb.c readdb.h cvd.c cvd.h dsig.c dsig.h \
+	others.c others.h readdb.c readdb.h qvd.c qvd.h dsig.c dsig.h \
 	scanners.c scanners.h textdet.c textdet.h filetypes.c \
 	filetypes.h filetypes_int.h rtf.c rtf.h blob.c blob.h mbox.c \
 	mbox.h message.c message.h table.c table.h text.c text.h \
@@ -368,7 +368,7 @@ am__objects_1 = libquikav_la-yara_arena.lo \
 am_libquikav_la_OBJECTS = libquikav_la-matcher-ac.lo \
 	libquikav_la-matcher-bm.lo libquikav_la-matcher-hash.lo \
 	libquikav_la-matcher.lo libquikav_la-others.lo \
-	libquikav_la-readdb.lo libquikav_la-cvd.lo \
+	libquikav_la-readdb.lo libquikav_la-qvd.lo \
 	libquikav_la-dsig.lo libquikav_la-scanners.lo \
 	libquikav_la-textdet.lo libquikav_la-filetypes.lo \
 	libquikav_la-rtf.lo libquikav_la-blob.lo libquikav_la-mbox.lo \
@@ -1323,7 +1323,7 @@ include ./$(DEPDIR)/libquikav_la-cache.Plo
 include ./$(DEPDIR)/libquikav_la-chmunpack.Plo
 include ./$(DEPDIR)/libquikav_la-cpio.Plo
 include ./$(DEPDIR)/libquikav_la-crtmgr.Plo
-include ./$(DEPDIR)/libquikav_la-cvd.Plo
+include ./$(DEPDIR)/libquikav_la-qvd.Plo
 include ./$(DEPDIR)/libquikav_la-dconf.Plo
 include ./$(DEPDIR)/libquikav_la-disasm.Plo
 include ./$(DEPDIR)/libquikav_la-dlp.Plo
@@ -1586,12 +1586,12 @@ libquikav_la-readdb.lo: readdb.c
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
 #	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libquikav_la_CFLAGS) $(CFLAGS) -c -o libquikav_la-readdb.lo `test -f 'readdb.c' || echo '$(srcdir)/'`readdb.c
 
-libquikav_la-cvd.lo: cvd.c
-	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libquikav_la_CFLAGS) $(CFLAGS) -MT libquikav_la-cvd.lo -MD -MP -MF $(DEPDIR)/libquikav_la-cvd.Tpo -c -o libquikav_la-cvd.lo `test -f 'cvd.c' || echo '$(srcdir)/'`cvd.c
-	$(AM_V_at)$(am__mv) $(DEPDIR)/libquikav_la-cvd.Tpo $(DEPDIR)/libquikav_la-cvd.Plo
-#	$(AM_V_CC)source='cvd.c' object='libquikav_la-cvd.lo' libtool=yes \
+libquikav_la-qvd.lo: qvd.c
+	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libquikav_la_CFLAGS) $(CFLAGS) -MT libquikav_la-qvd.lo -MD -MP -MF $(DEPDIR)/libquikav_la-qvd.Tpo -c -o libquikav_la-qvd.lo `test -f 'qvd.c' || echo '$(srcdir)/'`qvd.c
+	$(AM_V_at)$(am__mv) $(DEPDIR)/libquikav_la-qvd.Tpo $(DEPDIR)/libquikav_la-qvd.Plo
+#	$(AM_V_CC)source='qvd.c' object='libquikav_la-qvd.lo' libtool=yes \
 #	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) \
-#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libquikav_la_CFLAGS) $(CFLAGS) -c -o libquikav_la-cvd.lo `test -f 'cvd.c' || echo '$(srcdir)/'`cvd.c
+#	$(AM_V_CC_no)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libquikav_la_CFLAGS) $(CFLAGS) -c -o libquikav_la-qvd.lo `test -f 'qvd.c' || echo '$(srcdir)/'`qvd.c
 
 libquikav_la-dsig.lo: dsig.c
 	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libquikav_la_CFLAGS) $(CFLAGS) -MT libquikav_la-dsig.lo -MD -MP -MF $(DEPDIR)/libquikav_la-dsig.Tpo -c -o libquikav_la-dsig.lo `test -f 'dsig.c' || echo '$(srcdir)/'`dsig.c

@@ -77,7 +77,7 @@ typedef enum {
     CL_ENULLARG,
     CL_EARG,
     CL_EMALFDB,
-    CL_ECVD,
+    CL_EQVD,
     CL_EVERIFY,
     CL_EUNPACK,
 
@@ -120,7 +120,7 @@ typedef enum {
 #define CL_DB_PHISHING	    0x2
 #define CL_DB_PHISHING_URLS 0x8
 #define CL_DB_PUA	    0x10
-#define CL_DB_CVDNOTMP	    0x20    /* obsolete */
+#define CL_DB_QVDNOTMP	    0x20    /* obsolete */
 #define CL_DB_OFFICIAL	    0x40    /* internal */
 #define CL_DB_PUA_MODE	    0x80
 #define CL_DB_PUA_INCLUDE   0x100

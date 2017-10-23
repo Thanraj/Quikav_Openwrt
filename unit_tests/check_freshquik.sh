@@ -1,2 +1,2 @@
 #!/bin/sh
-../freshclam/freshclam --config-file=$srcdir/test-freshclam.conf -V >/dev/null
+../freshquik/freshquik --config-file=$srcdir/test-freshquik.conf -V >/dev/null

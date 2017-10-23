@@ -337,7 +337,7 @@ static void print_dbs(const char *dir)
 		    return;
 		}
 		sprintf(dbfile, "%s"PATHSEP"%s", dir, dent->d_name);
-		if(cli_strbcasestr(dbfile, ".cvd") || cli_strbcasestr(dbfile, ".cld")) {
+		if(cli_strbcasestr(dbfile, ".qavd") || cli_strbcasestr(dbfile, ".qld")) {
 		    cvd = cl_cvdhead(dbfile);
 		    if(!cvd) {
 			printf("%s: Can't get information about the database\n", dbfile);

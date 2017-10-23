@@ -292,7 +292,7 @@ static const char *mnemonic[] = {
   "cwde",
   "cbw",
   "clc",
-  "cld",
+  "qld",
   "cli",
   "clts",
   "cmc",

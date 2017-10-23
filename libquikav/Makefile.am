@@ -169,8 +169,8 @@ libquikav_la_SOURCES = \
         others.h \
         readdb.c \
 	readdb.h \
-	cvd.c \
-	cvd.h \
+	qvd.c \
+	qvd.h \
 	dsig.c \
 	dsig.h \
 	scanners.c \

@@ -509,7 +509,7 @@ START_TEST (test_load_bytecode_jit)
     engine = cl_engine_new();
     fail_unless(!!engine, "failed to create engine\n");
 
-    runload("input/bytecode.cvd", engine, 5);
+    runload("input/bytecode.qavd", engine, 5);
 
     cl_engine_free(engine);
 }
@@ -523,7 +523,7 @@ START_TEST (test_load_bytecode_int)
     engine->dconf->bytecode = BYTECODE_INTERPRETER;
     fail_unless(!!engine, "failed to create engine\n");
 
-    runload("input/bytecode.cvd", engine, 5);
+    runload("input/bytecode.qavd", engine, 5);
 
     cl_engine_free(engine);
 }
@@ -543,7 +543,7 @@ static void* thread(void *arg)
     /* run all cl_load at once, to maximize chance of a crash
      * in case of a race condition */
     pthread_barrier_wait(&barrier);
-    runload("input/bytecode.cvd", engine, 5);
+    runload("input/bytecode.qavd", engine, 5);
     cl_engine_free(engine);
     return NULL;
 }

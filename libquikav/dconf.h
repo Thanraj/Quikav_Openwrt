@@ -27,7 +27,7 @@
 
 #include "quikav.h"
 #include "cltypes.h"
-#include "cvd.h"
+#include "qvd.h"
 
 #include "mpool.h"
 

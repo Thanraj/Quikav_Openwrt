@@ -221,8 +221,8 @@ const char *cl_strerror(int clerror)
 	    return "Invalid argument passed to function";
 	case CL_EMALFDB:
 	    return "Malformed database";
-	case CL_ECVD:
-	    return "Broken or not a CVD file";
+	case CL_EQVD:
+	    return "Broken or not a QVD file";
 	case CL_EVERIFY:
 	    return "Can't verify database integrity";
 	case CL_EUNPACK:

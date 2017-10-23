@@ -115,9 +115,9 @@ const struct quik_option __quik_options[] = {
     { NULL, "ascii-normalise", 0, CLOPT_TYPE_STRING, NULL, -1, NULL, 0, OPT_SIGTOOL, "", "" },
     { NULL, "utf16-decode", 0, CLOPT_TYPE_STRING, NULL, -1, NULL, 0, OPT_SIGTOOL, "", "" },
     { NULL, "build", 'b', CLOPT_TYPE_STRING, NULL, -1, NULL, 0, OPT_SIGTOOL, "", "" },
-    { NULL, "max-bad-sigs", 0, CLOPT_TYPE_NUMBER, MATCH_NUMBER, 3000, NULL, 0, OPT_SIGTOOL, "Maximum number of mismatched signatures when building a CVD. Zero disables this limit.", "3000" },
-    { NULL, "flevel", 0, CLOPT_TYPE_NUMBER, MATCH_NUMBER, CL_FLEVEL, NULL, 0, OPT_SIGTOOL, "Feature level to put in the CVD", "" },
-    { NULL, "cvd-version", 0, CLOPT_TYPE_NUMBER, MATCH_NUMBER, 0, NULL, 0, OPT_SIGTOOL, "Version number of the CVD to build", "" },
+    { NULL, "max-bad-sigs", 0, CLOPT_TYPE_NUMBER, MATCH_NUMBER, 3000, NULL, 0, OPT_SIGTOOL, "Maximum number of mismatched signatures when building a QVD. Zero disables this limit.", "3000" },
+    { NULL, "flevel", 0, CLOPT_TYPE_NUMBER, MATCH_NUMBER, CL_FLEVEL, NULL, 0, OPT_SIGTOOL, "Feature level to put in the QVD", "" },
+    { NULL, "qvd-version", 0, CLOPT_TYPE_NUMBER, MATCH_NUMBER, 0, NULL, 0, OPT_SIGTOOL, "Version number of the QVD to build", "" },
     { NULL, "unsigned", 0, CLOPT_TYPE_BOOL, MATCH_BOOL, 0, NULL, 0, OPT_SIGTOOL, "", "" },
     { NULL, "no-cdiff", 0, CLOPT_TYPE_BOOL, MATCH_BOOL, 0, NULL, 0, OPT_SIGTOOL, "", "" },
     { NULL, "server", 0, CLOPT_TYPE_STRING, NULL, -1, NULL, 0, OPT_SIGTOOL, "", "" },
@@ -290,8 +290,8 @@ const struct quik_option __quik_options[] = {
     /* Scan options */
     { "Bytecode", "bytecode", 0, CLOPT_TYPE_BOOL, MATCH_BOOL, 1, NULL, 0, OPT_QUIKD | OPT_QUIKSCAN, "With this option enabled QuikAV will load bytecode from the database. It is highly recommended you keep this option on, otherwise you'll miss detections for many new viruses.", "yes" },
 
-    { "BytecodeSecurity", NULL, 0, CLOPT_TYPE_STRING, "^(TrustSigned|Paranoid)$", -1, "TrustSigned", 0, OPT_QUIKD, 
-	"Set bytecode security level.\nPossible values:\n\tTrustSigned - trust bytecode loaded from signed .c[lv]d files,\n\t\t insert runtime safety checks for bytecode loaded from other sources\n\tParanoid - don't trust any bytecode, insert runtime checks for all\nRecommended: TrustSigned, because bytecode in .cvd files already has these checks.","TrustSigned"},
+    { "BytecodeSecurity", NULL, 0, CLOPT_TYPE_STRING, "^(TrustSigned|Paranoid)$", -1, "TrustSigned", 0, OPT_QUIKD,
+	"Set bytecode security level.\nPossible values:\n\tTrustSigned - trust bytecode loaded from signed .c[lv]d files,\n\t\t insert runtime safety checks for bytecode loaded from other sources\n\tParanoid - don't trust any bytecode, insert runtime checks for all\nRecommended: TrustSigned, because bytecode in .qavd files already has these checks.","TrustSigned"},
 
     { "BytecodeTimeout", "bytecode-timeout", 0, CLOPT_TYPE_NUMBER, MATCH_NUMBER, 5000, NULL, 0, OPT_QUIKD | OPT_QUIKSCAN, 
 	"Set bytecode timeout in miliseconds.","5000"},
@@ -436,11 +436,11 @@ const struct quik_option __quik_options[] = {
 
     { "Checks", "checks", 'c', CLOPT_TYPE_NUMBER, MATCH_NUMBER, 12, NULL, 0, OPT_FRESHQUIK, "This option defined how many times daily freshquik should check for\na database update.", "24" },
 
-    { "DNSDatabaseInfo", NULL, 0, CLOPT_TYPE_STRING, NULL, -1, "current.cvd.quikav.net", FLAG_REQUIRED, OPT_FRESHQUIK, "Use DNS to verify the virus database version. Freshquik uses DNS TXT records\nto verify the versions of the database and software itself. With this\ndirective you can change the database verification domain.\nWARNING: Please don't change it unless you're configuring freshquik to use\nyour own database verification domain.", "current.cvd.quikav.net" },
+    { "DNSDatabaseInfo", NULL, 0, CLOPT_TYPE_STRING, NULL, -1, "current.qavd.quikav.net", FLAG_REQUIRED, OPT_FRESHQUIK, "Use DNS to verify the virus database version. Freshquik uses DNS TXT records\nto verify the versions of the database and software itself. With this\ndirective you can change the database verification domain.\nWARNING: Please don't change it unless you're configuring freshquik to use\nyour own database verification domain.", "current.qavd.quikav.net" },
 
     { "DatabaseMirror", NULL, 0, CLOPT_TYPE_STRING, NULL, -1, NULL, FLAG_MULTIPLE, OPT_FRESHQUIK, "DatabaseMirror specifies to which mirror(s) freshquik should connect.\nYou should have at least two entries: db.XY.quikav.net (or db.XY.ipv6.quikav.net\nfor IPv6) and database.quikav.net (in this order). Please replace XY with your\ncountry code (see http://www.iana.org/cctld/cctld-whois.htm).\ndatabase.quikav.net is a round-robin record which points to our most reliable\nmirrors. It's used as a fall back in case db.XY.quikav.net is not working.", "db.XY.quikav.net\ndatabase.quikav.net" },
 
-    { "PrivateMirror", NULL, 0, CLOPT_TYPE_STRING, NULL, -1, NULL, FLAG_MULTIPLE, OPT_FRESHQUIK, "This option allows you to easily point freshquik to private mirrors.\nIf PrivateMirror is set, freshquik does not attempt to use DNS\nto determine whether its databases are out-of-date, instead it will\nuse the If-Modified-Since request or directly check the headers of the\nremote database files. For each database, freshquik first attempts\nto download the CLD file. If that fails, it tries to download the\nCVD file. This option overrides DatabaseMirror, DNSDatabaseInfo\nand Scripted Updates. It can be used multiple times to provide\nfall-back mirrors.", "mirror1.mynetwork.com\nmirror2.mynetwork.com" },
+    { "PrivateMirror", NULL, 0, CLOPT_TYPE_STRING, NULL, -1, NULL, FLAG_MULTIPLE, OPT_FRESHQUIK, "This option allows you to easily point freshquik to private mirrors.\nIf PrivateMirror is set, freshquik does not attempt to use DNS\nto determine whether its databases are out-of-date, instead it will\nuse the If-Modified-Since request or directly check the headers of the\nremote database files. For each database, freshquik first attempts\nto download the CLD file. If that fails, it tries to download the\nQVD file. This option overrides DatabaseMirror, DNSDatabaseInfo\nand Scripted Updates. It can be used multiple times to provide\nfall-back mirrors.", "mirror1.mynetwork.com\nmirror2.mynetwork.com" },
 
     { "MaxAttempts", NULL, 0, CLOPT_TYPE_NUMBER, MATCH_NUMBER, 3, NULL, 0, OPT_FRESHQUIK, "This option defines how many attempts freshquik should make before giving up.", "5" },
 
@@ -448,9 +448,9 @@ const struct quik_option __quik_options[] = {
 
     { "TestDatabases", NULL, 0, CLOPT_TYPE_BOOL, MATCH_BOOL, 1, NULL, 0, OPT_FRESHQUIK, "With this option enabled, freshquik will attempt to load new\ndatabases into memory to make sure they are properly handled\nby libquikav before replacing the old ones.", "yes" },
 
-    { "CompressLocalDatabase", NULL, 0, CLOPT_TYPE_BOOL, MATCH_BOOL, 0, NULL, 0, OPT_FRESHQUIK, "By default freshquik will keep the local databases (.cld) uncompressed to\nmake their handling faster. With this option you can enable the compression.\nThe change will take effect with the next database update.", "" },
+    { "CompressLocalDatabase", NULL, 0, CLOPT_TYPE_BOOL, MATCH_BOOL, 0, NULL, 0, OPT_FRESHQUIK, "By default freshquik will keep the local databases (.qld) uncompressed to\nmake their handling faster. With this option you can enable the compression.\nThe change will take effect with the next database update.", "" },
 
-    { "ExtraDatabase", NULL, 0, CLOPT_TYPE_STRING, NULL, -1, NULL, FLAG_MULTIPLE, OPT_FRESHQUIK, "Download an additional 3rd party signature database distributed through\nthe QuikAV mirrors. This option can be used multiple times.\nHere you can find a list of available databases:\nhttp://www.quikav.net/download/cvd/3rdparty", "dbname1\ndbname2" },
+    { "ExtraDatabase", NULL, 0, CLOPT_TYPE_STRING, NULL, -1, NULL, FLAG_MULTIPLE, OPT_FRESHQUIK, "Download an additional 3rd party signature database distributed through\nthe QuikAV mirrors. This option can be used multiple times.\nHere you can find a list of available databases:\nhttp://www.quikav.net/download/qvd/3rdparty", "dbname1\ndbname2" },
 
     { "DatabaseCustomURL", NULL, 0, CLOPT_TYPE_STRING, NULL, -1, NULL, FLAG_MULTIPLE, OPT_FRESHQUIK, "With this option you can provide custom sources (http:// or file://) for database files.\nThis option can be used multiple times.", "http://myserver.com/mysigs.ndb\nfile:///mnt/nfs/local.hdb" },
 
@@ -485,9 +485,9 @@ const struct quik_option __quik_options[] = {
 
     { "DetectionStatsHostID", NULL, 0, CLOPT_TYPE_STRING, NULL, -1, NULL, 0, OPT_FRESHQUIK, "This option enables support for our \"Personal Statistics\" service.\nWhen this option is enabled, the information on malware detected by\nyour quikd installation is made available to you through our website.\nTo get your HostID, log on http://www.stats.quikav.net and add a new\nhost to your host list. Once you have the HostID, uncomment this option\nand paste the HostID here. As soon as your freshquik starts submitting\ninformation to our stats collecting service, you will be able to view\nthe statistics of this quikd installation by logging into\nhttp://www.stats.quikav.net with the same credentials you used to\ngenerate the HostID. For more information refer to:\nhttp://www.quikav.net/doc/cctts.html\nThis feature requires SubmitDetectionStats to be enabled.", "unique-id" },
 
-    { "SafeBrowsing", NULL, 0, CLOPT_TYPE_BOOL, MATCH_BOOL, 0, NULL, 0, OPT_FRESHQUIK, "This option enables support for Google Safe Browsing. When activated for\nthe first time, freshquik will download a new database file (safebrowsing.cvd)\nwhich will be automatically loaded by quikd and quikscan during the next\nreload, provided that the heuristic phishing detection is turned on. This\ndatabase includes information about websites that may be phishing sites or\npossible sources of malware. When using this option, it's mandatory to run\nfreshquik at least every 30 minutes.\nFreshquik uses the QuikAV's mirror infrastructure to distribute the\ndatabase and its updates but all the contents are provided under Google's\nterms of use. See http://www.google.com/transparencyreport/safebrowsing\nand http://www.quikav.net/doc/safebrowsing.html for more information.", "yes" },
+    { "SafeBrowsing", NULL, 0, CLOPT_TYPE_BOOL, MATCH_BOOL, 0, NULL, 0, OPT_FRESHQUIK, "This option enables support for Google Safe Browsing. When activated for\nthe first time, freshquik will download a new database file (safebrowsing.qavd)\nwhich will be automatically loaded by quikd and quikscan during the next\nreload, provided that the heuristic phishing detection is turned on. This\ndatabase includes information about websites that may be phishing sites or\npossible sources of malware. When using this option, it's mandatory to run\nfreshquik at least every 30 minutes.\nFreshquik uses the QuikAV's mirror infrastructure to distribute the\ndatabase and its updates but all the contents are provided under Google's\nterms of use. See http://www.google.com/transparencyreport/safebrowsing\nand http://www.quikav.net/doc/safebrowsing.html for more information.", "yes" },
 
-    { "Bytecode", NULL, 0, CLOPT_TYPE_BOOL, MATCH_BOOL, 1, NULL, 0, OPT_FRESHQUIK, "This option enables downloading of bytecode.cvd, which includes additional\ndetection mechanisms and improvements to the QuikAV engine.", "yes" },
+    { "Bytecode", NULL, 0, CLOPT_TYPE_BOOL, MATCH_BOOL, 1, NULL, 0, OPT_FRESHQUIK, "This option enables downloading of bytecode.qavd, which includes additional\ndetection mechanisms and improvements to the QuikAV engine.", "yes" },
 
     { "DisableCertCheck", "nocerts", 0, CLOPT_TYPE_BOOL, MATCH_BOOL, 0, NULL, 0, OPT_QUIKD | OPT_QUIKSCAN, "Disable authenticode certificate chain verification in PE files.", "no" },
 
@@ -504,7 +504,7 @@ const struct quik_option __quik_options[] = {
     { "QuikukoScanOnAccess", NULL, 0, CLOPT_TYPE_BOOL, MATCH_BOOL, -1, NULL, 0, OPT_QUIKD | OPT_DEPRECATED, "", "" },
     { "QuikukoScannerCount", NULL, 0, CLOPT_TYPE_NUMBER, MATCH_NUMBER, 3, NULL, 0, OPT_QUIKD | OPT_DEPRECATED, "", "" },
     { "QuikukoScanOnOpen", NULL, 0, CLOPT_TYPE_BOOL, MATCH_BOOL, -1, NULL, 0, OPT_QUIKD | OPT_DEPRECATED, "", "" },
-    { "QuikukoScanOnClose", NULL, 0, CLOPT_TYPE_BOOL, MATCH_BOOL, -1, NULL, 0, OPT_QUIKD | OPT_DEPRECATED, "", "" },
+    { "QuikoScanOnClose", NULL, 0, CLOPT_TYPE_BOOL, MATCH_BOOL, -1, NULL, 0, OPT_QUIKD | OPT_DEPRECATED, "", "" },
     { "QuikukoScanOnExec", NULL, 0, CLOPT_TYPE_BOOL, MATCH_BOOL, -1, NULL, 0, OPT_QUIKD | OPT_DEPRECATED, "", "" },
     { "QuikukoIncludePath", NULL, 0, CLOPT_TYPE_STRING, NULL, -1, NULL, FLAG_MULTIPLE, OPT_QUIKD | OPT_DEPRECATED, "", "" },
     { "QuikukoExcludePath", NULL, 0, CLOPT_TYPE_STRING, NULL, -1, NULL, FLAG_MULTIPLE, OPT_QUIKD | OPT_DEPRECATED, "", "" },

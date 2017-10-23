@@ -80,7 +80,7 @@
 #include "libquikav/quikav.h"
 #include "libquikav/others.h"
 #include "libquikav/str.h"
-#include "libquikav/cvd.h"
+#include "libquikav/qvd.h"
 #include "libquikav/regex_list.h"
 
 extern char updtmpdir[512], dbdir[512];
@@ -1087,7 +1087,7 @@ getcvd (const char *cvdfile, const char *newfile, const char *hostname,
         logg ("!Verification: %s\n", cl_strerror (ret));
         unlink (newfile2);
         free(newfile2);
-        return FCE_BADCVD;
+        return FCE_BADQVD;
     }
 
     if (!(cvd = cl_cvdhead (newfile2)))
@@ -1095,7 +1095,7 @@ getcvd (const char *cvdfile, const char *newfile, const char *hostname,
         logg ("!Can't read CVD header of new %s database.\n", cvdfile);
         unlink (newfile2);
         free(newfile2);
-        return FCE_BADCVD;
+        return FCE_BADQVD;
     }
 
     if (rename (newfile2, newfile) == -1)
@@ -1129,16 +1129,16 @@ chdir_tmp (const char *dbname, const char *tmpdir)
     if (access (tmpdir, R_OK | W_OK) == -1)
     {
         int ret;
-        ret = snprintf (cvdfile, sizeof(cvdfile), "%s.cvd", dbname);
+        ret = snprintf (cvdfile, sizeof(cvdfile), "%s.qavd", dbname);
         if (ret >= sizeof(cvdfile) || ret == -1) {
             logg ("!chdir_tmp: dbname parameter value too long to create cvd file name: %s\n", dbname);
             return -1;
         }
         if (access (cvdfile, R_OK) == -1)
         {
-            ret = snprintf (cvdfile, sizeof(cvdfile), "%s.cld", dbname);
+            ret = snprintf (cvdfile, sizeof(cvdfile), "%s.qld", dbname);
             if (ret >= sizeof(cvdfile) || ret == -1) {
-                logg ("!chdir_tmp: dbname parameter value too long to create cld file name: %s\n", dbname);
+                logg ("!chdir_tmp: dbname parameter value too long to create qld file name: %s\n", dbname);
                 return -1;
             }
             if (access (cvdfile, R_OK) == -1)
@@ -1254,13 +1254,13 @@ currentdb (const char *dbname, char *localname)
     struct cl_cvd *cvd = NULL;
 
 
-    snprintf (db, sizeof (db), "%s.cvd", dbname);
+    snprintf (db, sizeof (db), "%s.qavd", dbname);
     if (localname)
         strcpy (localname, db);
 
     if (access (db, R_OK) == -1)
     {
-        snprintf (db, sizeof (db), "%s.cld", dbname);
+        snprintf (db, sizeof (db), "%s.qld", dbname);
         if (localname)
             strcpy (localname, db);
     }
@@ -1621,8 +1621,8 @@ checkdbdir (void)
     {
         if (dent->d_ino)
         {
-            if (cli_strbcasestr (dent->d_name, ".cld")
-                || cli_strbcasestr (dent->d_name, ".cvd"))
+            if (cli_strbcasestr (dent->d_name, ".qld")
+                || cli_strbcasestr (dent->d_name, ".qavd"))
             {
                 snprintf (fname, sizeof (fname), "%s" PATHSEP "%s", dbdir,
                           dent->d_name);
@@ -1764,8 +1764,8 @@ updatedb (const char *dbname, const char *hostname, char *ip, int *signo,
     if (cli_strbcasestr (hostname, ".quikav.net"))
         mirror_stats = 1;
 
-    snprintf (cvdfile, sizeof (cvdfile), "%s.cvd", dbname);
-    snprintf (cldfile, sizeof (cldfile), "%s.cld", dbname);
+    snprintf (cvdfile, sizeof (cvdfile), "%s.qavd", dbname);
+    snprintf (cldfile, sizeof (cldfile), "%s.qld", dbname);
 
     if (!extra)
     {
@@ -1811,7 +1811,7 @@ updatedb (const char *dbname, const char *hostname, char *ip, int *signo,
 #ifdef HAVE_RESOLV_H
     else if (!nodb && extra && !optget (opts, "no-dns")->enabled)
     {
-        snprintf (extradbinfo, sizeof (extradbinfo), "%s.cvd.quikav.net",
+        snprintf (extradbinfo, sizeof (extradbinfo), "%s.qavd.quikav.net",
                   dbname);
         if ((extradnsreply = dnsquery (extradbinfo, T_TXT, NULL)))
         {
@@ -2043,9 +2043,9 @@ updatedb (const char *dbname, const char *hostname, char *ip, int *signo,
             return ret;
         }
         if (iscld > 0)
-            snprintf (newdb, sizeof (newdb), "%s.cld", dbname);
+            snprintf (newdb, sizeof (newdb), "%s.qld", dbname);
         else
-            snprintf (newdb, sizeof (newdb), "%s.cvd", dbname);
+            snprintf (newdb, sizeof (newdb), "%s.qavd", dbname);
 
     }
     else
@@ -2120,7 +2120,7 @@ updatedb (const char *dbname, const char *hostname, char *ip, int *signo,
                 free (newfile);
                 return ret;
             }
-            snprintf (newdb, sizeof (newdb), "%s.cvd", dbname);
+            snprintf (newdb, sizeof (newdb), "%s.qavd", dbname);
         }
         else
         {
@@ -2134,7 +2134,7 @@ updatedb (const char *dbname, const char *hostname, char *ip, int *signo,
                 free (newfile);
                 return FCE_FAILEDUPDATE;
             }
-            snprintf (newdb, sizeof (newdb), "%s.cld", dbname);
+            snprintf (newdb, sizeof (newdb), "%s.qld", dbname);
             cli_rmdirs (tmpdir);
             free (tmpdir);
         }
@@ -2161,7 +2161,7 @@ updatedb (const char *dbname, const char *hostname, char *ip, int *signo,
         }
         newfile2[strlen (newfile2) - 4] = '.';
         newfile2[strlen (newfile2) - 3] = 'c';
-        newfile2[strlen (newfile2) - 2] = strstr (newdb, ".cld") ? 'l' : 'v';
+        newfile2[strlen (newfile2) - 2] = strstr (newdb, ".qld") ? 'l' : 'v';
         newfile2[strlen (newfile2) - 1] = 'd';
         if (rename (newfile, newfile2) == -1)
         {
@@ -2216,7 +2216,7 @@ updatedb (const char *dbname, const char *hostname, char *ip, int *signo,
 
     if (!optget (opts, "ScriptedUpdates")->enabled && !optget (opts, "PrivateMirror")->enabled)
     {
-        snprintf (localname, sizeof (localname), "%s.cld", dbname);
+        snprintf (localname, sizeof (localname), "%s.qld", dbname);
         if (!access (localname, R_OK))
             if (unlink (localname))
                 logg ("^Can't unlink the old database file %s. Please remove it manually.\n", localname);
@@ -2434,7 +2434,7 @@ updatecustomdb (const char *url, int *signo, const struct optstruct *opts,
     }
     free (newfile);
 
-    if (cli_strbcasestr (dbname, ".cld") || cli_strbcasestr (dbname, ".cvd"))
+    if (cli_strbcasestr (dbname, ".qld") || cli_strbcasestr (dbname, ".qavd"))
     {
         if ((cvd = cl_cvdhead (dbname)))
         {
@@ -2686,10 +2686,10 @@ downloadmanager (const struct optstruct *opts, const char *hostname,
         {
             const char *safedb = NULL;
 
-            if (!access ("safebrowsing.cvd", R_OK))
-                safedb = "safebrowsing.cvd";
-            else if (!access ("safebrowsing.cld", R_OK))
-                safedb = "safebrowsing.cld";
+            if (!access ("safebrowsing.qavd", R_OK))
+                safedb = "safebrowsing.qavd";
+            else if (!access ("safebrowsing.qld", R_OK))
+                safedb = "safebrowsing.qld";
 
             if (safedb)
             {
@@ -2720,10 +2720,10 @@ downloadmanager (const struct optstruct *opts, const char *hostname,
         {
             const char *dbname = NULL;
 
-            if (!access ("bytecode.cvd", R_OK))
-                dbname = "bytecode.cvd";
-            else if (!access ("bytecode.cld", R_OK))
-                dbname = "bytecode.cld";
+            if (!access ("bytecode.qavd", R_OK))
+                dbname = "bytecode.qavd";
+            else if (!access ("bytecode.qld", R_OK))
+                dbname = "bytecode.qld";
 
             if (dbname)
             {
@@ -2789,7 +2789,7 @@ downloadmanager (const struct optstruct *opts, const char *hostname,
     {
         if (newver)
             free (newver);
-        return FCE_BADCVD;
+        return FCE_BADQVD;
     }
 
     if (updated)

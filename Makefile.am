@@ -35,7 +35,7 @@ pkgconfigdir = $(libdir)/pkgconfig
 pkgconfig_DATA = libquikav.pc
 
 # don't complain that configuration files and databases are not removed, this is intended
-distuninstallcheck_listfiles = find . -type f ! -name quikd.conf ! -name freshquik.conf ! -name daily.cvd ! -name main.cvd -print
+distuninstallcheck_listfiles = find . -type f ! -name quikd.conf ! -name freshquik.conf ! -name daily.qvd ! -name main.qvd -print
 DISTCLEANFILES = target.h
 DISTCHECK_CONFIGURE_FLAGS=--enable-milter --disable-quikav --enable-all-jit-targets --enable-llvm=yes --with-systemdsystemunitdir=$$dc_install_base/$(systemdsystemunitdir)
 lcov:
